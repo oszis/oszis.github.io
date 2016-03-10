@@ -21,12 +21,20 @@ body {
 }
 .dropdown-menu {
 	position: absolute;
-	display: block;
+	display: none;
+	text-align: left;
 	background: #1e2123;
-	min-width: 154px;
+	min-width: 104px;
 	border: 3px solid #1e2123;
-	left: -100%;
+	left: -50%;
 	top: 40px;
+	min-width: 150px;
+}
+.dropdown.active .dropdown-menu {
+	display: block;
+}
+.dropdown-btn {
+	cursor: pointer;
 }
 .dropdown-menu:before {
 	display: block;
@@ -38,29 +46,23 @@ body {
 	border: 16px solid transparent;
 	border-bottom-color: #1e2123;
 }
-.dropdown .dropdown-menu li {
-	display: block;
-	width: auto;
-	margin: 0;
-}
-.dropdown-menu li a {
+.dropdown-menu a {
+	cursor: pointer;
 	text-decoration: none;
 	display: block;
 	color: #fff;
-	width: 100%;
-	padding: 10px 0;
-	text-align: center;
+	width: auto;
+	padding: 10px 25px;
 	font-weight: 800;
 }
-.dropdown-menu li a:hover {
+.dropdown-menu a:hover {
 	color: #1e2123;
 	background-color: #fff;
 }
-
-.main-header {
-	background: #0b89d2;
-	color: #fff;
+.dropdown.active {
+	color: #1e2123;
 }
+
 
 .main-nav ul,
 .slide-nav ul {
@@ -69,9 +71,20 @@ body {
 	margin: 0;
 }
 
+.main-header {
+	background: #0b89d2;
+	color: #fff;
+	padding-top: 40px;
+}
 /*логотип*/
 .logo {
 	float: left;
+	font-weight: 300;
+	font-size: 27px;
+	line-height: 55px;
+}
+.logo span {
+	font-weight: 800;
 }
 
 /*главная навигация*/
@@ -82,6 +95,33 @@ body {
 .main-nav li {
 	color: #fff;
 	display: inline-block;
+	text-decoration: none;
+	font-weight: 600;
+}
+.main-nav li a {
+	color: #fff;
+	text-decoration: none;
+}
+.main-nav li {
+	position: relative;
+}
+.main-nav li:after,
+.main-nav li:after {
+	display: block;
+	content: '';
+	width: 0;
+	margin: 0 auto;
+	transition: width .3s;
+	height: 2px;
+	background-color: #fff;
+}
+.main-nav li:hover:after {
+	width: 100%;
+}
+.main-nav li.active:hover:after {
+	display: none;
+}
+.main-nav li {
 	margin-right: 30px;
 }
 .slide-nav {
