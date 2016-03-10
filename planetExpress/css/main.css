@@ -1,5 +1,5 @@
 body {
-	font: 17px/1em 'Open Sans';
+	font: 17px/22px 'Open Sans';
 	margin: 0;
 	padding: 0;
 }
@@ -13,6 +13,9 @@ body {
 .wrapper {
 	width: 1280px;
 	margin: 0 auto;
+}
+.wrapper-sm {
+	width: 800px;
 }
 
 /*дропдаун*/
@@ -63,6 +66,9 @@ body {
 	color: #1e2123;
 }
 
+.heading {
+	margin-bottom: 35px;
+}
 
 .main-nav ul,
 .slide-nav ul {
@@ -75,6 +81,8 @@ body {
 	background: #0b89d2;
 	color: #fff;
 	padding-top: 40px;
+	background: url('../img/head-background.jpg') no-repeat;
+	background-size: cover;
 }
 /*логотип*/
 .logo {
@@ -83,7 +91,16 @@ body {
 	font-size: 27px;
 	line-height: 55px;
 }
-.logo span {
+.logo img {
+	vertical-align: middle;
+	display: inline-block;
+}
+.logo .text {
+	line-height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.logo .bold {
 	font-weight: 800;
 }
 
@@ -124,9 +141,17 @@ body {
 .main-nav li {
 	margin-right: 30px;
 }
+
+/* head slider */
 .slide-nav {
 	margin-left: 80px;
+	vertical-align: top;
+	margin-bottom: 50px;
 }
+.slide-nav ul {
+	display: inline-block;
+}
+.slide-nav span,
 .slide-nav li {
 	padding: 7px 9px;
 	border: 3px solid;
@@ -136,6 +161,7 @@ body {
 	font-size: 16px;
 	cursor: pointer;
 }
+.slide-nav span:hover,
 .slide-nav li:hover {
 	color: #0c9aec;
 	background-color: #fff;
@@ -146,4 +172,35 @@ body {
 	color: #1e2123;
 	background: transparent;
 	border-color: #1e2123;
+}
+
+.head-slider {
+	overflow: hidden;
+}
+.head-slider .slider-container {
+	width: 9999px;
+	transition: margin 1s;
+	font-size: 0;
+}
+.head-slider .slide-elem {
+	font-size: 17px;
+	margin-bottom: 170px;
+	width: 800px;
+	display: inline-block;
+}
+.header {
+	margin-left: 80px;
+	font-size: 41px;
+	line-height: 1em;
+	font-weight: 800;
+	margin-bottom: 85px;
+}
+.header:after {
+	display: block;
+	width: 60px;
+	height: 10px;
+	content: '';
+	position: relative;
+	top: 40px;
+	background-color: #fff;
 }
