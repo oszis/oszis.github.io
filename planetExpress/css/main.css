@@ -316,8 +316,11 @@ h1,h2,h3 {
 .branding {
 	background: url('../assets/assets-image-4.jpg') no-repeat;
 }
-.posts {
+.main-container {
 	margin-bottom: 200px;
+}
+.md-container {
+	margin-bottom: 100px;
 }
 .post {
 	background-size: cover;
