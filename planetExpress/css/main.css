@@ -1,5 +1,5 @@
 body {
-	font: 17px/22px 'Open Sans';
+	font: 17px/25px 'Open Sans';
 	margin: 0;
 	padding: 0;
 	min-width: 1280px;
@@ -41,6 +41,21 @@ h1,h2,h3 {
 .btn-default:hover {
 	color: #0c9aec;
 	background-color: #fff;
+}
+.btn-gallery {
+	color: #0c9aec;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.btn-gallery.active {
+	color: #fff;
+	background-color: #1e2123;
+	border-color: #1e2123;
+}
+.btn-gallery:hover {
+	color: #fff;
+	border-color: #0c9aec;
+	background-color: #0c9aec;
 }
 
 .flex-container {
@@ -301,6 +316,9 @@ h1,h2,h3 {
 .branding {
 	background: url('../assets/assets-image-4.jpg') no-repeat;
 }
+.posts {
+	margin-bottom: 200px;
+}
 .post {
 	background-size: cover;
 }
@@ -318,6 +336,7 @@ h1,h2,h3 {
 	display: none;
 	z-index: 3;
 }
+.photo-elem:hover .absolute-overlay,
 .post:hover .absolute-overlay {
 	display: block;
 }
@@ -330,3 +349,36 @@ h1,h2,h3 {
 	right: 40px;
 	left: auto;
 }
+.gallery-nav {
+	margin-left: 80px;
+	margin-bottom: 40px;
+}
+
+.gallery-photos {
+	justify-content: space-between;
+	flex-flow: row wrap;
+}
+.photo-elem {
+	position: relative;
+	width: 50%;
+	line-height: 0;
+	color: #fff;
+	text-align: center;
+}
+.photo-elem .absolute-overlay {
+	line-height: 25px;
+	padding: 0 80px 80px;
+}
+.photo-elem .content {
+	margin-bottom: 40px;
+}
+.photo-elem .absolute-overlay .btn {
+	position: static;
+}
+.photo-elem .heading {
+	margin-bottom: 40px;
+}
+/*.photo-elem img {
+	width: 100%;
+	height: 100%;
+}*/
