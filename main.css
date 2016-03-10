@@ -1,0 +1,36 @@
+body {
+	font: 18px/1em Arial;
+}
+.wrapper {
+	width: 1024px;
+	margin: 0 auto;
+}
+.container {
+	display: flex;
+	justify-content: space-around;
+}
+.btn {
+	padding: 10px 15px;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	border: 2px solid;
+	text-transform: uppercase;
+}
+.btn-planet-express {
+	color: #0c9aec;
+	background-color: #fff;
+}
+.btn-planet-express:hover {
+	background-color: #0c9aec;
+	color: #fff;
+	border-color: #0c9aec;
+}
+.btn-mike {
+	color: #196fc0;
+}
+.btn-mike:hover {
+	background-color: #196fc0;
+	border-color: #196fc0;
+	color: #fff;
+}
