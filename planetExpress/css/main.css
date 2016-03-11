@@ -25,12 +25,16 @@ h1,h2,h3 {
 	line-height: 1em;
 	font-weight: inherit;
 }
+p {
+	margin-top: 0;
+}
 .btn {
 	display: inline-block;
-	padding: 8px 11px;
+	padding: 5px 11px;
 	border: 3px solid;
 	text-decoration: none;
 	font-weight: 800;
+	cursor: pointer;
 }
 .btn-default {
 	color: #fff;
@@ -61,6 +65,13 @@ h1,h2,h3 {
 .flex-container {
 	display: flex;
 	justify-content: center;
+}
+
+.main-container {
+	margin-bottom: 200px;
+}
+.md-container {
+	margin-bottom: 100px;
 }
 
 /*дропдаун*/
@@ -202,9 +213,9 @@ h1,h2,h3 {
 }
 .slide-nav span,
 .slide-nav li {
-	padding: 7px 9px;
+	padding: 1px 9px;
+	margin-right: 10px;
 	border: 3px solid;
-	/*color: #fff;*/
 	display: inline-block;
 	font-weight: 800;
 	font-size: 16px;
@@ -258,7 +269,7 @@ h1,h2,h3 {
 	background-color: #fff;
 }
 
-.about {
+.welcome {
 	margin-bottom: 95px;
 }
 
@@ -316,12 +327,6 @@ h1,h2,h3 {
 .branding {
 	background: url('../assets/assets-image-4.jpg') no-repeat;
 }
-.main-container {
-	margin-bottom: 200px;
-}
-.md-container {
-	margin-bottom: 100px;
-}
 .post {
 	background-size: cover;
 }
@@ -354,7 +359,9 @@ h1,h2,h3 {
 }
 .gallery-nav {
 	margin-left: 80px;
-	margin-bottom: 40px;
+}
+.btn-nav {
+	margin-bottom: 30px;
 }
 
 .gallery-photos {
@@ -385,3 +392,20 @@ h1,h2,h3 {
 	width: 100%;
 	height: 100%;
 }*/
+
+.about .heading {
+	margin-top: 0;
+	font-size: 33px;
+	margin-bottom: 40px;
+}
+.about .heading .thin {
+	font-weight: 400;
+}
+.left-col {
+	float: left;
+	margin-right: 50px;
+}
+.right-col {
+	float: left;
+	margin-left: 50px;
+}
