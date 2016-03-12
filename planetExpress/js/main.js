@@ -44,3 +44,24 @@
 		navElem[counter].classList.add('active');
 	}
 })();
+
+// (function(){
+	// слайдер скиллов
+	var fill = document.querySelectorAll('.skill .fill'),
+		filled = document.querySelectorAll('.skill .filled');
+
+	function slideFilled() {
+		skills = document.querySelector('.skills').getBoundingClientRect();
+        
+    if (skills.top <= 700) {
+      for(var i = 0; i < filled.length; i++) {
+        filled[i].style.width = fill[i].getAttribute('data-filled');
+          filled[i].querySelectorAll('.text')[0].textContent = fill[i].getAttribute('data-filled');
+        setTimeout(function(i){
+          filled[i].querySelectorAll('.text')[0].style.opacity = 1;
+        },200, i);
+      }
+    }
+  }
+  document.addEventListener('scroll', slideFilled);
+// })();

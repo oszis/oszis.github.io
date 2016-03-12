@@ -388,11 +388,6 @@ p {
 .photo-elem .heading {
 	margin-bottom: 40px;
 }
-/*.photo-elem img {
-	width: 100%;
-	height: 100%;
-}*/
-
 .about .heading {
 	margin-top: 0;
 	font-size: 33px;
@@ -408,4 +403,59 @@ p {
 .right-col {
 	float: left;
 	margin-left: 50px;
+}
+
+.about .left-col {
+	height: 410px;
+}
+.about .left-col img {
+	height: 100%;
+}
+img.floated {
+	float: left;
+	margin-right: -75%;
+	position: relative;
+	left: -80%;
+}
+
+.skills {
+	float: right;
+	margin-left: -310px;
+	position: relative;
+	right: -320px;
+	width: 640px;
+}
+
+.skills .fill {
+	height: 11px;
+	background-color: #eee;
+	margin-bottom: 18px;
+}
+.skills .filled {
+	background-color: #0c9aec;
+	height: 100%;
+	width: 0;
+	transition: width 2s;
+	position: relative;
+}
+.skills .header {
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+.skill .header {
+	margin-bottom: 12px;
+	font-weight: normal;
+}
+.skill .filled .text {
+	position: absolute;
+	right: -43px;
+	text-align: center;
+	width: 43px;
+	top: -22px;
+	background-color: #1e2123;
+	color: #fff;
+	line-height: 23px;
+	font-size: 11px;
+	transition: opacity 1s;
+	opacity: 0;
 }
