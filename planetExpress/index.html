@@ -366,23 +366,44 @@
 			</div>
 			<div class="contacts clearfix">
 				<div class="column map">
-					<img class="" src="assets/assets-image-15.jpg" alt="">
+					<img class="" src="img/map.jpg" alt="">
 				</div>
 				<div class="column text-col">
 					<div class="heading">ADDRESS</div>
 					<p>ul. Lorem Street 123<br>
 						31-970 Kraków<br>
 						Polska</p>
-					<p>Email: <span class="bold">sample@mail.com</span><br>
-						Phone: <span class="bold">+49 5241 80-0 00</span><br>
-						Mobile: <span class="bold">+49 5241 80-0 00</span><br>
+					<p>Email: <a href="mailto:sample@mail.com" class="bold">sample@mail.com</a><br>
+						Phone: <a href="tel:+49524180000" class="bold">+49 5241 80-0 00</a><br>
+						Mobile: <a href="tel:+49524180000" class="bold">+49 5241 80-0 00</a><br>
 						Facebook: <a href="#" class="bold">facebook.com/username</a><br>
 						Twitter: <a href="#" class="bold">twitter.com/username</a>
 					</p>
+					<form action="#" class="main-form">
+						<label for="name">NAME</label>
+						<input name="name" type="text" class="main-form-input" id="name">
+						<label for="email">EMAIL</label>
+						<input name="email" type="email" class="main-form-input" id="email">
+						<label for="message">MESSAGE</label>
+						<textarea name="message" id="message" cols="30" rows="10" class="main-form-textarea"></textarea>
+						<button type="submit" class="btn btn-gallery">SEND</button>
+					</form>
 				</div>
 			</div>
 		</div>
 	</main>
+	<div class="footer wrapper">
+		<nav class="main-nav footer-nav">
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">SERVICE</a></li>
+				<li><a href="#">WORKS</a></li>
+				<li><a href="#">ABOUT ME</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+		<div class="copyright">&copy; 2015 <span class="bold">Planet</span>Express All right reserved</div>
+	</div>
 	<script src="js/main.js"></script>
 </body>
 </html>
