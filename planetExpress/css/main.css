@@ -289,6 +289,7 @@ p {
 .text-col {
 	padding-left: 50px;
 	text-align: left;
+	box-sizing: border-box;
 }
 .container-negative .text-col {
 	padding-right: 50px;
@@ -408,7 +409,7 @@ p {
 	font-size: 33px;
 	margin-bottom: 40px;
 }
-.about .heading .thin {
+.thin {
 	font-weight: 400;
 }
 .about .left-col {
