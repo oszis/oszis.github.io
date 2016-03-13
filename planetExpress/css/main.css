@@ -2,7 +2,7 @@ body {
 	font: 17px/25px 'Open Sans';
 	margin: 0;
 	padding: 0;
-	min-width: 1280px;
+	min-width: 1200px;
 	color: #1e2123;
 }
 .clearfix:after {
@@ -16,7 +16,7 @@ body {
 	width: 1280px;
 	margin: 0 auto;
 }
-.wrapper-sm {
+.wrapper.wrapper-sm {
 	width: 800px;
 }
 h1,h2,h3 {
@@ -286,6 +286,7 @@ a:hover {
 	margin-bottom: 170px;
 	width: 800px;
 	display: inline-block;
+	margin-right: 20px;
 }
 
 .head-slider .main-heading:after {
@@ -452,7 +453,7 @@ a:hover {
 	margin-left: -210px;
 	position: relative;
 	right: -240px;
-	width: 640px;
+	width: 610px;
 }
 .skills .fill {
 	height: 11px;
@@ -566,4 +567,98 @@ a:hover {
 .copyright {
 	font-size: 11px;
 	margin-right: 30px;
+}
+
+@media screen and (max-width: 1280px) {
+	.wrapper {
+		width: auto;
+		min-width: auto;
+		max-width: none;
+	}
+	.skills {
+		right: 0;
+		margin: 0;
+		float: none;
+		margin-bottom: 60px;
+		position: static;
+	}
+	.about .floated {
+		float: none;
+		margin: 0 auto;
+		position: static;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	body {
+		min-width: auto;
+	}
+	.wrapper {
+		width: 900px;
+	}
+	.post {
+		margin: 0 auto;
+	}
+	.post .content {
+		width: auto;
+		padding: 0 30px;
+	}
+	.column {
+		width: 100%;
+		display: block;
+		padding: 0;
+	}
+	.container-negative .img-col,
+	.img-col {
+		float: none;
+	}
+	.absolute-overlay,
+	.post .absolute-overlay,
+	.container-negative .absolute-overlay {
+		background: linear-gradient(to top, rgb(14, 154, 235), rgba(14, 154, 235,0.8));
+	}
+	.text-col,
+	.container-negative .text-col {
+		padding-right: 0;
+		text-align: center;
+	}
+	.contacts .map {
+		float: none;
+		width: auto;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.head-slider .slide-elem {
+		width: 900px;
+	}
+	.main-form {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.main-form input,
+	.main-form textarea {
+		margin: 0 auto 20px;
+	}
+	..skill .filled .text {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.wrapper,
+	.wrapper.wrapper-sm {
+		width: 700px;
+	}
+	.logo {
+		float: none;
+		margin-bottom: 40px;
+	}
+	.main-nav {
+		float: none;
+	}
+
+	.head-slider .slide-elem {
+		width: 700px;
+	}
 }

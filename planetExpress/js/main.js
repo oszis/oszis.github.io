@@ -14,6 +14,7 @@
 		next = document.querySelector('.head-slider .slide-nav .next'),
 		slideElem = document.querySelectorAll('.head-slider .slide-nav .slide-elem'),
 		slideContainer = document.querySelector('.head-slider .slider-container'),
+		slideContainerElem = document.querySelector('.head-slider .slider-container .slide-elem'),
 		counter = 0;
 
 	for (var i = 0; i < navElem.length; i++) {
@@ -37,7 +38,7 @@
 	}
 	
 	function slide() {
-		slideContainer.style.marginLeft = -counter * 800 + 'px';
+		slideContainer.style.marginLeft = -counter * (slideContainerElem.offsetWidth + 20) + 'px';
 		for (var i = 0; i < navElem.length; i++) {
 			navElem[i].classList.remove('active');
 		}
