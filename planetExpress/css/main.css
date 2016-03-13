@@ -309,14 +309,15 @@ p {
 
 .img-col {
 	float: left;
-	display: table-column;
 	line-height: 0;
+	position: relative;
 }
 .container-negative .img-col {
 	float: right;
 }
 .post {
 	background-size: cover;
+	transition: background .3s;
 }
 .post:hover {
 	color: #fff;
@@ -328,32 +329,6 @@ p {
 	font-size: 13px;
 	line-height: 25px;
 	margin-bottom: 5px;
-}
-.absolute-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(to left, rgb(14, 154, 235), rgba(14, 154, 235,0.8));
-	display: none;
-	z-index: 3;
-}
-.container-negative .absolute-overlay {
-	background: linear-gradient(to right, rgb(14, 154, 235), rgba(14, 154, 235,0.8));
-}
-.photo-elem:hover .absolute-overlay,
-.post:hover .absolute-overlay {
-	display: block;
-}
-.absolute-overlay .btn {
-	position: absolute;
-	bottom: 45px;
-	left: 40px;
-}
-.container-negative .absolute-overlay .btn {
-	right: 40px;
-	left: auto;
 }
 .post .column {
 	min-height: 350px;
@@ -371,6 +346,35 @@ p {
 }
 .container-negative .content {
 	text-align: left;
+}
+.absolute-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(to left, rgb(14, 154, 235), rgba(14, 154, 235,0.8));
+	/*display: none;*/
+	z-index: 3;
+	opacity: 0;
+	transition: opacity .3s;
+}
+.container-negative .absolute-overlay {
+	background: linear-gradient(to right, rgb(14, 154, 235), rgba(14, 154, 235,0.8));
+}
+.photo-elem:hover .absolute-overlay,
+.post:hover .absolute-overlay {
+	/*display: block;*/
+	opacity: 1;
+}
+.absolute-overlay .btn {
+	position: absolute;
+	bottom: 45px;
+	left: 40px;
+}
+.container-negative .absolute-overlay .btn {
+	right: 40px;
+	left: auto;
 }
 .gallery-nav {
 	margin-left: 80px;
