@@ -51,7 +51,7 @@
 		filled = document.querySelectorAll('.skill .filled');
 
 	function slideFilled() {
-		skills = document.querySelector('.skills').getBoundingClientRect();
+		var skills = document.querySelector('.skills').getBoundingClientRect();
         
     if (skills.top <= 700) {
       for(var i = 0; i < filled.length; i++) {
