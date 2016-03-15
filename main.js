@@ -1,4 +1,5 @@
-	var btn = document.querySelector('.btn-mike'),
+	var btnMike = document.querySelector('.btn-mike'),
+		btnTheBand = document.querySelector('.btn-band'),
 		popup = document.querySelector('.popup-container'),
 		closePopup = document.querySelector('.popup-close');
 	function error(event) {
@@ -11,6 +12,6 @@
 		popup.classList.remove('active');
 	}
 
-	btn.addEventListener('click', error, false);
-
+	btnMike.addEventListener('click', error, false);
+	btnTheBand.onclick = error;
 	closePopup.onclick = popup.onclick = close;

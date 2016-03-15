@@ -34,6 +34,15 @@ body {
 	border-color: #196fc0;
 	color: #fff;
 }
+.btn-band {
+	background-color: #f8f8f8;
+	color: #826b60;
+}
+.btn-band:hover {
+	background-color: #826b60;
+	color: #f8f8f8;
+	border-color: #826b60;
+}
 
 @keyframes bounce {
 	0% {
