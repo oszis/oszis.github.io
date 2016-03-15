@@ -131,11 +131,11 @@
 *Слайдер команды
 */
 (function(){
-  var slideElem = document.querySelectorAll('.team-slider .slide-elem'),
-      slideCarousel = document.querySelector('.team-slider .slider-carousel'),
+  var slideElem = document.querySelectorAll('.review-slider .slide-elem'),
+      slideCarousel = document.querySelector('.review-slider .slider-carousel'),
       counter = 0,
-      prev = document.querySelector('.team-slider .slider-prev'),
-      next = document.querySelector('.team-slider .slider-next');
+      prev = document.querySelector('.review-slider .slider-prev'),
+      next = document.querySelector('.review-slider .slider-next');
       
       function slide() {
         slideCarousel.style.marginLeft = -((slideElem[0].offsetWidth + 20) * counter) + 'px';
