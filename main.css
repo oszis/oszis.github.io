@@ -17,6 +17,14 @@ body {
 	border: 2px solid;
 	text-transform: uppercase;
 }
+.btn-default {
+	color: #18DC18;
+	border-color: #18DC18;
+}
+.btn-default:hover {
+	background-color: #18DC18;
+	color: #fff;
+}
 .btn-planet-express {
 	color: #0c9aec;
 	background-color: #fff;
