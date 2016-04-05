@@ -20,7 +20,7 @@
 
 (function($){
 	// слайдер
-	var doctorSlider = $('.doctor-slider-container');
+	var doctorSlider = $('.doctor-slider');
 	doctorSlider.owlCarousel({
 		loop:true,
 	    margin:10,
