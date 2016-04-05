@@ -1,5 +1,6 @@
 (function(){
-	document.addEventListener('scroll', showBones)
+	document.addEventListener('scroll', showBones);
+	window.addEventListener('load', showBones);
 
 	function showBones() {
 	var girl = document.querySelector('.girl'),
