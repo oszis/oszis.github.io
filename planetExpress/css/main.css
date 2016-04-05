@@ -530,6 +530,7 @@ a:hover {
 }
 .main-form-textarea {
 	height: 175px;
+	resize: vertical;
 }
 .main-form-input:focus,
 .main-form-textarea:focus {

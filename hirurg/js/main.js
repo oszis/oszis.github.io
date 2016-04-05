@@ -20,10 +20,11 @@
 
 (function($){
 	// слайдер
-	$('.doctor-slider').owlCarousel({
+	var doctorSlider = $('.doctor-slider-container');
+	doctorSlider.owlCarousel({
 		loop:true,
 	    margin:10,
-	    nav:true,
+	    nav:false,
 	    dots: false,
 	    responsive:{
 	        0:{
@@ -37,6 +38,12 @@
 	        }
 	    }
 	});
+	$('.doctor-slider .next').click(function(){
+		doctorSlider.trigger('next.owl.carousel', [400]);
+	});
+	$('.doctor-slider .prev').click(function(){
+		doctorSlider.trigger('prev.owl.carousel', [400]);
+	})
 
 	// input mask
 	$('input[name="phone"]').inputmask({
