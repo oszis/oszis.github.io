@@ -402,6 +402,7 @@ h3 {
 
 .services-container {
 	margin-top: 90px;
+	text-align: center;
 }
 .services-elem {
 	display: inline-block;
@@ -539,21 +540,21 @@ h3 {
 	font-size: 25px;
 }
 
-.doctor-slider {
-	position: relative;
+.doctor-slider-container {
 	margin-bottom: 30px;
 }
 .doctor-slider-container {
 	width: 80%;
 	margin: 0 auto;
+	position:  relative;
 }
 .doctor-slider-container img {
 	min-height: 100px;
 	max-height: 225px;
 	width: 100%;
 }
-.doctor-slider .prev,
-.doctor-slider .next {
+.doctor-slider-container .prev,
+.doctor-slider-container .next {
 	position: absolute;
 	top: 50%;
 	margin-top: -30px;
@@ -563,15 +564,15 @@ h3 {
 	cursor: pointer;
 	transition: opacity .3s;
 }
-.doctor-slider .prev:hover,
-.doctor-slider .next:hover {
+.doctor-slider-container .prev:hover,
+.doctor-slider-container .next:hover {
 	opacity: 1;
 }
-.doctor-slider .next {
+.doctor-slider-container .next {
 	border-left: 30px solid #929292;
 	right: -100px;
 }
-.doctor-slider .prev {
+.doctor-slider-container .prev {
 	border-right: 30px solid #929292;
 	left: -100px;
 }
@@ -697,11 +698,32 @@ h3 {
 		max-width: 350px;
 	}
 
-	.doctor-slider .next {
+	.doctor-slider-container .next {
 		right: -76px;
 	}
-	.doctor-slider .prev {
+	.doctor-slider-container .prev {
 		left: -76px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.left-col, .right-col,
+	.section-3 .bordered {
+		width: 48%;
+		box-sizing: border-box;
+	}
+	.glad-elem {
+		max-width: 50%;
+		float: none;
+		margin: 0 auto 40px;
+	}
+	.glad-elem:last-of-type {
+		margin-right: auto;
+	}
+	.its-cool-elem {
+		padding: 0 15px;
+	}
+	h2 {
+		margin-left: 20px;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -709,6 +731,9 @@ h3 {
 		text-align: center;
 		font-size: 75px;
 		line-height: 80px;
+	}
+	h2 {
+		margin-left: 0;
 	}
 	.wrapper {
 		max-width: 690px;
@@ -792,8 +817,8 @@ h3 {
 		margin-right: 0;
 	}
 
-	.doctor-slider .next,
-	.doctor-slider .prev {
+	.doctor-slider-container .next,
+	.doctor-slider-container .prev {
 		display: none;
 	}
 
@@ -850,6 +875,7 @@ h3 {
 	.btn-default {
 		display: block;
 		width: 100%;
+		padding: 10px 20px;
 	}
 
 	.name-contacts {

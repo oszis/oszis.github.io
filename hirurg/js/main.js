@@ -38,10 +38,10 @@
 	        }
 	    }
 	});
-	$('.doctor-slider .next').click(function(){
+	$('.doctor-slider-container .next').click(function(){
 		doctorSlider.trigger('next.owl.carousel', [400]);
 	});
-	$('.doctor-slider .prev').click(function(){
+	$('.doctor-slider-container .prev').click(function(){
 		doctorSlider.trigger('prev.owl.carousel', [400]);
 	})
 
