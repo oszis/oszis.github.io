@@ -51,6 +51,14 @@ body {
 	color: #f8f8f8;
 	border-color: #826b60;
 }
+.btn-innosphere {
+	border-color: #f17398;
+	color: #f17398;
+}
+.btn-innosphere:hover {
+	background-color: #f17398;
+	color: #fff;
+}
 
 @keyframes bounce {
 	0% {
