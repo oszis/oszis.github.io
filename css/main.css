@@ -32,6 +32,10 @@ body
 {
     margin-bottom: 30px;
 }
+.col-container
+{
+    margin-bottom: 45px;
+}
 .left-col img,
 .right-col img
 {
@@ -123,12 +127,23 @@ p
     margin: 0;
     margin-bottom: 45px;
 }
-.custom-list
+.preferences-list
 {
-    margin: 0;
-    padding: 0;
+    list-style-type: circle;
+}
+.preferences-list li
+{
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+li.list-heading
+{
+    font-weight: bolder;
 
-    list-style: none;
+    margin-bottom: 15px;
+    margin-left: 0;
+
+    list-style-type: none;
 }
 .block-centered
 {
