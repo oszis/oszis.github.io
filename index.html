@@ -1,25 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Портфолио</title>
-	<link rel="stylesheet" href="main.css">
-</head>
-<body>
-	<div class="container wrapper">
-		<a href="innosphere/index.html" class="btn btn-innosphere">INNOSPHERE</a>
-		<a href="hirurg/index.html" class="btn btn-default">ХИРУРГИЯ</a>
-		<a href="planetExpress/index.html" class="btn btn-planet-express">PLANET EXPRESS</a>
-		<a href="theBand/index.html" class="btn btn-band">the Band</a>
-		<a href="mike/index.html" class="btn btn-mike">mike studio</a>
-	</div>
-	<div class="popup-container">
-		<div class="popup">
-			<div class="popup-close"></div>
-			<div class="popup-header">Ошибка</div>
-			<div class="popup-content">К сожалению, данный макет еще не готов, но вы все еще можете просмотреть остальные макеты</div>
-		</div>
-	</div>
-	<script src="main.js"></script>
-</body>
+<html>
+  <head>
+    <title>simple project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/assets.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-header__desktop">
+        <nav class="main-header__nav">
+          <div class="wrapper">
+            <ul class="stilized-list">
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#about">ABOUT ME</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#contacts">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="main-header__mobile">
+        <div class="wrapper">
+          <div class="hamburger"><span></span><span></span><span></span></div>
+          <nav class="main-header__nav mobile-header__nav">
+            <ul class="stilized-list">
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#about">ABOUT ME</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#contacts">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="main-section main-section__home" id="home">
+      <div class="wrapper block-centered">
+        <h1>ГЛЕБ <span class="text-bold">БЕЛКИН</span></h1>
+        <div class="main-heading">
+          <h2>ВЕРСТАЛЬЩИК</h2>
+        </div>
+        <div class="main-heading">
+          <h3>HTML <span class="text-bold">CSS </span>JADE <span class="text-bold">LESS </span>STYLUS <span class="text-bold">JAVASCRIPT </span>JQUERY</h3>
+        </div>
+        <div class="scroll-btn">SCROLL</div>
+      </div>
+    </section>
+    <section class="main-section main-section--white" id="about">
+      <div class="wrapper wrapper--mini">
+        <h2>Обо мне</h2>
+        <p>Мне 20 лет, я бородат</p>
+        <p>Тролль лжец и недевственник</p>
+        <div class="text-signature">Глеб Белкин</div>
+        <div class="scroll-btn">SCROLL</div>
+      </div>
+    </section>
+    <section class="main-section" id="portfolio">
+      <div class="wrapper block-centered">
+        <div class="main-heading">
+          <h2>PORTFOLIO</h2>
+        </div>
+        <div class="portfolio-container"><a class="portfolio-elem" href="innosphere/index.html"><img src="img/innosphere.png" alt="">
+            <div class="portfolio-elem__text">INNOSPHERE</div></a><a class="portfolio-elem" href="hirurg/index.html"><img src="img/surgery.png" alt="#">
+            <div class="portfolio-elem__text">Тестовое задание
+              <div class="text-bold">челюстно-лицевая хирургия</div>
+            </div></a><a class="portfolio-elem" href="planetExpress/index.html"><img src="img/planetExpress.png" alt="#">
+            <div class="portfolio-elem__text"> <span class="text-bold">PLANET </span>EXPRESS</div></a></div>
+        <div class="scroll-btn">SCROLL</div>
+      </div>
+    </section>
+    <footer class="main-section main-section--white" id="contacts">
+      <div class="wrapper block-centered">
+        <div class="contacts-elem">
+          <div class="contacts-elem__heading">EMAIL:</div><a class="contacts-elem__content" href="mailto:belkin643@gmail.com">belkin643@gmail.com</a>
+        </div>
+        <div class="contacts-elem">
+          <div class="contacts-elem__heading">ТЕЛЕФОН:</div>
+          <div class="contacts-elem__content">+7 (960) 917-00-33</div>
+        </div>
+        <div class="contacts-elem center-box">
+          <div class="contacts-elem__heading">SOCIAL LINKS:</div>
+          <div class="contacts-elem__content"><a class="contacts-elem__btn icon-vkontakte btn-vkontakte" href="https://new.vk.com/azazel113"></a><a class="contacts-elem__btn icon-gplus btn-gplus" href="https://plus.google.com/110454156565491698928"></a><span class="contacts-elem__btn icon-skype btn-skype btn-tip" data-name="oszis113"></span><a class="contacts-elem__btn icon-facebook btn-facebook" href="https://facebook.com/azazel113"></a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/assets.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
