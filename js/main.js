@@ -1,6 +1,5 @@
 (function($){
 
-	$('.mobile-header__nav').hide();
 	$('body').click(function(e){
 		var target = e.target;
 		if ($(target).is('.hamburger')) {

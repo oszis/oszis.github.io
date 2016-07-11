@@ -379,6 +379,10 @@ li.list-heading
 {
     color: #b1b1b1;
 }
+.mobile-header__nav
+{
+    display: none;
+}
 .main-section
 {
     position: relative;
