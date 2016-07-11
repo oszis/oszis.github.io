@@ -32,10 +32,6 @@ body
 {
     margin-bottom: 30px;
 }
-.col-container
-{
-    margin-bottom: 45px;
-}
 .left-col img,
 .right-col img
 {
@@ -129,6 +125,8 @@ p
 }
 .preferences-list
 {
+    margin-bottom: 45px;
+
     list-style-type: circle;
 }
 .preferences-list li
@@ -263,10 +261,11 @@ li.list-heading
 }
 .main-header__mobile .hamburger
 {
+    font-size: 30px;
+    line-height: 50px;
+
     width: 50px;
     height: 50px;
-
-    background-color: #fff;
 }
 @media screen and (min-width: 1024px)
 {
@@ -361,11 +360,13 @@ li.list-heading
 
     border-bottom: 2px solid #cacaca;
 }
-.main-header__nav a:hover
+.main-header__nav a:hover,
+.main-header__nav a.active
 {
     color: #000;
 }
-.main-header__nav a:hover:before
+.main-header__nav a:hover:before,
+.main-header__nav a.active:before
 {
     right: 25px;
     left: 25px;
@@ -461,7 +462,7 @@ li.list-heading
     display: block;
     overflow: hidden;
 
-    max-width: 300px;
+    width: 300px;
     height: 250px;
     margin: auto;
     margin-bottom: 40px;
@@ -588,12 +589,12 @@ li.list-heading
     font-weight: normal;
     font-style: normal;
 
-    src: url('../font/portfolio.eot?9986114');
-    src: url('../font/portfolio.eot?9986114#iefix') format('embedded-opentype'),
-    url('../font/portfolio.woff2?9986114') format('woff2'),
-    url('../font/portfolio.woff?9986114') format('woff'),
-    url('../font/portfolio.ttf?9986114') format('truetype'),
-    url('../font/portfolio.svg?9986114#portfolio') format('svg');
+    src: url('../font/portfolio.eot?88858328');
+    src: url('../font/portfolio.eot?88858328#iefix') format('embedded-opentype'),
+    url('../font/portfolio.woff2?88858328') format('woff2'),
+    url('../font/portfolio.woff?88858328') format('woff'),
+    url('../font/portfolio.ttf?88858328') format('truetype'),
+    url('../font/portfolio.svg?88858328#portfolio') format('svg');
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
@@ -601,7 +602,7 @@ li.list-heading
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'portfolio';
-    src: url('../font/portfolio.svg?9986114#portfolio') format('svg');
+    src: url('../font/portfolio.svg?88858328#portfolio') format('svg');
   }
 }
 */
@@ -641,6 +642,10 @@ li.list-heading
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+.icon-menu:before
+{
+    content: '\e800';
+} /* '' */
 .icon-vkontakte:before
 {
     content: '\e801';
