@@ -1,22 +1,31 @@
 (function($){
 
-	$('body').click(function(e){
-		var target = e.target;
-		if ($(target).is('.hamburger')) {
-			$('.mobile-header__nav').slideToggle('fast');
-			$('.hamburger').addClass('active');
-		} else if ($('.hamburger').hasClass('active')) {
-			$('.mobile-header__nav').slideUp('fast');
-			$('.hamburger').removeClass('active');
+	// меню на мобилках по клику
+	$(document).on('click', function (e) {
+		var hamburger = $('.hamburger'),
+			nav = $('.mobile-header__nav');
+		if ($(e.target).closest('.hamburger').length) {
+
+			nav.slideToggle('fast');
+			hamburger.toggleClass('active');
+		} else if (hamburger.hasClass('active')) {
+			nav.slideUp('fast');
+			hamburger.removeClass('active');
 		}
-		
 	});
 
+	// добавляем класс active элементу списка nav
+	function navLinkActive(e) {
+		$('.mobile-header__nav a, .main-header__nav a').removeClass('active');
+		e.addClass('active');
+	}
+
+	// скролл к section по клику на ссылку в навигации
 	$('.mobile-header__nav a, .main-header__nav a').click(function(e){
 		e.stopPropagation();
-		$('.mobile-header__nav a, .main-header__nav a').removeClass('active');
-		$(this).addClass('active');
-		var elemHref = $(this).attr('href');
+		var link = $(this);
+		navLinkActive(link);
+		var elemHref = link.attr('href');
 		$('html, body').clearQueue();
 		$('html, body').animate({
 			scrollTop: $(elemHref).offset().top
@@ -24,6 +33,7 @@
 	});
 
 
+	// tooltip
 	var tip = {
 		show: function(){
 			var elem = $(this),
@@ -33,20 +43,39 @@
 				$('body').append(tip);
 				var width = $('.tip').css('width');
 				$('.tip').css({
-					'top': elem.offset().top + (elem.outerHeight() - $('.tip').outerHeight())/2 + 'px',
-					'left': elem.offset().left + 10 + elem.width() + 'px',
-					'width': 0,
-				}).animate({
-					'width': width,
-				}, 200)
+					'top': elem.offset().top - $('.tip').outerHeight() - 10 + 'px',
+					'left': elem.offset().left + elem.outerWidth() /2 -  $('.tip').outerWidth()/2 + 'px',
+				});
 			} else return false;
 		},
 		hide: function(){
-			setTimeout(function(){
-				$('.tip').remove();
-			}, 1500);
+			$('.tip').remove();
 		}
 	}
 
 	$('.btn-tip').hover(tip.show, tip.hide);
+
+	// Меняем background у fixed header по scroll
+	$(window).scroll(function(){
+		var scrolled = $(window).scrollTop(),
+			header = $('.main-header'),
+			idList = ['#contacts', '#portfolio', '#about', '#home'];
+
+		if (scrolled >= $(idList[0]).offset().top) {
+			header.addClass('negative');
+			return;
+		}
+		if (scrolled >= $(idList[1]).offset().top) {
+			header.removeClass('negative');
+			return;
+		}
+		if (scrolled >= $(idList[2]).offset().top) {
+			header.addClass('negative');
+			return;
+		}
+		if (scrolled >= $(idList[3]).offset().top) {
+			header.removeClass('negative');
+			return
+		}
+	});
 })(jQuery);

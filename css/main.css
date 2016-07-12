@@ -214,6 +214,7 @@ li.list-heading
 .tip
 {
     font-size: 16px;
+    font-weight: 500;
     line-height: 20px;
 
     position: absolute;
@@ -224,11 +225,25 @@ li.list-heading
     box-sizing: border-box;
     padding: 5px 10px;
 
-    color: #fff;
-    border: 2px solid rgba(255,62,62,.75);
+    color: #202020;
+    border: 2px solid #202020;
     border-radius: 5px;
-    background-color: rgba(32,32,32,.85);
-    box-shadow: 0 0 5px 0 #cacaca;
+    background-color: #fff;
+}
+.tip:before
+{
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+
+    display: block;
+
+    margin-left: -6px;
+
+    content: '';
+
+    border: 6px solid transparent;
+    border-top: 10px solid #202020;
 }
 .main-header
 {
@@ -242,6 +257,13 @@ li.list-heading
     top: 0;
     right: 0;
     left: 0;
+
+    -webkit-transition: background-color .2s;
+
+    transition: background-color .2s;
+
+    color: #fff;
+    background-color: #202020;
 }
 .main-header__desktop
 {
@@ -253,7 +275,6 @@ li.list-heading
 
     color: #fff;
     border-bottom: 1px solid #fff;
-    background-color: #202020;
 }
 .main-header__mobile .main-header__nav
 {
@@ -266,6 +287,16 @@ li.list-heading
 
     width: 50px;
     height: 50px;
+}
+.main-header.negative .main-header__desktop,
+.main-header.negative .main-header__mobile
+{
+    color: #cacaca;
+    background-color: #fff;
+}
+.main-header.negative .main-header__mobile
+{
+    border-bottom-color: #cacaca;
 }
 @media screen and (min-width: 1024px)
 {
@@ -319,7 +350,7 @@ li.list-heading
 
     text-align: center;
 
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid #fff;
 }
 .main-header__nav li
 {
@@ -340,7 +371,7 @@ li.list-heading
 
     text-decoration: none;
 
-    color: #cacaca;
+    color: #fff;
 }
 .main-header__nav a:before
 {
@@ -358,7 +389,7 @@ li.list-heading
     -webkit-transition: left .3s, right .3s;
     transition: left .3s, right .3s;
 
-    border-bottom: 2px solid #cacaca;
+    border-bottom: 2px solid #fff;
 }
 .main-header__nav a:hover,
 .main-header__nav a.active
@@ -373,11 +404,28 @@ li.list-heading
 }
 .main-header__nav a:visited
 {
-    color: #cacaca;
+    color: #fff;
 }
 .main-header__nav a:active
 {
+    color: #fefefe;
+}
+.negative .main-header__nav
+{
+    border-bottom-color: #cacaca;
+}
+.negative .main-header__nav a
+{
+    color: #cacaca;
+}
+.negative .main-header__nav a:visited,
+.negative .main-header__nav a:active
+{
     color: #b1b1b1;
+}
+.negative .main-header__nav a:before
+{
+    border-bottom-color: #cacaca;
 }
 .mobile-header__nav
 {
