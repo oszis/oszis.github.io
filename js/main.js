@@ -56,26 +56,23 @@
 	$('.btn-tip').hover(tip.show, tip.hide);
 
 	// Меняем background у fixed header по scroll
-	$(window).scroll(function(){
-		var scrolled = $(window).scrollTop(),
-			header = $('.main-header'),
-			idList = ['#contacts', '#portfolio', '#about', '#home'];
 
-		if (scrolled >= $(idList[0]).offset().top) {
-			header.addClass('negative');
-			return;
-		}
-		if (scrolled >= $(idList[1]).offset().top) {
-			header.removeClass('negative');
-			return;
-		}
-		if (scrolled >= $(idList[2]).offset().top) {
-			header.addClass('negative');
-			return;
-		}
-		if (scrolled >= $(idList[3]).offset().top) {
-			header.removeClass('negative');
-			return
-		}
+	var scrollSection = $('.scroll-section');
+	$(window).on('scroll load', function(){
+		scrollSection.each(function(){
+			var elem = $(this),
+				scrolled = $(window).scrollTop(),
+				header = $('.main-header');
+			if (scrolled >= elem.offset().top && scrolled <= elem.offset().top + elem.height()) {
+				switch (true) {
+					case elem.hasClass('scroll-section--grey'):
+						header.removeClass('negative');
+						break;
+					case elem.hasClass('scroll-section--white'):
+						header.addClass('negative')
+						break;
+				}
+			}
+		});
 	});
 })(jQuery);
