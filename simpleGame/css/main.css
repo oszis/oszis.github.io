@@ -1,0 +1,100 @@
+body {
+  font: 16px/1em Arial;
+  line-height: 20px;
+  margin: 0;
+}
+.block-container {
+  position: relative;
+  transition: background-color 0.2s;
+}
+#block {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background-color: #ff008d;
+  border-radius: 30%;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  line-height: 150px;
+  font-size: 30px;
+}
+.time {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.main-header {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  height: 50px;
+  z-index: 20;
+  font-size: 20px;
+  line-height: 50px;
+}
+.overlay {
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #24dc24;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  padding: 100px 10px;
+  font-size: 25px;
+  font-weight: normal;
+}
+.overlay p {
+  font-size: 25px;
+}
+.overlay.active {
+  z-index: 30;
+  opacity: 1;
+}
+.overlay__end-game {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 0;
+  line-height: 100vh;
+}
+.overlay__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  font-size: 30px;
+  line-height: 100px;
+  text-align: center;
+  transition: color 0.2s, background-color 0.2s;
+}
+.overlay__close:hover {
+  background-color: #fff;
+  color: #24dc24;
+}
+.peedor {
+  position: fixed;
+  bottom: -100%;
+  left: -100%;
+  transition: left 0.1s, bottom 0.1s;
+}
+.peedor.active {
+  bottom: 0;
+  left: 0;
+}
+@media screen and (min-width: 768px) {
+  .overlay {
+    font-size: 35px;
+    font-size: 30px;
+  }
+}
