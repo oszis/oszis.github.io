@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>G-Energy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <!-- bower:css-->
+    <link rel="stylesheet" href="bower_components/bootstrap.css">
+    <!-- endinject-->
+    <!-- inject:css-->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endinject-->
+  </head>
+  <body>
+    <!-- Шапка-->
+    <header class="main-header">
+      <div class="main-header__top">
+        <div class="container">
+          <div class="row clearfix"><a class="main-header-top__elem take-a-gift pull-left" href="#" data-toggle="modal" data-target="#b-gift-modal">
+              <div class="take-a-gift__icon"></div>
+              <div class="take-a-gift__icon--hover"></div><span>ПОЛУЧИТЕ ПОДАРОК
+                <div class="desktop-show desktop-show--inline">СЕЙЧАС</div></span></a>
+            <div class="pull-right text-center">
+              <!-- Блок выбора языка-->
+              <div class="language-container dropdown"><a class="main-header-top__elem" href="#" data-toggle="dropdown" id="b-language-dropdown">
+                  <!-- TODO: Меняем класс 'language-elem--russian' у блока 'language-elem--active' на 'language-elem--russian' 'language-elem--english' 'language-elem--italian' 'language-elem--spain' для замены флага-->
+                  <div class="language-elem language-elem--russian language-elem--active"></div><span class="caret visible-md visible-lg"></span></a>
+                <ul class="dropdown-menu language-dropdown" aria-labelledby="b-language-dropdown">
+                  <li><a class="language-elem language-elem--russian active" href="#"></a></li>
+                  <li><a class="language-elem language-elem--english" href="#"></a></li>
+                  <li><a class="language-elem language-elem--italian" href="#"></a></li>
+                  <li><a class="language-elem language-elem--spain" href="#"></a></li>
+                </ul>
+              </div>
+              <div class="main-header-top__elem"><a class="icon-facebook link-box" href="#"></a><a class="icon-youtube link-box" href="#"></a></div><a class="main-header-top__elem call-us" href="#">
+                <div class="icon-message link-box"></div>
+                <div class="desktop-show">СВЯЖИТЕСЬ С НАМИ</div></a>
+            </div>
+            <div class="main-header-top__elem main-header-top__input">
+              <form class="sm-absolute-container search-form">
+                <input class="header-top-input" type="text" placeholder="ПОИСК ПО САЙТУ">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header__bottom">
+        <!-- Шапка десктоп-->
+        <div class="main-header__desktop">
+          <div class="container">
+            <div class="row">
+              <div class="flex-container">
+                <!-- навигационная панель-->
+                <!-- TODO: добавлять класс "active" активной ссылке (a), если мы находимся на внутренней странице сайта-->
+                <nav class="desktop-nav">
+                  <ul>
+                    <li><a class="icon-home" href="#"></a></li>
+                    <li><a href="#">О БРЕНДЕ</a></li>
+                    <li><a href="#">ПРОДУКЦИЯ</a></li>
+                    <li><a href="#">ПОДБОР МАСЛА</a></li>
+                    <li><a href="#">ГДЕ КУПИТЬ</a></li>
+                    <li><a href="#">G-ENERGY SERVICE</a></li>
+                    <li><a href="#">НОВОСТИ</a></li>
+                  </ul>
+                </nav><a class="main-header__logo" href="#"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Шапка мобильная-->
+        <div class="main-header__mobile">
+          <div class="container">
+            <div class="row"><a class="icon-home pull-left col-xs-1 xs-visible sm-visible mobile" href="#"></a>
+              <div class="dropdown mobile-dropdown pull-left"><a class="icon-hamburger" href="#" data-toggle="dropdown" id="b-mobile-menu-dropdown"></a></div><a class="main-header__logo pull-right" href="#"></a>
+            </div>
+            <nav class="dropdown-menu mobile-nav" aria-labelledby="b-mobile-menu-dropdown">
+              <!-- навигационная панель-->
+              <!-- TODO: добавлять класс "active" активной ссылке (a), если мы находимся на внутренней странице сайта-->
+              <div class="container">
+                <div class="row">
+                  <ul>
+                    <li><a href="#">О БРЕНДЕ</a></li>
+                    <li><a href="#">ПРОДУКЦИЯ</a></li>
+                    <li><a href="#">ПОДБОР МАСЛА</a></li>
+                    <li><a href="">ГДЕ КУПИТЬ</a></li>
+                    <li><a href="">G-ENERGY SERVICE</a></li>
+                    <li><a href="">НОВОСТИ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="parallax-container">
+        <div class="parallax-img"></div>
+      </div>
+      <div class="container text-center">
+        <div class="main-heading">
+          <h1>ТЕХНОЛОГИЯ ACF<span>Adaptive Components Formula</span></h1>
+        </div>
+        <div class="row acf-components">
+          <div class="acf-elem col-md-6 col-sm-12 clearfix"><img src="img/work-mode.png" alt="#">
+            <div class="acf-elem__text">ФОРСИРОВАННЫЙ РЕЖИМ РАБОТЫ</div>
+          </div>
+          <div class="acf-elem col-md-6 col-sm-12 clearfix"><img src="img/winter-mode.png" alt="#">
+            <div class="acf-elem__text">ЗИМНИЙ РЕЖИМ ЭКСПЛУАТАЦИИ</div>
+          </div>
+          <div class="acf-elem col-md-6 col-sm-12 clearfix"><img src="img/traffic-jam-mode.png" alt="#">
+            <div class="acf-elem__text">РЕЖИМ ГОРОДСКОЙ ПРОБКИ</div>
+          </div>
+          <div class="acf-elem col-md-6 col-sm-12 clearfix visible-lg"><img src="img/track-mode.png" alt="#">
+            <div class="acf-elem__text">РЕЖИМ ЗАГОРОДНОЙ ТРАССЫ</div>
+          </div>
+          <div class="acf-elem col-md-6 col-sm-12 clearfix"><img src="img/know-more.png" alt="#">
+            <div class="acf-elem__text">УЗНАЙТЕ БОЛЬШЕ</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Подвал-->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="recommends-elem col-md-4 visible-md visible-lg no-gutter"><img src="img/gazprom.png" alt=""></div>
+          <div class="footer-container col-md-4 text-center"><a class="link-box link-box--lg icon-facebook-lg" href="#"></a><a class="link-box link-box--lg icon-youtube-lg" href="#"></a><a class="link-box link-box--lg icon-message-lg" href="#"></a></div>
+          <div class="recommends-elem col-md-4 text-right visible-md visible-lg no-gutter"><img src="img/cherry.png" alt=""><img src="img/lifan.png" alt=""></div>
+        </div>
+        <div class="row hidden-md hidden-lg">
+          <div class="recommends-elem col-md-4 text-center"><img src="img/gazprom.png" alt=""><img src="img/cherry.png" alt=""><img src="img/lifan.png" alt=""></div>
+        </div>
+        <div class="row text-center footer-links-row">
+          <div class="footer-links">
+            <div class="footer-links__text">МНЕ НРАВИТСЯ</div>
+            <div class="footer-links__container"><a class="icon-facebook--footer link-box link-box--footer" href="#"></a><a class="icon-vk--footer link-box link-box--footer" href="#"></a><a class="icon-twitter--footer link-box link-box--footer" href="#"></a></div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-links__text">ПОДЕЛИТЬСЯ</div>
+            <div class="footer-links__container"><a class="icon-facebook--footer link-box link-box--footer" href="#"></a><a class="icon-vk--footer link-box link-box--footer" href="#"></a><a class="icon-ok--footer link-box link-box--footer" href="#"></a><a class="icon-twitter--footer link-box link-box--footer" href="#"></a></div>
+          </div>
+        </div>
+        <div class="row copyrights">
+          <div class="col-md-12 col-lg-4 visible-lg no-gutter">© 2009–2014, «Газпромнефть - смазочные материалы», <a class="active" href="#">Контакты</a></div>
+          <!-- Контакты-->
+          <div class="col-md-12 col-lg-4 text-center copyrights-elem">
+            <!-- TODO: добавляем класс 'active' активной ссылке--><a class="main-footer-link main-footer-link--bordered active" href="#">РУССКИЙ</a><a class="main-footer-link main-footer-link--bordered" href="#">ENGLISH</a><a class="main-footer-link main-footer-link--bordered" href="#">ITALIAN</a><a class="main-footer-link main-footer-link--bordered" href="#">СРПСКИ</a>
+          </div>
+          <div class="col-md-12 col-lg-4 visible-sm visible-xs visible-md text-center copyrights-elem">© 2009–2014, «Газпромнефть - смазочные материалы», <a class="active" href="#">Контакты</a></div>
+          <div class="col-md-12 col-lg-4 studio no-gutter">Создание сайта – <a class="active" href="#">«Энсайн»</a></div>
+        </div>
+      </div>
+    </footer>
+    <!-- модальное окно-->
+    <div class="modal fade" id="b-gift-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="modal-title text-center">ПОЛЕЗНЫЕ СОВЕТЫ ОТ G-ENERGY</div>
+          </div>
+          <div class="modal-body">
+            <div class="jumbotron jumbotron-gift">
+              <div class="container text-center">ПОЛУЧИТЕ СПЕЦИАЛЬНОЕ ИЗДАНИЕ<br><span class="text-red">«ПОЛЕЗНЫЕ СОВЕТЫ АВТОМОБИЛИСТУ»</span><br><span class="text-bolder">БЕСПЛАТНО!</span></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 text-center"><img src="img/book.png"></div>
+              <div class="col-sm-6">
+                <form class="modal-form text-center">
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="ВАШЕ ИМЯ">
+                    <input class="form-control" type="email" placeholder="ВАШ EMAIL">
+                    <input class="form-control" type="email" placeholder="ВАШ ГОРОД">
+                    <button class="btn btn-default" type="submit">ПРОДОЛЖИТЬ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <!-- bower:js-->
+    <script src="bower_components/jquery.js"></script>
+    <script src="bower_components/bootstrap.js"></script>
+    <!-- endinject-->
+    <!-- inject:js-->
+    <script src="main.js"></script>
+    <!-- endinject-->
+  </body>
+</html>
