@@ -995,7 +995,8 @@ a.acf-elem:active {
 }
 @media screen and (min-width: 480px)
 {
-    .acf-elem
+    .acf-elem,
+    a.acf-elem
     {
         font-size: 29px;
     }
@@ -1037,7 +1038,8 @@ a.acf-elem:active {
     {
         font-size: 14px;
     }
-    .acf-elem
+    .acf-elem,
+    a.acf-elem
     {
         font-size: 20px;
     }
@@ -1184,7 +1186,8 @@ a.acf-elem:active {
         -ms-grid-row-align: flex-start;
         align-items: flex-start;
     }
-    .acf-elem
+    .acf-elem,
+    a.acf-elem
     {
         width: 300px;
         margin-bottom: 35px;
@@ -1197,7 +1200,8 @@ a.acf-elem:active {
 
         flex-flow: column wrap;
     }
-    .acf-elem img
+    .acf-elem img,
+    a.acf-elem img
     {
         margin: 0;
         margin-bottom: 50px;
@@ -1242,7 +1246,8 @@ a.acf-elem:active {
 
         margin-right: 43px;
     }
-    .acf-elem
+    .acf-elem,
+    a.acf-elem
     {
         font-size: 23px;
     }
