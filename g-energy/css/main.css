@@ -575,8 +575,10 @@ a.take-a-gift
     -ms-flex-pack: start;
     justify-content: flex-start;
 }
-.acf-elem
+.acf-elem,
+a.acf-elem
 {
+    color: #3d3333;
     font-size: 20px;
 
     display: -webkit-box;
@@ -599,6 +601,13 @@ a.take-a-gift
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+}
+a.acf-elem {
+    cursor:  pointer;
+}
+a.acf-elem:hover,
+a.acf-elem:active {
+    color: #3d3333;
 }
 .acf-elem img
 {
