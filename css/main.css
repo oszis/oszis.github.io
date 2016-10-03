@@ -555,6 +555,7 @@ li.list-heading
     text-align: center;
 
     opacity: 0;
+    padding: 10px 20px;
 }
 .portfolio-elem:hover
 {
