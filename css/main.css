@@ -126,6 +126,8 @@ p
 .preferences-list
 {
     margin-bottom: 45px;
+    display: inline-block;
+    vertical-align: top;
 
     list-style-type: circle;
 }
