@@ -83,7 +83,7 @@
 			$('.video-container').fadeIn(300);
 
 			if ('ontouchstart' in window) {
-				alert(1);
+				mainVideo.play();
 			} else {
 				mainVideo.play();
 			}
