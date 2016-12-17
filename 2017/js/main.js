@@ -82,7 +82,7 @@
 		_this.showVideo = function(){
 			$('.video-container').fadeIn(300);
 
-			if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+			if ('ontouchstart' in window) {
 				console.log(1);
 			} else {
 				mainVideo.play();
