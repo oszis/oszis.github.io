@@ -83,9 +83,10 @@
 			$('.video-container').fadeIn(300);
 
 			if ($(window).innerWidth() <= 768) {
-				$mainVideo.attr('controls', 'controls');
+				$mainVideo.prop("controls",true); 
 
 			} else {
+				$mainVideo.prop("controls",false); 
 				mainVideo.play();
 			}
 
