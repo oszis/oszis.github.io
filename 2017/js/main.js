@@ -84,8 +84,10 @@
 
 			if ('ontouchstart' in window) {
 				mainVideo.play();
+				console.log(2);
 			} else {
-				mainVideo.play();
+				// mainVideo.play();
+				console.log(1);
 			}
 
 
