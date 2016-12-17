@@ -5,7 +5,8 @@
 	var activeClass = 'active',
 		hiddenClass = 'hidden',
 		mainVideo = 
-			document.querySelectorAll('.video-container video')[0];
+			document.querySelectorAll('.video-container video')[0],
+		$mainVideo = $('.video-container video').eq(0);
 
 	// ЕСЛИ МОБИЛЬНЫЙ БРАУЗЕР
 	var isMobile = false;
@@ -89,7 +90,7 @@
 			$('.video-container').fadeIn(300);
 
 			if (isMobile) {
-				mainVideo.attr('controls', 'controls');
+				$mainVideo.attr('controls', 'controls');
 
 			} else {
 				mainVideo.play();
