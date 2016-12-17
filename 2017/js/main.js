@@ -83,11 +83,12 @@
 			$('.video-container').fadeIn(300);
 
 			if ('ontouchstart' in window) {
-				mainVideo.play();
-				console.log(2);
-			} else {
 				// mainVideo.play();
-				console.log(1);
+				$('.video-container').fadeOut(300);
+				$('.postcard').fadeIn(0);
+
+			} else {
+				mainVideo.play();
 			}
 
 
