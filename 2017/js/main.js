@@ -91,7 +91,8 @@
 			// if (isMobile) {
 				// mainVideo.play();
 				$('.video-container').fadeOut(300);
-				$('.postcard').fadeIn(0);
+				// $('.postcard').fadeIn(0);
+				postcard.show();
 
 			// }
 
