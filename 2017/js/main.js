@@ -82,10 +82,8 @@
 		_this.showVideo = function(){
 			$('.video-container').fadeIn(300);
 
-			var ua = navigator.userAgent.toLowerCase();
-			var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-			if(isAndroid) {
-				
+			if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+				console.log(1);
 			} else {
 				mainVideo.play();
 			}
