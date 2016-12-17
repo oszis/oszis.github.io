@@ -158,6 +158,10 @@ body
     background: url('../img/postcard-bg.jpg') no-repeat center center;
     background-size: cover;
 }
+.postcard img
+{
+    max-width: 100%;
+}
 .postcard__content
 {
     font-size: 2.4rem;
@@ -174,9 +178,13 @@ body
     margin-top: 0;
     margin-bottom: 20px;
 }
-.postcard__content-footer .col-md-6
+.postcard__content-footer img
 {
-    line-height: 104px;
+    display: inline-block;
+
+    margin-left: 35px;
+
+    vertical-align: middle;
 }
 .postcard__footer a
 {
@@ -349,5 +357,12 @@ body
     .postcard-director__img
     {
         margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 768px)
+{
+    .preload-line.active
+    {
+        width: 96%;
     }
 }

@@ -8,6 +8,7 @@
 			document.querySelectorAll('.video-container video')[0],
 		$mainVideo = $('.video-container video').eq(0);
 
+
 	
 	// АНИМАЦИЯ БЛОКА ПРОГРЕСС-БАРА
 	function PreloadAnimate(){
@@ -82,12 +83,16 @@
 		_this.showVideo = function(){
 			$('.video-container').fadeIn(300);
 
-			if ($(window).innerWidth() <= 768) {
+			if ($(window).innerWidth() <= 1024) {
+				
 				$mainVideo.prop("controls",true); 
 
 			} else {
+				
 				$mainVideo.prop("controls",false); 
+				
 				mainVideo.play();
+
 			}
 
 
