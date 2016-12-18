@@ -7,7 +7,7 @@
 		mainVideo = 
 			document.querySelectorAll('.video-container video')[0],
 		$mainVideo = $('.video-container video').eq(0),
-		mobileVideoBtn = $('.video-container .mobile-btn');
+		mobileVideoBtn = $('.video-container .mobile-btn__content');
 
 
 	
@@ -81,16 +81,16 @@
 		var _this = this;
 
 
+
 		_this.showVideo = function(){
 			$('.video-container').fadeIn(300);
+
 
 			if ($(window).innerWidth() <= 1024) {
 				
 				_this.mobileVideo();
 
 			} else {
-				
-				$mainVideo.prop("controls",false); 
 				
 				mainVideo.play();
 
@@ -109,7 +109,7 @@
 
 		_this.mobileVideo = function(){
 			
-			mobileVideoBtn.fadeIn(300);
+			mobileVideoBtn.parent().fadeIn(300);
 
 		}
 
@@ -125,7 +125,7 @@
 
 		mainVideo.play();
 
-		$(this).fadeOut(0);
+		$(this).parent().fadeOut(0);
 		
 	});
 
