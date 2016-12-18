@@ -1,3 +1,15 @@
+@font-face
+{
+    font-family: DINPro;
+
+    src: url('../fonts/dinpro-regular.otf') format('opentype');
+}
+@font-face
+{
+    font-family: DINProBold;
+
+    src: url('../fonts/dinpro-bold.otf') format('opentype');
+}
 html
 {
     font-size: 10px;
@@ -22,8 +34,8 @@ body
 }
 .main-heading h1
 {
+    font-family: DINProBold;
     font-size: 3.6rem;
-    font-weight: bold;
     line-height: 3.6rem;
 
     margin: 0;
@@ -60,7 +72,7 @@ body
 }
 .preload-loading
 {
-    font-weight: bold;
+    font-family: DINProBold;
 
     color: #68666f;
 }
@@ -80,7 +92,7 @@ body
     width: 0;
     height: 1px;
 
-    transition: width 2s;
+    transition: width 1s;
 
     background-color: #c3c2c5;
 }
@@ -139,6 +151,7 @@ body
 .video-container video
 {
     position: absolute;
+    z-index: 9;
     top: -9999px;
     right: -9999px;
     bottom: -9999px;
@@ -147,6 +160,40 @@ body
     min-width: 100%;
     min-height: 100%;
     margin: auto;
+}
+.video-container .mobile-btn
+{
+    font-family: DINProBold;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 2.4rem;
+
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+
+    display: none;
+
+    width: 100%;
+    height: 200px;
+    margin-top: -100px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ed6900;
+}
+.video-container .mobile-btn__circle
+{
+    width: 144px;
+    height: 144px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+    background: url('../img/mobile-btn.png') no-repeat center center;
 }
 .postcard
 {
@@ -188,8 +235,8 @@ body
 }
 .postcard__footer a
 {
+    font-family: DINProBold;
     font-size: 1.8rem;
-    font-weight: bold;
     line-height: 2.4rem;
 
     display: inline-block;
@@ -207,7 +254,7 @@ body
 .postcard__footer a:active,
 .postcard__footer a:visited
 {
-    font-weight: bold;
+    font-family: DINProBold;
 
     text-decoration: none;
 
@@ -261,8 +308,8 @@ body
 }
 .postcard-director__text div
 {
+    font-family: DINProBold;
     font-size: 1.8rem;
-    font-weight: bold;
     line-height: 2.4rem;
 
     margin-bottom: 10px;
