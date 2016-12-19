@@ -210,8 +210,17 @@
 	}
 
 
-
+	// ОБРАБОТЧИКИ ПО ОКОНЧАНИЮ ИЛИ ОШИБКЕ ВИДЕО
 	mainVideo.addEventListener('ended', function(){
+
+		videoAnimations.hideVideo();
+
+		
+		postcard.show();
+
+	});
+
+	mainVideo.addEventListener('error', function(){
 
 		videoAnimations.hideVideo();
 
