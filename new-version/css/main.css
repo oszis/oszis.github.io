@@ -48,6 +48,10 @@ a:active
 {
     color: #fff;
 }
+.main-section--black .btn-show-menu span
+{
+    background-color: #ff3a3a;
+}
 .main-section.active
 {
     z-index: 3;
@@ -56,7 +60,7 @@ a:active
     transition: top 1s, transform .5s;
     transform: scale(1);
 
-    box-shadow: 0 -15px 15px 0 #000;
+    box-shadow: 0 0 10px -3px #000;
 }
 .main-section.last
 {
@@ -70,18 +74,87 @@ a:active
 {
     transform: scale(.85);
 }
+.btn-show-menu
+{
+    position: absolute;
+    z-index: 20;
+    top: 50px;
+    right: 50px;
+
+    display: block;
+    overflow: hidden;
+
+    width: 70px;
+    height: 60px;
+
+    cursor: pointer;
+
+    background-color: #a7e8ff;
+    box-shadow: inset 0 0 10px -5px #000;
+}
+.btn-show-menu span
+{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+
+    display: block;
+
+    width: 50px;
+    height: 8px;
+    margin-top: -4px;
+
+    transition: transform .5s;
+    transform: rotate(0deg);
+    transform-origin: center;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px -2px #000;
+}
+.btn-show-menu span:first-of-type
+{
+    top: 10px;
+
+    margin-top: 0;
+}
+.btn-show-menu span:last-of-type
+{
+    top: auto;
+    bottom: 10px;
+
+    margin-top: 0;
+}
+.btn-show-menu:hover span:first-of-type,
+.btn-show-menu.active span:first-of-type
+{
+    transform: rotate(45deg);
+}
+.btn-show-menu:hover span:last-of-type,
+.btn-show-menu.active span:last-of-type
+{
+    transform: rotate(-45deg);
+}
+.btn-show-menu:hover span:nth-of-type(2),
+.btn-show-menu.active span:nth-of-type(2)
+{
+    transform: translateX(-12px);
+}
 .main-header
 {
     position: fixed;
     z-index: 100;
-    top: 0;
+    top: -200px;
     right: 0;
     left: 0;
 
-    display: none;
+    transition: top 1s;
 
     color: #fff;
     background-color: #ff3a3a;
+}
+.main-header.active
+{
+    top: 0;
 }
 .main-header ul
 {
@@ -137,7 +210,7 @@ a:active
 
     color: #fff;
     background-color: #a7e8ff;
-    box-shadow: inset 0 0 10px -4px #000;
+    box-shadow: inset 0 0 10px -5px #000;
 }
 .project-elem:hover,
 .project-elem:visited,
