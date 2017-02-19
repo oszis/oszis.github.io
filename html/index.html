@@ -1,0 +1,641 @@
+
+<html>
+  <head>
+    <title>МИНПРОМТОРГ РОССИИ</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <style type="text/css">
+      #page-preloader {
+      	position: fixed;
+      	left: 0;
+      	top: 0;
+      	right: 0;
+      	bottom: 0;
+      	background: #000;
+      	z-index: 100500;
+      }
+      
+      #page-preloader .spinner {
+      	width: 32px;
+      	height: 32px;
+      	position: absolute;
+      	left: 50%;
+      	top: 50%;
+      	background: url('/img/ajax-loader.gif') no-repeat 50% 50%;
+      	margin: -16px 0 0 -16px;
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/nanoscroller.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div id="page-preloader"><span class="spinner"></span></div>
+    <div class="page-overlay"></div>
+    <aside class="aside-menu">
+      <div class="aside-menu__content">
+        <div class="aside-menu__list nano">
+          <div class="nano-content">
+            <ul>
+              <li class="aside-menu-elem aside-menu-btn active aside-menu-elem--navigator">
+                <div class="left-col btn btn-default"><img src="img/icon-bread.png"/></div><span>Навигатор портала</span>
+              </li>
+              <li class="aside-list">
+                <div class="aside-menu-elem">
+                  <div class="left-col"><img src="img/news-icon.png"/></div><a href="#"><span>Новости</span></a>
+                </div>
+                <ul>
+                  <li><a href="#">События</a></li>
+                  <li><a href="#">Аналитика</a></li>
+                  <li><a href="#">Истории успеха</a></li>
+                </ul>
+              </li>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/prom-icon.png"/></div><a href="#"><span>Предприятия промышленности</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/objects-icon.png"/></div><a href="#"><span>Объекты инжиниринговой деятельности</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/region-icon.png"/></div><a href="#"><span>Промышленность в регионах</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/navigator-icon.png"/></div><a href="#"><span>Навигатор поддержки</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/plans-icon.png"/></div><a href="#"><span>Отраслевые планы импортазамещения</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/base-icon.png"/></div><a href="#"><span>База знаний</span></a>
+              </div>
+              <div class="aside-menu-elem">
+                <div class="left-col"><img src="img/info-icon.png"/></div><a href="#"><span>Инжиниринговая информация</span></a>
+              </div>
+              <li class="aside-list">
+                <div class="aside-menu-elem">
+                  <div class="left-col"><img src="img/news-icon.png"/></div><a href="#"><span>Новости</span></a>
+                </div>
+                <ul>
+                  <li><a href="#">События</a></li>
+                  <li><a href="#">Аналитика</a></li>
+                  <li><a href="#">Истории успеха</a></li>
+                  <li><a href="#">Государственная поддержка</a></li>
+                  <li><a href="#">Документы</a></li>
+                  <li><a href="#">Ссылки</a></li>
+                </ul>
+              </li><a class="aside-menu-elem" href="#">
+                <div class="left-col"><img src="img/account-icon.png"/></div><span>Личный кабинет</span></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <header class="main-header fixed">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-md-6 col-xs-6"><a class="btn btn-default aside-menu-btn mobile-show btn-close" href="#"><span class="stick"></span><span class="stick"></span><img src="img/icon-bread.png"/></a><a class="main-logo mobile-hide" href="#"><img src="img/main-logo.png"/></a><a class="main-logo" href="#"><img src="img/main-logo-gisp.png"/></a></div>
+          <div class="col-xs-6 col-md-6 text-right">
+            <form class="main-search clearfix">
+              <button class="main-search__btn btn btn-default" type="submit"></button>
+              <input class="main-search__input" placeholder="Введите поисковый запрос..."/>
+              <div class="btn btn-default btn-close btn-close-search"><span class="stick"></span><span class="stick"></span></div>
+            </form><a class="register-link" href="#"><span>Регистрация</span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <section class="main-section main-slider main-section--main-slider">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-slider-elem__heading">Государственная информационная система промышленности —</div>
+            </div>
+          </div>
+          <div class="main-slider__content">
+            <!-- .main-slider-elem-->
+            <div class="main-slider-elem">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="main-slider-elem__content">Формирование высокотехнологичной, конкурентоспособной промышленности</div>
+                </div><img src="img/main-slider-img.png"/>
+              </div>
+            </div>
+            <!-- End .main-slider-elem-->
+            <div class="main-slider-elem">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="main-slider-elem__content">Обеспечение обороны страны и безопасности государства</div>
+                </div><img src="img/icon_02.png"/>
+              </div>
+            </div>
+            <div class="main-slider-elem">
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="main-slider-elem__content">Обеспечение занятости населения и повышение уровня жизни граждан РФ</div>
+                </div><img src="img/icon_03.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="row main-slider__dots-container">
+            <div class="col-md-12">
+              <div class="main-slider__dots"></div>
+            </div>
+          </div>
+        </div>
+        <div class="before-elem"></div>
+        <div class="main-section--services">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem animated-elem" href="#" data-class="zoomIn">
+                  <div class="services-elem__content">
+                    <div class="services-elem__img"><img src="img/fish/services-img-1.png"/></div>
+                    <div class="services-elem__heading">Навигатор по мерам государственной поддержки</div>
+                    <div class="services-elem__hidden">
+                      <div class="services-elem__btn fa fa-times"></div>
+                    </div>
+                  </div></a></div>
+              <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem animated-elem" href="#" data-class="zoomIn">
+                  <div class="services-elem__content">
+                    <div class="services-elem__img"><img src="img/fish/services-img-2.png"/></div>
+                    <div class="services-elem__heading">Информационное обеспечение</div>
+                    <div class="services-elem__hidden">
+                      <div class="services-elem__btn fa fa-times"></div>
+                    </div>
+                  </div></a></div>
+              <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem animated-elem" href="#" data-class="zoomIn">
+                  <div class="services-elem__content">
+                    <div class="services-elem__img"><img src="img/fish/services-img-3.png"/></div>
+                    <div class="services-elem__heading">Объекты инжиниринговой деятельности</div>
+                    <div class="services-elem__hidden">
+                      <div class="services-elem__btn fa fa-times"></div>
+                    </div>
+                  </div></a></div>
+              <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem animated-elem" href="#" data-class="zoomIn">
+                  <div class="services-elem__content">
+                    <div class="services-elem__img"><img src="img/fish/services-img-4.png"/></div>
+                    <div class="services-elem__heading">Мониторинг проектов импортозамещения</div>
+                    <div class="services-elem__hidden">
+                      <div class="services-elem__btn fa fa-times"></div>
+                    </div>
+                  </div></a></div>
+            </div>
+          </div>
+          <div class="services-hidden">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem" href="#">
+                    <div class="services-elem__content">
+                      <div class="services-elem__img"><img src="img/fish/services-img-5.png"/></div>
+                      <div class="services-elem__heading">Регламентный мониторинг финансово-экономического состояния предприятий</div>
+                      <div class="services-elem__hidden">
+                        <div class="services-elem__btn fa fa-times"></div>
+                      </div>
+                    </div></a></div>
+                <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem" href="#">
+                    <div class="services-elem__content">
+                      <div class="services-elem__img"><img src="img/fish/services-img-6.png"/></div>
+                      <div class="services-elem__heading">Проектное управление</div>
+                      <div class="services-elem__hidden">
+                        <div class="services-elem__btn fa fa-times"></div>
+                      </div>
+                    </div></a></div>
+                <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem" href="#">
+                    <div class="services-elem__content">
+                      <div class="services-elem__img"><img src="img/fish/services-img-7.png"/></div>
+                      <div class="services-elem__heading">Наука</div>
+                      <div class="services-elem__hidden">
+                        <div class="services-elem__btn fa fa-times"></div>
+                      </div>
+                    </div></a></div>
+                <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem" href="#">
+                    <div class="services-elem__content">
+                      <div class="services-elem__img"><img src="img/fish/services-img-8.png"/></div>
+                      <div class="services-elem__heading">Каталог продукции</div>
+                      <div class="services-elem__hidden">
+                        <div class="services-elem__btn fa fa-times"></div>
+                      </div>
+                    </div></a></div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-6"><a class="services-elem material-animate-elem" href="#">
+                    <div class="services-elem__content">
+                      <div class="services-elem__img"><img src="img/fish/services-img-9.png"/></div>
+                      <div class="services-elem__heading">Аналитика</div>
+                      <div class="services-elem__hidden">
+                        <div class="services-elem__btn fa fa-times"></div>
+                      </div>
+                    </div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6"><a class="btn btn-default btn-show-services btn-block" href="#" data-text-active="Свернуть" data-text="Все сервисы"><span class="pseudo-link">Все сервисы</span></a></div>
+            </div>
+          </div>
+        </div>
+        <section class="main-section main-section--news">
+          <div class="container">
+            <div class="row main-heading">
+              <div class="col-xs-6 col-lg-9">
+                <h1>Новости</h1>
+              </div>
+              <div class="col-xs-6 text-right col-lg-3"><a class="btn btn-default btn-block" href="#"><span>Подписаться</span></a></div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="news-elem animated-elem" data-class="zoomIn"><a class="news-elem__img" href="#"><img src="img/fish/news-image-1.png"/></a>
+                  <div class="news-elem__date-views">
+                    <div class="news-elem__date">2 февраля 2017</div>
+                    <div class="news-elem__views">435</div>
+                  </div>
+                  <h6 class="news-elem__heading">О проведении анкетирования промышленных предприятий Воронежской области</h6>
+                  <div class="news-elem__content">Объединениями предпринимателей Воронежской области разработана региональная модель оценки удовлетворенности работодателей...</div><a class="news-elem__show-more" href="#">Читать полностью</a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="news-elem animated-elem" data-class="zoomIn"><a class="news-elem__img" href="#"><img src="img/fish/news-image-2.png"/></a>
+                  <div class="news-elem__date-views">
+                    <div class="news-elem__date">27 Января 2017</div>
+                    <div class="news-elem__views">26</div>
+                  </div>
+                  <h6 class="news-elem__heading">Минпромторг России поддержит производство и продажу вагонов</h6>
+                  <div class="news-elem__content">Минпромторг России подготовил проект постановления Правительства РФ, предусматривающий в 2017 году компенсацию затрат покупателям ...</div><a class="news-elem__show-more" href="#">Читать полностью</a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="news-elem animated-elem" data-class="zoomIn"><a class="news-elem__img" href="#"><img src="img/fish/news-image-3.png"/></a>
+                  <div class="news-elem__date-views">
+                    <div class="news-elem__date">31 Января 2017</div>
+                    <div class="news-elem__views">120</div>
+                  </div>
+                  <h6 class="news-elem__heading">АО «ЕВРОТЕХНИКА» открыла новый производственный корпус при поддержке ФРП</h6>
+                  <div class="news-elem__content">Состоялось торжественное открытие нового производственного корпуса самарского сельхозмашино- строительного предприятия ...</div><a class="news-elem__show-more" href="#">Читать полностью</a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="news-elem animated-elem" data-class="zoomIn"><a class="news-elem__img" href="#"><img src="img/fish/news-image-4.png"/></a>
+                  <div class="news-elem__date-views">
+                    <div class="news-elem__date">18 Января 2017</div>
+                    <div class="news-elem__views">26</div>
+                  </div>
+                  <h6 class="news-elem__heading">ФРП и Ульяновский фонд предоставят первый федерально-региональный заём</h6>
+                  <div class="news-elem__content">Экспертный совет Фонда развития промышленности при Минпромторге России одобрил первый федерально-региональный заём...</div><a class="news-elem__show-more" href="#">Читать полностью</a>
+                </div>
+              </div>
+            </div>
+            <div class="row text-center"><a class="btn btn-default icon btn-more-news" href="#"><span>Больше новостей</span></a></div>
+          </div>
+        </section>
+      </section>
+      <section class="main-section main-section--container">
+        <section class="main-section main-section--support">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 main-heading animated-elem" data-class="fadeInLeft">
+                <h1>Меры поддержки</h1>
+              </div>
+            </div>
+            <div class="support-container animated-elem" data-class="fadeInLeft">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="row">
+                    <div class="support-container__heading animated-elem" data-class="fadeInRight">Мер поддержки для всех предприятий<span class="number-count" data-value="216">216</span></div>
+                  </div>
+                  <div class="row">
+                    <p>Интерактивный помощник поможет Вам найти наиболее подходящие меры государственной поддержки.</p>
+                  </div>
+                </div>
+                <div class="col-md-6 support-diagram text-right">
+                  <div class="row">
+                    <div class="support-diagram__content animated-elem" data-class="fadeInRight">
+                      <div class="support-elem">
+                        <div class="support-elem__block" data-height="245px">
+                          <div class="support-elem__heading text-left">Создаваемые предприятия</div>
+                        </div>
+                      </div>
+                      <div class="support-elem">
+                        <div class="support-elem__block" data-height="320px">
+                          <div class="support-elem__heading text-left">Малые предприятия</div>
+                        </div>
+                        <div class="support-elem__footer text-center">0-100 человек</div>
+                      </div>
+                      <div class="support-elem">
+                        <div class="support-elem__block" data-height="255px">
+                          <div class="support-elem__heading text-left">Средние предприятия</div>
+                        </div>
+                        <div class="support-elem__footer text-center">100-250 человек</div>
+                      </div>
+                      <div class="support-elem">
+                        <div class="support-elem__block" data-height="355px">
+                          <div class="support-elem__heading text-left">Крупные предприятия</div>
+                        </div>
+                        <div class="support-elem__footer text-center">от 251 человек</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row"><a class="btn btn-default" href="#"><span>Подобрать способ поддержки</span></a></div>
+            </div>
+          </div>
+        </section>
+        <section class="main-section main-section--products">
+          <div class="container"><img class="img-turbine" src="img/turbine.png"/>
+            <div class="row">
+              <div class="col-lg-6 col-lg-offset-6 col-md-12 main-heading animated-elem" data-class="fadeInRight">
+                <h1>Продукты, производимые предприятиями</h1>
+              </div>
+            </div>
+            <div class="row clearfix">
+              <div class="col-lg-8 col-md-12 col-sm-12 pull-right">
+                <div class="row animated-elem" data-class="fadeInRight">
+                  <div class="col-md-6">
+                    <div class="products-elem products-elem--big">
+                      <div class="products-elem__content">
+                        <div class="products-elem__date"><span>1 318</span></div>
+                        <p>Продуктов производимых предприятиями находится в каталоге портала</p>
+                        <div class="products-elem__footer text-center"><a class="btn btn-default btn-block" href="#"><span>Перейти в каталог портала</span></a></div><img src="img/products-elem-1-bg.png"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6"><a class="products-elem" href="#">
+                      <div class="products-elem__content material-animate-elem">
+                        <div class="products-elem__date"><span class="number-count" data-value="118">118</span>
+                          <div class="products-elem__sup">продуктов</div>
+                        </div>
+                        <h3 class="products-elem__heading">Электроэнергетика</h3>
+                        <p>Важнейший сектор экономики России</p><img src="img/products-elem-2-bg.png"/>
+                      </div></a><a class="products-elem" href="#">
+                      <div class="products-elem__content material-animate-elem">
+                        <div class="products-elem__date"><span class="number-count" data-value="11">11</span>
+                          <div class="products-elem__sup">продуктов</div>
+                        </div>
+                        <h3 class="products-elem__heading">Гидроэнергетика</h3>
+                        <p>Крупнейшие по выработке российские гидроэлектростанции</p><img src="img/products-elem-3-bg.png"/>
+                      </div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main-section main-section--companies">
+          <div class="container">
+            <div class="row main-heading">
+              <div class="col-md-6 animated-elem" data-class="fadeInLeft">
+                <h1>Количество предприятий, использующих сервисы ГИСП</h1>
+              </div>
+              <div class="col-md-6 random-container main-heading--number main-heading--number-sup animated-elem" data-class="fadeInRight"><span data-value="1274">1 274</span></div>
+            </div>
+          </div>
+          <div class="main-section--grey">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 companies-container">
+                  <div class="companies-circle">
+                    <div>
+                      <div class="companies-circle__content">
+                        <div class="company-circle"></div>
+                      </div>
+                      <div class="companies-circle__content">
+                        <div class="company-circle"></div>
+                      </div>
+                    </div>
+                    <div class="companies-img companies-img--first" data-index="0"><img src="img/companies-img--first.png"/><img class="companies-img--hover" src="img/companies-img--first-hover.png"/></div>
+                    <div class="companies-img companies-img--second" data-index="1"><img src="img/companies-img--second.png"/><img class="companies-img--hover" src="img/companies-img--second-hover.png"/></div>
+                    <div class="companies">
+                      <div class="company" data-index="0">
+                        <div class="company-value">311</div>
+                        <div class="company-content">Региональных предприятий используют сервисы ГИСП по данным независимых аналитиков на 2016 год</div>
+                      </div>
+                      <div class="company" data-index="1">
+                        <div class="company-value">963</div>
+                        <div class="company-content">Федеральных предприятий используют сервисы ГИСП по данным независимых аналитиков на 2016 год</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="main-section main-section--industries">
+        <div class="container">
+          <div class="row main-heading">
+            <div class="col-md-6 text-right main-heading--number animated-elem" data-class="fadeInLeft"><span class="number-count" data-value="42">42</span></div>
+            <div class="col-md-6 animated-elem" data-class="fadeInRight">
+              <h1>Отрасли предприятий, использующих сервисы ГИСП</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--1" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Гидроэнергетика</div>
+                <div class="industry-elem__value">68 предприятий</div><img src="img/fish/industry-elem-1-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--2" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Металлургия</div>
+                <div class="industry-elem__value">127 предприятий</div><img src="img/fish/industry-elem-2-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--3" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Судостроение</div>
+                <div class="industry-elem__value">28 предприятия</div><img src="img/fish/industry-elem-3-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--4" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Легкая промышленность</div>
+                <div class="industry-elem__value">124 предприятия</div><img src="img/fish/industry-elem-4-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--5" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Фармацевтическая промышленность</div>
+                <div class="industry-elem__value">154 предприятия</div><img src="img/fish/industry-elem-5-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--6" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Химическая промышленность</div>
+                <div class="industry-elem__value">49 предприятия</div><img src="img/fish/industry-elem-6-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--7" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Энергетическое машиностроение</div>
+                <div class="industry-elem__value">67 предприятия</div><img src="img/fish/industry-elem-7-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--8" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Медицинская промышленность</div>
+                <div class="industry-elem__value">76 предприятия</div><img src="img/fish/industry-elem-8-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--9" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Лесопромышленный комплекс</div>
+                <div class="industry-elem__value">79 предприятия</div><img src="img/fish/industry-elem-9-bg.png"/></a></div>
+            <div class="col-md-3"><a class="industry-elem material-animate-elem animated-elem industry-elem--10" href="#" data-class="zoomIn">
+                <div class="industry-elem__heading">Промышленность обычных вооружений</div>
+                <div class="industry-elem__value">47 предприятия</div><img src="img/fish/industry-elem-10-bg.png"/></a></div>
+            <div class="col-md-6">
+              <div class="industry-elem industry-elem--show-more animated-elem industry-elem--11" data-class="zoomIn">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>Просмотрите все отрасли предприятий, использующие сервисы ГИСП</p>
+                  </div>
+                  <div class="col-md-6"><a class="btn btn-default btn-block material-animate-elem" href="#"><span>Еще 32 отрасли</span></a></div>
+                </div><img src="img/fish/industry-elem-11-bg.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section main-section--regions">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 main-heading animated-elem" data-class="fadeInLeft">
+              <h1>Регионы, использующие сервисы ГИСП</h1>
+            </div>
+          </div>
+        </div>
+        <div class="region-slider animated-elem" data-class="fadeInUp">
+          <div class="region-slider__content">
+            <div class="region-slider-elem">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                    <div class="region-slider-elem__number"><span>27</span>Предприятий</div>
+                    <div class="region-slider-elem__content">
+                      <h3 class="region-slider-elem__heading">Новгородская область</h3>
+                      <p>В целом промышленность составляет около 40% валового регионального продукта и 80% полученной прибыли.</p>
+                    </div>
+                  </div><img class="region-slider-elem__emblem" src="img/region-slider-emblem.png"/><img class="region-slider-elem__img" src="img/region-slider-img.png"/>
+                </div>
+              </div>
+            </div>
+            <div class="region-slider-elem">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                    <div class="region-slider-elem__number"><span>27</span>Предприятий</div>
+                    <div class="region-slider-elem__content">
+                      <h3 class="region-slider-elem__heading">Новгородская область</h3>
+                      <p>В целом промышленность составляет около 40% валового регионального продукта и 80% полученной прибыли.</p>
+                    </div>
+                  </div><img class="region-slider-elem__emblem" src="img/region-slider-emblem.png"/><img class="region-slider-elem__img" src="img/region-slider-img.png"/>
+                </div>
+              </div>
+            </div>
+            <div class="region-slider-elem">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                    <div class="region-slider-elem__number"><span>27</span>Предприятий</div>
+                    <div class="region-slider-elem__content">
+                      <h3 class="region-slider-elem__heading">Новгородская область</h3>
+                      <p>В целом промышленность составляет около 40% валового регионального продукта и 80% полученной прибыли.</p>
+                    </div>
+                  </div><img class="region-slider-elem__emblem" src="img/region-slider-emblem.png"/><img class="region-slider-elem__img" src="img/region-slider-img.png"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="region-slider__arrows"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12"><a class="btn btn-default" href="#"><span>Еще 84 субъекта РФ</span></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="main-section main-section--objects">
+        <div class="container">
+          <div class="row main-heading">
+            <div class="col-lg-8 col-md-5 text-right text-random main-heading--number animated-elem" data-class="fadeInLeft">9 478</div>
+            <div class="col-lg-4 col-md-7 text-left animated-elem" data-class="fadeInRight">
+              <h1>Объектов инжиниринговой деятельности</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="engineering-elem engineering-elem--all animated-elem" data-class="zoomIn">
+                <div class="engineering-elem__content material-animate-elem"><img class="background-image" src="img/fish/object-elem-bg-all.png"/>
+                  <div class="engineering-elem__heading">Все объекты инжиниринговой деятельности</div>
+                </div><a class="btn btn-default" href="#"><span>Подробнее об объектах</span></a>
+              </div>
+            </div>
+            <div class="col-md-4 animated-elem" data-class="zoomIn"><a class="engineering-elem" href="#">
+                <div class="engineering-elem__img"><img src="img/high-tech-equipment-icon.png"/></div>
+                <div class="engineering-elem__content material-animate-elem">
+                  <div class="engineering-elem__heading">Высокотехнологичное оборудование</div>Важнейший сектор экономики России<img class="background-image" src="img/fish/object-elem-bg.png"/>
+                </div></a></div>
+            <div class="col-md-4 animated-elem" data-class="zoomIn"><a class="engineering-elem" href="#">
+                <div class="engineering-elem__img"><img src="img/software-icon.png"/></div>
+                <div class="engineering-elem__content material-animate-elem">
+                  <div class="engineering-elem__heading">Программное обеспечение</div>Отечественное программное обеспечение<img class="background-image" src="img/fish/object-elem-bg.png"/>
+                </div></a></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="help-block"><a class="help-block-btn help-block-btn--support" href="#"><img src="img/helpblock-img-1.png"/></a><a class="help-block-btn" href="#"><img src="img/helpblock-img-2.png"/></a><a class="help-block-btn help-block-btn--feedback" href="#"><img src="img/helpblock-img-3.png"/></a></div>
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="main-footer__about">Государственная информационная система промышленности</div>
+          </div>
+          <div class="col-md-5 text-right"><a href="#"><img src="img/main-logo--footer.png"/></a><a href="#"><img src="img/frp-logo-footer.png"/></a></div>
+        </div>
+      </div>
+    </footer>
+    <div class="main-popup">
+      <div class="main-popup__overlay"></div>
+      <div class="main-popup__container main-popup--tech-support fadeInLeft">
+        <div class="main-popup__close material-animate-elem"></div>
+        <div class="main-heading">
+          <h3>Техническая поддержка</h3>
+        </div>
+        <div class="main-popup__content">
+          <p>Получить техническую и консультационную поддержку можно, написав запрос по электронному адресу </p>
+          <p>В запросе необходимо задать вопрос, либо описать возникшую проблему и указать контактную информацию, по которой с Вами смогут связаться специалисты группы поддержки.</p><a href="mailto:support@gisp.gov.ru">support@gisp.gov.ru</a>
+          <p>Кроме того, с 09:00 до 18:00 по московскому времени поддержка оказывается по специальному телефону</p><a class="sublink" href="callto:+74951204654">+7 (495) 120-46-54.</a>
+        </div>
+      </div>
+      <div class="main-popup__container main-popup--feedback fadeInLeft">
+        <div class="main-popup__close material-animate-elem"></div>
+        <div class="main-heading">
+          <h3>Обратная связь</h3>
+        </div>
+        <div class="main-popup__content">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Электронная почта</label>
+              <input class="main-input" type="email"/>
+            </div>
+            <div class="col-md-6">
+              <label>Имя</label>
+              <input class="main-input" type="text"/>
+            </div>
+            <div class="col-md-12">
+              <label>Текст сообщения</label>
+              <textarea class="main-input"></textarea>
+            </div>
+            <div class="col-md-12">
+              <label>Код с картинки</label>
+            </div>
+            <div class="col-md-6">
+              <input class="main-input" type="text"/>
+            </div>
+            <div class="col-md-6">
+              <!-- Сюда втыкаем капчу--><img src="img/fish/captcha.png"/>
+            </div>
+            <div class="col-md-12"><a class="btn btn-default material-animate-elem" href="#"><span>Отправить сообщение</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/cash.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/trianglify.min.js"></script>
+    <script src="js/jquery.nanoscroller.min.js"></script>
+    <script src="js/animatedBlocks2.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
