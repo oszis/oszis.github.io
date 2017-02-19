@@ -1238,7 +1238,7 @@ a.btn-close-search
 {
     position: absolute;
     z-index: -1;
-    top: 100%;
+    top: 95%;
     right: 0;
     left: 0;
 
@@ -1266,6 +1266,15 @@ a.btn-close-search
 .main-section.main-section--container
 {
     padding-bottom: 0;
+}
+@media screen and (min-width: 2150px)
+{
+    .main-section.main-section--support:before,
+    .main-section.main-section--products:before,
+    .main-section.main-section--industries:before
+    {
+        height: 640px;
+    }
 }
 .main-slider__content
 {
