@@ -12,19 +12,116 @@
       	top: 0;
       	right: 0;
       	bottom: 0;
-      	background: #000;
+      	background: rgba(0,0,0,0.99);
       	z-index: 100500;
       }
       
-      #page-preloader .spinner {
-      	width: 32px;
-      	height: 32px;
+      #page-preloader .loader {
+      	width: 100px;
+      	height: 100px;
       	position: absolute;
-      	left: 50%;
       	top: 50%;
-      	background: url('img/ajax-loader.gif') no-repeat 50% 50%;
-      	margin: -16px 0 0 -16px;
+      	margin-top: -50px;
+      	left: 50%;
+      	margin-left: -50px;
       }
+      .circular {
+      	-webkit-animation: rotate 2s linear infinite;
+      	animation: rotate 2s linear infinite;
+      	height: 100%;
+      	-webkit-transform-origin: center center;
+      	transform-origin: center center;
+      	width: 100%;
+      	position: absolute;
+      	top: 0;
+      	bottom: 0;
+      	left: 0;
+      	right: 0;
+      	margin: auto;
+      }
+      
+      .path {
+      	stroke-dasharray: 1, 200;
+      	stroke-dashoffset: 0;
+      	-webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      	animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      	stroke-linecap: round;
+      }
+      
+      @-webkit-keyframes rotate {
+      	100% {
+      		-webkit-transform: rotate(360deg);
+      		transform: rotate(360deg);
+      	}
+      }
+      
+      @keyframes rotate {
+      	100% {
+      		-webkit-transform: rotate(360deg);
+      		transform: rotate(360deg);
+      	}
+      }
+      @-webkit-keyframes dash {
+      	0% {
+      		stroke-dasharray: 1, 200;
+      		stroke-dashoffset: 0;
+      	}
+      	50% {
+      		stroke-dasharray: 89, 200;
+      		stroke-dashoffset: -35px;
+      	}
+      	100% {
+      		stroke-dasharray: 89, 200;
+      		stroke-dashoffset: -124px;
+      	}
+      }
+      @keyframes dash {
+      	0% {
+      		stroke-dasharray: 1, 200;
+      		stroke-dashoffset: 0;
+      	}
+      	50% {
+      		stroke-dasharray: 89, 200;
+      		stroke-dashoffset: -35px;
+      	}
+      	100% {
+      		stroke-dasharray: 89, 200;
+      		stroke-dashoffset: -124px;
+      	}
+      }
+      @-webkit-keyframes color {
+      	100%,
+      	0% {
+      		stroke: #acb2b8;
+      	}
+      	40% {
+      		stroke: #7b432b;
+      	}
+      	66% {
+      		stroke: #a8735d;
+      	}
+      	80%,
+      	90% {
+      		stroke: #e8e8e8;
+      	}
+      }
+      @keyframes color {
+      	100%,
+      	0% {
+      		stroke: #acb2b8;
+      	}
+      	40% {
+      		stroke: #7b432b;
+      	}
+      	66% {
+      		stroke: #a8735d;
+      	}
+      	80%,
+      	90% {
+      		stroke: #e8e8e8;
+      	}
+      }
+      
     </style>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/slick.css"/>
@@ -33,7 +130,13 @@
     <link rel="stylesheet" href="css/main.css"/>
   </head>
   <body>
-    <div id="page-preloader"><span class="spinner"></span></div>
+    <div id="page-preloader">
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"></circle>
+        </svg>
+      </div>
+    </div>
     <div class="page-overlay"></div>
     <aside class="aside-menu">
       <div class="aside-menu__content">
@@ -102,7 +205,7 @@
               <button class="main-search__btn btn btn-default" type="submit"></button>
               <input class="main-search__input" placeholder="Введите поисковый запрос..."/>
               <div class="btn btn-default btn-close btn-close-search"><span class="stick"></span><span class="stick"></span></div>
-            </form><a class="register-link" href="#"><span>Регистрация</span></a>
+            </form><a class="register-link material-animate-elem" href="#"><span>Регистрация</span></a>
           </div>
         </div>
       </div>
@@ -304,7 +407,7 @@
               <div class="row">
                 <div class="col-md-5">
                   <div class="row">
-                    <div class="support-container__heading animated-elem" data-class="fadeInRight">Мер поддержки для всех предприятий<span class="number-count" data-value="216">216</span></div>
+                    <div class="support-container__heading animated-elem" data-class="fadeInRight">Мер поддержки для всех предприятий<span class="number-count" data-value="216">0</span></div>
                   </div>
                   <div class="row">
                     <p>Интерактивный помощник поможет Вам найти наиболее подходящие меры государственной поддержки.</p>
@@ -365,14 +468,14 @@
                   </div>
                   <div class="col-md-6"><a class="products-elem" href="#">
                       <div class="products-elem__content material-animate-elem">
-                        <div class="products-elem__date"><span class="number-count" data-value="118">118</span>
+                        <div class="products-elem__date"><span class="number-count" data-value="118">0</span>
                           <div class="products-elem__sup">продуктов</div>
                         </div>
                         <h3 class="products-elem__heading">Электроэнергетика</h3>
                         <p>Важнейший сектор экономики России</p><img src="img/products-elem-2-bg.png"/>
                       </div></a><a class="products-elem" href="#">
                       <div class="products-elem__content material-animate-elem">
-                        <div class="products-elem__date"><span class="number-count" data-value="11">11</span>
+                        <div class="products-elem__date"><span class="number-count" data-value="11">0</span>
                           <div class="products-elem__sup">продуктов</div>
                         </div>
                         <h3 class="products-elem__heading">Гидроэнергетика</h3>
@@ -427,7 +530,7 @@
       <section class="main-section main-section--industries">
         <div class="container">
           <div class="row main-heading">
-            <div class="col-md-6 text-right main-heading--number animated-elem" data-class="fadeInLeft"><span class="number-count" data-value="42">42</span></div>
+            <div class="col-md-6 text-right main-heading--number animated-elem" data-class="fadeInLeft"><span class="number-count" data-value="42">0</span></div>
             <div class="col-md-6 animated-elem" data-class="fadeInRight">
               <h1>Отрасли предприятий, использующих сервисы ГИСП</h1>
             </div>
@@ -574,10 +677,10 @@
     <footer class="main-footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-7">
+          <div class="col-md-7 col-xs-6">
             <div class="main-footer__about">Государственная информационная система промышленности</div>
           </div>
-          <div class="col-md-5 text-right"><a href="#"><img src="img/main-logo--footer.png"/></a><a href="#"><img src="img/frp-logo-footer.png"/></a></div>
+          <div class="col-md-5 text-right col-xs-6"><a href="#"><img src="img/main-logo--footer.png"/></a><a href="#"><img src="img/frp-logo-footer.png"/></a></div>
         </div>
       </div>
     </footer>

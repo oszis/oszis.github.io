@@ -8,7 +8,8 @@
 		activeClass: 'active',
 		hoverClass: 'hovered',
 		pagePopup: 'page-has-popup',
-		animated: 'animated'
+		animated: 'animated',
+		cleanBtnClass: 'clean-btn'
 	}
 
 var parent, ink, d, x, y;
@@ -148,18 +149,43 @@ function MainSearch(){
 	var _this = this,
 		page = $('body');
 
+	this.fieldTimeout;
+	this.buttonTimeout;
+	this.blockTimeout;
+
+	this.clearTimeouts = function(){
+
+		if (_this.fieldTimeout) {
+			clearTimeout(_this.fieldTimeout);
+		}
+		if (_this.buttonTimeout){
+			clearTimeout(_this.buttonTimeout);
+		}
+		if (_this.blockTimeout){
+			clearTimeout(_this.blockTimeout);
+		}
+	}
+
 	this.showSearch = function(searchBlock, searchField, searchButton) {
+		_this.clearTimeouts();
+		searchField.stop();
+		searchBlock.stop();
+		searchButton.stop();
 
 		if ($(window).innerWidth() >= 1025) {
 			searchButton.addClass(CLASSES.activeClass);
 
-			setTimeout(function(elem){
+			_this.blockTimeout = setTimeout(function(elem){
 				elem.addClass(CLASSES.activeClass);
 			}, 500, searchBlock);
 
-			setTimeout(function(elem){
+			this.fieldTimeout = setTimeout(function(elem){
 				elem.addClass(CLASSES.activeClass);
 			}, 1000, searchField);
+
+			this.buttonTimeout = setTimeout(function(elem){
+				elem.addClass(CLASSES.cleanBtnClass);
+			}, 1200, searchButton);
 
 			page.addClass('search-open');
 
@@ -175,19 +201,28 @@ function MainSearch(){
 	};
 
 	this.hideSearch = function(searchBlock, searchField, searchButton) {
+		_this.clearTimeouts();
+
+		searchField.stop();
+		searchBlock.stop();
+		searchButton.stop();
+
+		clearTimeout()
 
 		if ($(window).innerWidth() >= 1025) {
 			searchField.removeClass(CLASSES.activeClass);
 
 			page.removeClass('search-open');
+			searchButton.removeClass(CLASSES.cleanBtnClass);
 
-			setTimeout(function(elem){
+			this.buttonTimeout = setTimeout(function(elem){
 				elem.removeClass(CLASSES.activeClass);
-			}, 1200, searchButton);
+			}, 900, searchButton);
 
-			setTimeout(function(elem){
+			this.blockTimeout = setTimeout(function(elem){
 				elem.removeClass(CLASSES.activeClass);
 			}, 600, searchBlock);
+
 			
 		} else {
 			searchButton.removeClass(CLASSES.activeClass);
@@ -292,7 +327,7 @@ $('.btn-close-search').click(function(){
 
 	$(window).on('load scroll', function(){
 
-		if ($(window).innerWidth() > 1024) {
+		if ($(window).innerWidth() > 1024 && $(window).innerWidth() < 2000) {
 			if (CheckElemOffset($('.companies-container'), $('.companies-container').innerHeight())
 				&& !$('.companies-container').hasClass(CLASSES.activeClass)) {
 
@@ -421,12 +456,11 @@ function NumberCounter(){
 var NumberCounterVar =  new NumberCounter();
 
 var i = 0;
-$(window).scroll(function(){
+$(window).on('load scroll',function(){
 	
 	$('.number-count').each(function() {
 		var elem = $(this);
-		if ($(window).scrollTop() >=
-			(elem.offset().top - $(window).innerWidth()) 
+		if (CheckElemOffset(elem, $(window).outerHeight()) 
 			&& !elem.hasClass('animated')) {
 
 			elem.addClass('animated');
