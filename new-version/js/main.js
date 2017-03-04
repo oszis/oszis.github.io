@@ -19,19 +19,31 @@
 			slides,
 			activeSlide;
 
+		var scrollEnable = false;
+
 		_this.scrollDetect = function(e){
-			
-			e = e || window.event;
-			var delta = e.deltaY || e.detail || e.wheelDelta;
 
-			scrollValue = delta;
+			if (!scrollEnable) {
+				scrollEnable = true;
+				
+				e = e || window.event;
+				var delta = e.deltaY || e.detail || e.wheelDelta;
 
-			if (scrollValue > 0) {
-				console.log('Событие колесика сработало!');
-				return _this.slideNext(activeSlide);
-			} else if (scrollValue < 0) {
-				return _this.slidePrev(activeSlide);
+				scrollValue = delta;
+
+				if (scrollValue > 0) {
+					console.log('Событие колесика сработало!');
+					return _this.slideNext(activeSlide);
+				} else if (scrollValue < 0) {
+					return _this.slidePrev(activeSlide);
+				}
 			}
+			else return false;
+
+			setTimeout(function(){
+				scrollEnable = false;
+			}, 1000);
+			
 		}
 
 		_this.slidePrev = function(){
