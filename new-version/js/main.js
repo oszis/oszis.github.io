@@ -25,7 +25,7 @@
 
 			if (!scrollEnable) {
 				scrollEnable = true;
-				
+
 				e = e || window.event;
 				var delta = e.deltaY || e.detail || e.wheelDelta;
 
@@ -37,12 +37,13 @@
 				} else if (scrollValue < 0) {
 					return _this.slidePrev(activeSlide);
 				}
+				
+				setTimeout(function(){
+					scrollEnable = false;
+				}, 1000);
 			}
 			else return false;
 
-			setTimeout(function(){
-				scrollEnable = false;
-			}, 1000);
 			
 		}
 

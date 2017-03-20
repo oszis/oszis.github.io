@@ -1,0 +1,505 @@
+
+<html>
+  <head>
+    <title> </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/nouislider.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/slick-theme.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body class="page">
+    <header class="main-header">
+      <div class="main-header__desktop">
+        <div class="row-container">
+          <div class="row clearfix">
+            <div class="col-lg-5 pull-left clearfix"><a class="main-logo" href="#"><img src="img/main-logo.png"/></a>
+              <div class="pull-right">
+                <div class="dropdown dropdown--inline main-header__phone-dropdown">
+                  <div class="dropdown-toggle main-header__mobile-btn" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">+34 93 531 47 76</div>
+                  <div class="dropdown-menu main-header__mobile-menu-dropdown" aria-labelledby="dropdownMenu1">
+                    <div class="menu-dropdown__container">
+                      <form class="main-form">
+                        <div class="menu-dropdown__heading">Оставить заявку на подбор недвижимости</div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <input type="text" placeholder="Имя"/>
+                            <input type="text" placeholder="Телефон"/>
+                            <input type="text" placeholder="E-mail"/>
+                          </div>
+                          <div class="col-md-6">
+                            <textarea placeholder="Комментарий"></textarea>
+                            <button type="submit">ОТПРАВИТЬ</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="menu-dropdown__container clearfix">
+                      <div class="menu-dropdown__heading">Контакты</div>
+                      <div class="menu-dropdown__place menu-dropdown__contacts">Carrer de Ramon Turró, 55, Local 2, Vila Olimpica, Barcelona, España</div>
+                      <div class="col-md-6">
+                        <div class="menu-dropdown__phone menu-dropdown__contacts">+34 93 531 47 76</div>
+                        <div class="menu-dropdown__skype menu-dropdown__contacts">reuniondeagenciassa</div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="menu-dropdown__contacts menu-dropdown__phone">+34 636 949 154</div>
+                        <div class="menu-dropdown__contacts menu-dropdown__email">raejvsl@gmail.com</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 pull-right clearfix">
+              <div class="main-header__links col-sm-6"><a class="btn btn-rounded btn-bordered icon--youtube" href="#"></a><a class="btn btn-rounded btn-bordered icon--facebook" href="#"></a><a class="btn btn-rounded btn-bordered icon--instagram" href="#"></a><a class="btn btn-rounded btn-bordered icon--g-plus" href="#"></a></div>
+              <div class="main-header__right col-sm-6">
+                <div class="pull-left"><a class="btn btn-rounded btn-bordered icon-login btn-login" href="#"></a><a class="active main-header__like" href="#">
+                    <div class="btn btn-rounded btn-bordered icon-like btn-favorite"></div><span>2</span></a></div>
+                <div class="pull-right">
+                  <div class="dropdown lang-dropdown">
+                    <div class="dropdown-toggle btn btn-default" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">RU<img src="img/icon-rus.png"/><span class="icon-caret"></span></div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <li><a href="#">EN</a></li>
+                      <li><a href="#">RU</a></li>
+                      <li><a href="#">EN</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header__mobile"><a class="main-logo pull-left" href="#"><img src="img/main-logo.png"/></a>
+        <div class="pull-right"><a class="btn btn-rounded btn-bordered icon-login btn-login" href="#"></a><a class="active main-header__like" href="#">
+            <div class="btn btn-rounded btn-bordered icon-like btn-favorite"></div></a>
+          <div class="btn btn-square"></div>
+        </div>
+      </div>
+      <div class="main-header__filter-left">
+        <div class="filters-left">
+          <div class="filter-elem">
+            <div class="filter-elem__heading">
+              <div class="btn btn-square filter-elem__btn"></div>
+            </div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading">
+              <div class="btn btn-square filter-elem__btn"></div>
+            </div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading">
+              <div class="btn btn-square filter-elem__btn"></div>
+            </div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading">
+              <div class="btn btn-square filter-elem__btn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header__filter-right">
+        <form class="filter-right-form main-form">
+          <div class="filter-elem filter-elem--input">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div>
+              <input type="text" placeholder="Введите текст или ID объекта"/>
+            </div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Купить</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Тип недвижимости</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Город</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Жилая площадь</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Количество комнат</span>
+            </div>
+            <div class="filter-elem__content">
+              <div class="main-range-slider">
+                <div class="main-range-slider__elem"></div>
+                <input type="text"/>
+                <input type="text"/>
+              </div>
+            </div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Цена</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Расширенный поиск</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+          <div class="filter-elem">
+            <div class="filter-elem__heading clearfix">
+              <div class="btn btn-square btn-square-sale filter-elem__btn"></div><span>Продать недвижимость</span>
+            </div>
+            <div class="filter-elem__content"></div>
+          </div>
+        </form>
+      </div>
+      <div class="main-header__filter-overlay"></div>
+    </header>
+    <div class="main-content">
+      <div class="container main-content-container">
+        <article class="property-card">
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <div class="property-card-slider">
+                  <div class="property-card-slider__header">
+                    <div class="property-card-slider__btn-big"></div>
+                    <div class="property-card-slider__length"></div>
+                  </div>
+                  <div class="property-card-slider__content">
+                    <div class="property-card-slider__elem">
+                      <div class="property-card-slider__elem-overlay"></div><img src="img/fish/property-list-1.png"/>
+                    </div>
+                    <div class="property-card-slider__elem">
+                      <div class="property-card-slider__elem-overlay"></div><img src="img/fish/property-list-1.png"/>
+                    </div>
+                    <div class="property-card-slider__elem">
+                      <div class="property-card-slider__elem-overlay"></div><img src="img/fish/property-list-1.png"/>
+                    </div>
+                    <div class="property-card-slider__elem">
+                      <div class="property-card-slider__elem-overlay"></div><img src="img/fish/property-list-1.png"/>
+                    </div>
+                  </div>
+                  <div class="property-card-slider__footer text-center">
+                    <div class="list-elem__price list-elem__price--torn">2 500 000 &#8364;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <header class="property-card__header">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="property-card__info text-center">
+                  <div class="property-card__info-elem">ATR2010</div>
+                  <div class="property-card__info-elem">Продажа</div>
+                  <div class="property-card__info-elem">Дом</div>
+                  <div class="property-card__info-elem">Местоположение: Аликанте. Испания</div>
+                </div>
+                <div class="list-elem__heading text-center">
+                  <h2>Индивидуальный коттедж класса «Люкс» в респектабельной резиденции</h2>
+                </div>
+                <div class="list-elem__data">
+                  <div class="list-elem__data-elem">5</div>
+                  <div class="list-elem__data-elem">2</div>
+                  <div class="list-elem__data-elem">50 м<sup>2</sup></div>
+                  <div class="list-elem__data-elem">75 м<sup>2</sup></div>
+                  <div class="list-elem__data-elem">1</div>
+                  <div class="list-elem__data-elem">5 м<sup>2</sup></div>
+                  <div class="list-elem__data-elem">Есть</div>
+                  <div class="list-elem__data-elem">Юг</div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <section class="main-section">
+            <div class="row property-card__tag-container">
+              <div class="col-md-2">
+                <div class="property-card__tag-img"><img src="img/fish/tags-icon.png"/></div>
+              </div>
+              <div class="col-md-10">
+                <div class="btn property-card__tag">Джакузи</div>
+                <div class="btn property-card__tag">Система-климат контроль</div>
+                <div class="btn property-card__tag">Каркасно-монолитное строение</div>
+                <div class="btn property-card__tag">Кирпичный фасад</div>
+                <div class="btn property-card__tag">Городской газ</div>
+                <div class="btn property-card__tag">Собственный городской вид</div>
+                <div class="btn property-card__tag">Вид на горы</div>
+                <div class="btn property-card__tag">Вид на море</div>
+                <div class="btn property-card__tag">Все окна выходят на улицу</div>
+                <div class="btn property-card__tag">Вид на береговую линию</div>
+                <div class="btn property-card__tag">Терраса для загара</div>
+                <div class="btn property-card__tag">Вид на горы</div>
+                <div class="btn property-card__tag">Открытый бассейн</div>
+                <div class="btn property-card__tag">Кирпичный фасад</div>
+                <div class="btn property-card__tag">Вид на море</div>
+                <div class="btn property-card__tag">Все окна выходят на улицу </div>
+                <div class="btn property-card__tag">Детская игровая площадка</div>
+              </div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="property-card__heading property-card__heading--no-margin">
+                  <h3>Аликанте. Испания</h3>
+                </div>
+                <div class="property-card__map" id="elem-page-map"></div>
+              </div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <div class="property-card__heading">
+                  <h2>Виртуальный тур</h2>
+                </div>
+                <!-- инклудим сюда видео-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zQhtka5u-Mk" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+              </div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="main-form main-form--grey property-card__form clearfix">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="property-card__heading text-center">
+                    <h2>Оставить заявку</h2>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Имя"/>
+                  <input type="text" placeholder="Телефон"/>
+                  <input type="text" placeholder="E-mail"/>
+                </div>
+                <div class="col-md-6">
+                  <textarea placeholder="Комментарий"></textarea>
+                  <button type="submit">ОТПРАВИТЬ</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-4"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Распечатать страницу</span></a></div>
+              <div class="col-md-4"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Сохранить страницу</span></a></div>
+              <div class="col-md-4"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Поделиться ссылкой</span></a></div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="property-card__heading">
+                  <h2>Похожие объекты недвижимости</h2>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="other-property-slider">
+                  <article class="other-property-elem list-elem list-elem--small">
+                    <div class="list-elem__container">
+                      <div class="list-elem__front-side">
+                        <div class="list-elem__img"><img src="img/fish/property-list-1.png"/></div>
+                        <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
+                        <div class="list-elem__vendor-code">APP2816</div>
+                        <div class="list-elem__heading">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5>
+                        </div>
+                      </div>
+                      <div class="list-elem__sold">
+                        <div class="btn btn-sold">ПРОДАНО</div>
+                      </div>
+                      <div class="list-elem__back-side">
+                        <div class="list-elem__buttons">
+                          <div class="list-elem__like"></div>
+                          <div class="list-elem__video"></div>
+                        </div>
+                        <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
+                        <div class="list-elem__data">
+                          <div class="list-elem__data-elem list-elem__bedroom">2</div>
+                          <div class="list-elem__data-elem list-elem__bathroom">1</div>
+                          <div class="list-elem__data-elem list-elem__square-space">53.26 м<sup>2</sup></div>
+                          <div class="list-elem__data-elem list-elem__cube-space">8000 м<sup>2</sup></div>
+                        </div>
+                        <div class="list-elem__place">Calle Cecilio Gallego Alamis, 36, Barcelona, Испания</div>
+                        <div class="list-elem__price">89 000 &#8364;</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="other-property-elem list-elem list-elem--small">
+                    <div class="list-elem__container">
+                      <div class="list-elem__front-side">
+                        <div class="list-elem__img"><img src="img/fish/property-list-1.png"/></div>
+                        <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
+                        <div class="list-elem__vendor-code">APP2816</div>
+                        <div class="list-elem__heading">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5>
+                        </div>
+                      </div>
+                      <div class="list-elem__sold">
+                        <div class="btn btn-sold">ПРОДАНО</div>
+                      </div>
+                      <div class="list-elem__back-side">
+                        <div class="list-elem__buttons">
+                          <div class="list-elem__like"></div>
+                          <div class="list-elem__video"></div>
+                        </div>
+                        <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
+                        <div class="list-elem__data">
+                          <div class="list-elem__data-elem list-elem__bedroom">2</div>
+                          <div class="list-elem__data-elem list-elem__bathroom">1</div>
+                          <div class="list-elem__data-elem list-elem__square-space">53.26 м<sup>2</sup></div>
+                          <div class="list-elem__data-elem list-elem__cube-space">8000 м<sup>2</sup></div>
+                        </div>
+                        <div class="list-elem__place">Calle Cecilio Gallego Alamis, 36, Barcelona, Испания</div>
+                        <div class="list-elem__price">89 000 &#8364;</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="other-property-elem list-elem list-elem--small">
+                    <div class="list-elem__container">
+                      <div class="list-elem__front-side">
+                        <div class="list-elem__img"><img src="img/fish/property-list-1.png"/></div>
+                        <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
+                        <div class="list-elem__vendor-code">APP2816</div>
+                        <div class="list-elem__heading">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5>
+                        </div>
+                      </div>
+                      <div class="list-elem__sold">
+                        <div class="btn btn-sold">ПРОДАНО</div>
+                      </div>
+                      <div class="list-elem__back-side">
+                        <div class="list-elem__buttons">
+                          <div class="list-elem__like"></div>
+                          <div class="list-elem__video"></div>
+                        </div>
+                        <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
+                        <div class="list-elem__data">
+                          <div class="list-elem__data-elem list-elem__bedroom">2</div>
+                          <div class="list-elem__data-elem list-elem__bathroom">1</div>
+                          <div class="list-elem__data-elem list-elem__square-space">53.26 м<sup>2</sup></div>
+                          <div class="list-elem__data-elem list-elem__cube-space">8000 м<sup>2</sup></div>
+                        </div>
+                        <div class="list-elem__place">Calle Cecilio Gallego Alamis, 36, Barcelona, Испания</div>
+                        <div class="list-elem__price">89 000 &#8364;</div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="other-property-elem list-elem list-elem--small">
+                    <div class="list-elem__container">
+                      <div class="list-elem__front-side">
+                        <div class="list-elem__img"><img src="img/fish/property-list-1.png"/></div>
+                        <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
+                        <div class="list-elem__vendor-code">APP2816</div>
+                        <div class="list-elem__heading">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5>
+                        </div>
+                      </div>
+                      <div class="list-elem__sold">
+                        <div class="btn btn-sold">ПРОДАНО</div>
+                      </div>
+                      <div class="list-elem__back-side">
+                        <div class="list-elem__buttons">
+                          <div class="list-elem__like"></div>
+                          <div class="list-elem__video"></div>
+                        </div>
+                        <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
+                          <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
+                        <div class="list-elem__data">
+                          <div class="list-elem__data-elem list-elem__bedroom">2</div>
+                          <div class="list-elem__data-elem list-elem__bathroom">1</div>
+                          <div class="list-elem__data-elem list-elem__square-space">53.26 м<sup>2</sup></div>
+                          <div class="list-elem__data-elem list-elem__cube-space">8000 м<sup>2</sup></div>
+                        </div>
+                        <div class="list-elem__place">Calle Cecilio Gallego Alamis, 36, Barcelona, Испания</div>
+                        <div class="list-elem__price">89 000 &#8364;</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="main-section">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="property-card__heading text-center">
+                  <h2>Популярные статьи</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="popular-article">
+                  <div class="popular-article__img"><img src="#"/></div>
+                  <div class="popular-article__heading">Как получить золотую визу в Испании?</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="popular-article">
+                  <div class="popular-article__img"><img src="#"/></div>
+                  <div class="popular-article__heading">Как мы работаем при продаже недвижимости в Испании?</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="popular-article">
+                  <div class="popular-article__img"><img src="#"/></div>
+                  <div class="popular-article__heading">Идеальный бизнес в Испании</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+    <footer class="main-footer">
+      <div class="main-footer__right-col">
+        <div class="main-footer__place main-footer-icon-col">Carrer de Ramon Turró, 55, Local 2, Vila Olimpica, Barcelona, España</div>
+        <div class="main-footer__phone main-footer-icon-col">+34 93 531 47 76</div>
+        <div class="main-footer__links">
+          <div class="btn icon-youtube"></div>
+          <div class="btn icon-facebook"></div>
+          <div class="btn icon-instagram"></div>
+          <div class="btn icon-g-plus"></div>
+        </div>
+      </div>
+      <div class="main-footer-map" id="map">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
+      </div>
+      <div class="main-footer-overlay text-center">
+        <div class="main-footer-overlay__btn"></div>
+        <div class="main-footer-overlay__content">
+          <div class="main-footer-overlay__heading">
+            <h4>REUNION DE AGENCIAS EUROPEA SL está ubicada en la localidad de BARCELONA, provincia de Barcelona.</h4>
+          </div>
+          <p>Fue constituida el 26/06/2006 con el objetivo SERVICIOS INMOBILIARIOS: ADQUISICION, TENENCIA, PROMOCION, CONSTRUCCION, REPARACION, CONSERVACION, CESION, ALQUILER EXPLOTACION COMPRAVENTA Y PERMUTA DE TERRENOS, FINCAS, SOLARES, URBANIZACIONES, ETC" y se dedica a la actividad CNAE de "Servicios relativos a la propiedad inmobiliaria y a la propiedad industrial".</p>
+          <p>CNAE 6810 - Compraventa de bienes inmobiliarios por cuenta propia, SIC 6531 - Agencias inmobiliarias, administradores de fincas, CIF B64256399.</p>
+        </div>
+      </div>
+    </footer>
+    <div class="big-map-popup" id="map-popup"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
