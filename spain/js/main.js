@@ -187,10 +187,20 @@
 			center: new google.maps.LatLng(40.6743890, -73.9455),
 		};
 
-		var map = new google.maps.Map(document.getElementById('map'),
-			mapOptions);
-		var map2 = new google.maps.Map(document.getElementById('map-popup'),
-			mapOptions2);
+		if (document.getElementById('map')) {
+			var map = new google.maps.Map(document.getElementById('map'),
+				mapOptions);
+			
+		}
+		if (document.getElementById('map-popup')) {
+			var map2 = new google.maps.Map(document.getElementById('map-popup'),
+				mapOptions2);
+
+		}
+		if (document.getElementById('elem-page-map')) {
+			var map3 = new google.maps.Map(document.getElementById('elem-page-map'),
+				mapOptions2);
+		}
 		}
 
 
@@ -225,40 +235,81 @@
 		});
 	}
 
+	if ($('.property-card-slider__content').length) {
 
-	$('.property-card-slider__content').slick({
-		centerMode: true,
-		centerPadding: '0',
-		slidesToShow: 3,
-		variableWidth: true,
-		infinite: true,
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 3
+		$('.property-card-slider__content').slick({
+			centerMode: true,
+			centerPadding: '0',
+			slidesToShow: 3,
+			variableWidth: true,
+			infinite: true,
+			arrows: true,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 1
+					}
 				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 1
-				}
-			}
-		]
-	})
+			]
+		})
+	}
+	if ($('.other-property-slider').length) {
 
-	$('.other-property-slider').slick({
-		slidesToShow: 4,
-		// variableWidth: true,
-		infinite: true,
-	})
+		$('.other-property-slider').slick({
+			slidesToShow: 4,
+			// variableWidth: true,
+			infinite: true,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						arrows: false,
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						arrows: false,
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						arrows: false,
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 560,
+					settings: {
+						arrows: false,
+						slidesToShow: 1
+					}
+				}
+			]
+		})
+		
+	}
+
+
+$('.btn-mobile-menu').click(function(){
+	$(this).toggleClass(CLASSES.active);
+})
 
 		
 })(jQuery)
