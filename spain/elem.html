@@ -35,7 +35,7 @@
                           </div>
                           <div class="col-md-6">
                             <textarea placeholder="Комментарий"></textarea>
-                            <button type="submit">ОТПРАВИТЬ</button>
+                            <button class="main-form__submit main-form__submit--inline" type="submit">ОТПРАВИТЬ</button>
                           </div>
                         </div>
                       </form>
@@ -44,12 +44,16 @@
                       <div class="menu-dropdown__heading">Контакты</div>
                       <div class="menu-dropdown__place menu-dropdown__contacts">Carrer de Ramon Turró, 55, Local 2, Vila Olimpica, Barcelona, España</div>
                       <div class="col-md-6">
-                        <div class="menu-dropdown__phone menu-dropdown__contacts">+34 93 531 47 76</div>
-                        <div class="menu-dropdown__skype menu-dropdown__contacts">reuniondeagenciassa</div>
+                        <div class="row">
+                          <div class="menu-dropdown__phone menu-dropdown__contacts">+34 93 531 47 76</div>
+                          <div class="menu-dropdown__skype menu-dropdown__contacts">reuniondeagenciassa</div>
+                        </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="menu-dropdown__contacts menu-dropdown__phone">+34 636 949 154</div>
-                        <div class="menu-dropdown__contacts menu-dropdown__email">raejvsl@gmail.com</div>
+                        <div class="row">
+                          <div class="menu-dropdown__contacts menu-dropdown__phone-viber">+34 636 949 154</div>
+                          <div class="menu-dropdown__contacts menu-dropdown__email">raejvsl@gmail.com</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -59,8 +63,15 @@
             <div class="col-lg-6 pull-right clearfix">
               <div class="main-header__links col-sm-7"><a class="btn btn-rounded btn-bordered icon icon--youtube" href="#"></a><a class="btn btn-rounded btn-bordered icon icon--facebook" href="#"></a><a class="btn btn-rounded btn-bordered icon icon--instagram" href="#"> </a><a class="btn btn-rounded btn-bordered icon icon--g-plus" href="#"></a></div>
               <div class="main-header__right col-sm-5">
-                <div class="pull-left"><a class="btn btn-rounded btn-bordered icon icon--login" href="#"></a><a class="active main-header__like" href="#">
-                    <div class="btn btn-rounded btn-bordered icon icon--favorite"></div><span>2</span></a></div>
+                <div class="pull-left">
+                  <div class="dropdown dropdown--inline dropdown-authorize"><span class="btn btn-rounded btn-bordered icon icon--login dropown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                      <div class="dropdown-menu__heading">Авторизуйтесь через социальные сети</div>
+                      <div class="dropdown-menu__content"><a class="dropdown-menu-elem icon--facebook" href="#"></a><a class="dropdown-menu-elem icon--twitter" href="#"></a><a class="dropdown-menu-elem icon--gmail" href="#"></a></div>
+                    </div>
+                  </div><a class="active main-header__like" href="#">
+                    <div class="btn btn-rounded btn-bordered icon icon--favorite"></div><span>2</span></a>
+                </div>
                 <div class="pull-right">
                   <div class="dropdown lang-dropdown">
                     <div class="dropdown-toggle btn btn-default" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">RU<img src="img/flag-rus.png"/><span class="caret caret--small"></span></div>
@@ -77,7 +88,13 @@
         </div>
       </div>
       <div class="main-header__mobile"><a class="main-logo pull-left" href="#"><img src="img/main-logo.png"/></a>
-        <div class="pull-right"><a class="btn btn-rounded btn-bordered icon icon--login" href="#"></a><a class="active main-header__like" href="#">
+        <div class="pull-right">
+          <div class="dropdown dropdown--inline dropdown-authorize"><span class="btn btn-rounded btn-bordered icon icon--login dropown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+              <div class="dropdown-menu__heading">Авторизуйтесь через социальные сети</div>
+              <div class="dropdown-menu__content"><a class="dropdown-menu-elem icon--facebook" href="#"></a><a class="dropdown-menu-elem icon--twitter" href="#"></a><a class="dropdown-menu-elem icon--gmail" href="#"></a></div>
+            </div>
+          </div><a class="active main-header__like" href="#">
             <div class="btn btn-rounded btn-bordered icon icon--favorite"></div></a>
           <div class="btn btn-square btn-mobile-menu"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         </div>
@@ -86,22 +103,22 @@
         <div class="filters-left">
           <div class="filter-elem">
             <div class="filter-elem__heading">
-              <div class="btn btn-square filter-elem__btn"></div>
+              <div class="btn btn-square filter-elem__btn icon icon--filter-mail"></div>
             </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading">
-              <div class="btn btn-square filter-elem__btn"></div>
+              <div class="btn btn-square filter-elem__btn icon icon--filter-like"></div>
             </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading">
-              <div class="btn btn-square filter-elem__btn"></div>
+              <div class="btn btn-square filter-elem__btn icon icon--filter-share"></div>
             </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading">
-              <div class="btn btn-square filter-elem__btn"></div>
+              <div class="btn btn-square filter-elem__btn icon icon--filter-print" onclick="window.print();"></div>
             </div>
           </div>
         </div>
@@ -116,37 +133,99 @@
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
-              <div class="btn btn-square icon--filter-buy filter-elem__btn"></div><span>Купить</span>
+              <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Купить</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div>
+                <input class="hidden" type="radio" name="sale-type" value="1"/><span>Продажа</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-tenancy"></div>
+                <input class="hidden" type="radio" name="sale-type" value="2"/><span>Аренда</span>
+              </label>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-property-type filter-elem__btn"></div><span>Тип недвижимости</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-house"></div>
+                <input class="hidden" type="radio" name="house-type" value="1"/><span>Дом</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-apartaments"></div>
+                <input class="hidden" type="radio" name="house-type" value="1"/><span>Апартаменты</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-stead"></div>
+                <input class="hidden" type="radio" name="house-type" value="3"/><span>Земельный участок</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-yacht"></div>
+                <input class="hidden" type="radio" name="house-type" value="4"/><span>Яхта</span>
+              </label>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-city filter-elem__btn"></div><span>Город</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-search">
+                <input type="search" placeholder="Поиск по городам"/>
+              </div>
+              <div class="filter-elem__search-content">
+                <label>
+                  <input class="hidden" type="checkbox" value="1"/><span>А-Лансада</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="2"/><span>Авила</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="3"/><span>Авилес</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="4"/><span>Агаэте</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="5"/><span>Агвадульсе</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="6"/><span>Айгуаблава</span>
+                </label>
+              </div>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-life-zone filter-elem__btn"></div><span>Жилая площадь</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Жилая площадь</span>
+              </div>
+              <div class="main-range-slider">
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="10000"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>10000</span> м<sup>2</sup>
+              </div>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--rooms-number filter-elem__btn"></div><span>Количество комнат</span>
             </div>
             <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Количество комнат</span>
+              </div>
               <div class="main-range-slider">
-                <div class="main-range-slider__elem"></div>
-                <input type="text"/>
-                <input type="text"/>
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="100"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>100</span> Комнат
               </div>
             </div>
           </div>
@@ -154,20 +233,70 @@
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-price filter-elem__btn"></div><span>Цена</span>
             </div>
-            <div class="filter-elem__content"></div>
-          </div>
-          <div class="filter-elem">
-            <div class="filter-elem__heading clearfix">
-              <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Жилая площадь</span>
+              </div>
+              <div class="main-range-slider">
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="17500000"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>17500000</span> &#8364;
+              </div>
             </div>
-            <div class="filter-elem__content"></div>
-          </div>
-          <div class="filter-elem">
+          </div><a class="filter-elem" href="#">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Продать недвижимость</span>
-            </div>
-            <div class="filter-elem__content"></div>
-          </div>
+            </div></a>
+          <div class="filter-elem"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span></a></div>
+          <div class="filter-elem mobile-show"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-filter icon-red filter-elem__btn"></div><span>Фильтр</span>
+              <div class="filter-elem__content">
+                <div class="filter-elem__content-elem filter-elem__content-elem--no-padding">Сортировать:</div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по цене</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="price" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="price" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по площади дома</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="place" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="place" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по размеру участка</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="height" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="height" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по дате добавления</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--checkbox icon-torn">
+                      <input type="checkbox" name="date" value="1"/><span></span>
+                    </label>
+                  </div>
+                </div>
+              </div></a></div>
+          <div class="filter-elem mobile-show filter-elem--map"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-map icon-red filter-elem__btn"></div><span>Показать на карте</span></a></div>
         </form>
       </div>
       <div class="main-header__filter-overlay"></div>
@@ -216,14 +345,30 @@
                   <h2>Индивидуальный коттедж класса «Люкс» в респектабельной резиденции</h2>
                 </div>
                 <div class="list-elem__data">
-                  <div class="list-elem__data-elem">5</div>
-                  <div class="list-elem__data-elem">2</div>
-                  <div class="list-elem__data-elem">50 м<sup>2</sup></div>
-                  <div class="list-elem__data-elem">75 м<sup>2</sup></div>
-                  <div class="list-elem__data-elem">1</div>
-                  <div class="list-elem__data-elem">5 м<sup>2</sup></div>
-                  <div class="list-elem__data-elem">Есть</div>
-                  <div class="list-elem__data-elem">Юг</div>
+                  <div class="list-elem__data-elem list-elem__data-elem--bedroom">5
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--bathroom">2
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--square-space">50 м<sup>2</sup>
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--cube-space">75 м<sup>2</sup>
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--garage">1
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--terrace">5 м<sup>2</sup>
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--elevator">Есть
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
+                  <div class="list-elem__data-elem list-elem__data-elem--side">Юг
+                    <div class="list-elem__data-elem__hidden">Жилая площадь</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -257,7 +402,7 @@
           <section class="main-section">
             <div class="row">
               <div class="col-md-12">
-                <div class="property-card__heading property-card__heading--no-margin">
+                <div class="property-card__heading property-card__heading--no-margin property-card__heading--padding property-card__heading--icon property-card__heading--icon-map">
                   <h3>Аликанте. Испания</h3>
                 </div>
                 <div class="property-card__map" id="elem-page-map"></div>
@@ -297,9 +442,9 @@
           </section>
           <section class="main-section">
             <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Распечатать страницу</span></a></div>
-              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Сохранить страницу</span></a></div>
-              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square"></span><span class="property-card__block-link-content">Поделиться ссылкой</span></a></div>
+              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-print"></span><span class="property-card__block-link-content">Распечатать страницу</span></a></div>
+              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-pdf"></span><span class="property-card__block-link-content">Сохранить страницу</span></a></div>
+              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-share"></span><span class="property-card__block-link-content">Поделиться ссылкой</span></a></div>
             </div>
           </section>
           <section class="main-section">
@@ -515,6 +660,18 @@
       </div>
     </footer>
     <div class="big-map-popup" id="map-popup"></div>
+    <div class="popup main-popup main-popup--blue" id="requestPopup">
+      <div class="popup-overlay"></div>
+      <div class="main-popup__window">
+        <div class="popup-close"></div>
+        <div class="main-heading main-popup__heading">
+          <h1>Спасибо за заявку</h1>
+        </div>
+        <div class="main-heading main-popup__heading">
+          <h3>В ближайшее время наш менеджер свяжется с Вами</h3>
+        </div>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nouislider.min.js"></script>

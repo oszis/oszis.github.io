@@ -61,11 +61,18 @@
             <div class="col-lg-6 pull-right clearfix">
               <div class="main-header__links col-sm-7"><a class="btn btn-rounded btn-bordered icon icon--youtube" href="#"></a><a class="btn btn-rounded btn-bordered icon icon--facebook" href="#"></a><a class="btn btn-rounded btn-bordered icon icon--instagram" href="#"> </a><a class="btn btn-rounded btn-bordered icon icon--g-plus" href="#"></a></div>
               <div class="main-header__right col-sm-5">
-                <div class="pull-left"><a class="btn btn-rounded btn-bordered icon icon--login" href="#"></a><a class="active main-header__like" href="#">
-                    <div class="btn btn-rounded btn-bordered icon icon--favorite"></div><span>2</span></a></div>
+                <div class="pull-left">
+                  <div class="dropdown dropdown--inline dropdown-authorize"><span class="btn btn-rounded btn-bordered icon icon--login dropown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                      <div class="dropdown-menu__heading">Авторизуйтесь через социальные сети</div>
+                      <div class="dropdown-menu__content"><a class="dropdown-menu-elem icon--facebook" href="#"></a><a class="dropdown-menu-elem icon--twitter" href="#"></a><a class="dropdown-menu-elem icon--gmail" href="#"></a></div>
+                    </div>
+                  </div><a class="active main-header__like" href="#">
+                    <div class="btn btn-rounded btn-bordered icon icon--favorite"></div><span>2</span></a>
+                </div>
                 <div class="pull-right">
                   <div class="dropdown lang-dropdown">
-                    <div class="dropdown-toggle btn btn-default" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">RU<img src="img/flag-rus.png"/><span class="icon-caret"></span></div>
+                    <div class="dropdown-toggle btn btn-default" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">RU<img src="img/flag-rus.png"/><span class="caret caret--small"></span></div>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <li><a href="#">EN</a></li>
                       <li><a href="#">RU</a></li>
@@ -79,7 +86,13 @@
         </div>
       </div>
       <div class="main-header__mobile"><a class="main-logo pull-left" href="#"><img src="img/main-logo.png"/></a>
-        <div class="pull-right"><a class="btn btn-rounded btn-bordered icon icon--login" href="#"></a><a class="active main-header__like" href="#">
+        <div class="pull-right">
+          <div class="dropdown dropdown--inline dropdown-authorize"><span class="btn btn-rounded btn-bordered icon icon--login dropown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+              <div class="dropdown-menu__heading">Авторизуйтесь через социальные сети</div>
+              <div class="dropdown-menu__content"><a class="dropdown-menu-elem icon--facebook" href="#"></a><a class="dropdown-menu-elem icon--twitter" href="#"></a><a class="dropdown-menu-elem icon--gmail" href="#"></a></div>
+            </div>
+          </div><a class="active main-header__like" href="#">
             <div class="btn btn-rounded btn-bordered icon icon--favorite"></div></a>
           <div class="btn btn-square btn-mobile-menu"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         </div>
@@ -95,10 +108,10 @@
               <div class="filter-sort clearfix">
                 <div class="filter-sort__heading pull-left">по цене</div>
                 <div class="filter-sort__buttons pull-right">
-                  <label class="input-label input-label--radio icon-corn-top">
+                  <label class="input-label input-label--radio icon-torn">
                     <input type="radio" name="price" value="1"/><span></span>
                   </label>
-                  <label class="input-label input-label--radio icon-corn-bottom">
+                  <label class="input-label input-label--radio icon-torn icon-corn-bottom">
                     <input type="radio" name="price" value="2"/><span></span>
                   </label>
                 </div>
@@ -106,10 +119,10 @@
               <div class="filter-sort clearfix">
                 <div class="filter-sort__heading pull-left">по площади дома</div>
                 <div class="filter-sort__buttons pull-right">
-                  <label class="input-label input-label--radio">
+                  <label class="input-label input-label--radio icon-torn">
                     <input type="radio" name="place" value="1"/><span></span>
                   </label>
-                  <label class="input-label input-label--radio icon-corn-bottom">
+                  <label class="input-label input-label--radio icon-torn icon-corn-bottom">
                     <input type="radio" name="place" value="2"/><span></span>
                   </label>
                 </div>
@@ -117,10 +130,10 @@
               <div class="filter-sort clearfix">
                 <div class="filter-sort__heading pull-left">по размеру участка</div>
                 <div class="filter-sort__buttons pull-right">
-                  <label class="input-label input-label--radio icon-corn-top">
+                  <label class="input-label input-label--radio icon-torn">
                     <input type="radio" name="height" value="1"/><span></span>
                   </label>
-                  <label class="input-label input-label--radio icon-corn-bottom">
+                  <label class="input-label input-label--radio icon-torn icon-corn-bottom">
                     <input type="radio" name="height" value="2"/><span></span>
                   </label>
                 </div>
@@ -128,7 +141,7 @@
               <div class="filter-sort clearfix">
                 <div class="filter-sort__heading pull-left">по дате добавления</div>
                 <div class="filter-sort__buttons pull-right">
-                  <label class="input-label input-label--checkbox">
+                  <label class="input-label input-label--checkbox icon-torn">
                     <input type="checkbox" name="date" value="1"/><span></span>
                   </label>
                 </div>
@@ -152,37 +165,99 @@
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
-              <div class="btn btn-square icon--filter-buy filter-elem__btn"></div><span>Купить</span>
+              <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Купить</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div>
+                <input class="hidden" type="radio" name="sale-type" value="1"/><span>Продажа</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-tenancy"></div>
+                <input class="hidden" type="radio" name="sale-type" value="2"/><span>Аренда</span>
+              </label>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-property-type filter-elem__btn"></div><span>Тип недвижимости</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-house"></div>
+                <input class="hidden" type="radio" name="house-type" value="1"/><span>Дом</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-apartaments"></div>
+                <input class="hidden" type="radio" name="house-type" value="1"/><span>Апартаменты</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-stead"></div>
+                <input class="hidden" type="radio" name="house-type" value="3"/><span>Земельный участок</span>
+              </label>
+              <label class="filter-elem__content-elem">
+                <div class="icon icon-yacht"></div>
+                <input class="hidden" type="radio" name="house-type" value="4"/><span>Яхта</span>
+              </label>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-city filter-elem__btn"></div><span>Город</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-search">
+                <input type="search" placeholder="Поиск по городам"/>
+              </div>
+              <div class="filter-elem__search-content">
+                <label>
+                  <input class="hidden" type="checkbox" value="1"/><span>А-Лансада</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="2"/><span>Авила</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="3"/><span>Авилес</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="4"/><span>Агаэте</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="5"/><span>Агвадульсе</span>
+                </label>
+                <label>
+                  <input class="hidden" type="checkbox" value="6"/><span>Айгуаблава</span>
+                </label>
+              </div>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-life-zone filter-elem__btn"></div><span>Жилая площадь</span>
             </div>
-            <div class="filter-elem__content"></div>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Жилая площадь</span>
+              </div>
+              <div class="main-range-slider">
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="10000"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>10000</span> м<sup>2</sup>
+              </div>
+            </div>
           </div>
           <div class="filter-elem">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--rooms-number filter-elem__btn"></div><span>Количество комнат</span>
             </div>
             <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Количество комнат</span>
+              </div>
               <div class="main-range-slider">
-                <div class="main-range-slider__elem"></div>
-                <input type="text"/>
-                <input type="text"/>
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="100"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>100</span> Комнат
               </div>
             </div>
           </div>
@@ -190,20 +265,70 @@
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-price filter-elem__btn"></div><span>Цена</span>
             </div>
-            <div class="filter-elem__content"></div>
-          </div>
-          <div class="filter-elem">
-            <div class="filter-elem__heading clearfix">
-              <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span>
+            <div class="filter-elem__content">
+              <div class="filter-elem__content-elem">
+                <div class="icon icon-sale"></div><span>Жилая площадь</span>
+              </div>
+              <div class="main-range-slider">
+                <div class="main-range-slider__elem" data-min-value="0" data-max-value="17500000"></div>
+                <input class="hidden" type="text"/>
+                <input class="hidden" type="text"/><span>0</span> - <span>17500000</span> &#8364;
+              </div>
             </div>
-            <div class="filter-elem__content"></div>
-          </div>
-          <div class="filter-elem">
+          </div><a class="filter-elem" href="#">
             <div class="filter-elem__heading clearfix">
               <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Продать недвижимость</span>
-            </div>
-            <div class="filter-elem__content"></div>
-          </div>
+            </div></a>
+          <div class="filter-elem"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span></a></div>
+          <div class="filter-elem mobile-show"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-filter icon-red filter-elem__btn"></div><span>Фильтр</span>
+              <div class="filter-elem__content">
+                <div class="filter-elem__content-elem filter-elem__content-elem--no-padding">Сортировать:</div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по цене</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="price" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="price" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по площади дома</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="place" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="place" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по размеру участка</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--radio icon-torn">
+                      <input type="radio" name="height" value="1"/><span></span>
+                    </label>
+                    <label class="input-label input-label--radio icon-torn icon-corn-bottom">
+                      <input type="radio" name="height" value="2"/><span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-sort clearfix">
+                  <div class="filter-sort__heading pull-left">по дате добавления</div>
+                  <div class="filter-sort__buttons pull-right">
+                    <label class="input-label input-label--checkbox icon-torn">
+                      <input type="checkbox" name="date" value="1"/><span></span>
+                    </label>
+                  </div>
+                </div>
+              </div></a></div>
+          <div class="filter-elem mobile-show filter-elem--map"><a class="filter-elem__heading clearfix" href="#">
+              <div class="btn btn-square icon icon--filter-map icon-red filter-elem__btn"></div><span>Показать на карте</span></a></div>
         </form>
       </div>
       <div class="main-header__filter-overlay"></div>
@@ -684,6 +809,18 @@
       </div>
     </footer>
     <div class="big-map-popup" id="map-popup"></div>
+    <div class="popup main-popup main-popup--blue" id="requestPopup">
+      <div class="popup-overlay"></div>
+      <div class="main-popup__window">
+        <div class="popup-close"></div>
+        <div class="main-heading main-popup__heading">
+          <h1>Спасибо за заявку</h1>
+        </div>
+        <div class="main-heading main-popup__heading">
+          <h3>В ближайшее время наш менеджер свяжется с Вами</h3>
+        </div>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nouislider.min.js"></script>
