@@ -5,7 +5,8 @@
 	var CLASSES = {
 		active: 'active',
 		filterMapContainer: 'filter-elem--map',
-		mapOpen: 'open'
+		mapOpen: 'open',
+		absoluteClass: 'absolute'
 	}
 	
 
@@ -84,6 +85,46 @@
 	});
 
 
+	// filters on scroll
+	$(window).on('load scroll', function(){
+		var mainFooter = $('.main-footer'),
+			leftFilters = $('.main-header__filter-left'),
+			rightFilters = $('.main-header__filter-right'),
+			leftFiltersOffset = 170,
+			rightFiltersForm = $('.filter-right-form'),
+			rightFiltersOffset = 100,
+			fixedOffset = 80;
+
+		if ($(window).scrollTop() + rightFilters.outerHeight() + rightFiltersOffset
+			> mainFooter.offset().top - rightFiltersOffset) {
+			rightFilters.addClass(CLASSES.absoluteClass);
+			rightFilters.css({
+				top: mainFooter.offset().top - rightFiltersOffset - rightFilters.outerHeight() + 'px'
+			})
+		} else {
+			rightFilters.removeClass(CLASSES.absoluteClass)
+			rightFilters.css({
+				top: ''
+			})
+			
+		}
+
+		if ($(window).scrollTop() + leftFilters.outerHeight() + leftFiltersOffset
+			> mainFooter.offset().top - rightFiltersOffset) {
+			leftFilters.addClass(CLASSES.absoluteClass);
+			leftFilters.css({
+				top: mainFooter.offset().top - rightFiltersOffset - leftFilters.outerHeight() + 'px'
+			})
+		} else {
+			leftFilters.removeClass(CLASSES.absoluteClass);
+			leftFilters.css({
+				top: ''
+			})
+		}
+		
+	})
+
+
 	// left filters
 	$('.filters-left .filter-elem__heading').click(function(){
 		var elem = $(this),
@@ -130,13 +171,14 @@
 	$(window).on('load resize', function(){
 		var containerWidth = $('.main-content-container').eq(0).innerWidth(),
 			rightFilters = $('.main-header__filter-right'),
+			rightFiltersForm = $('.filter-right-form'),
 			containerRightOffsetWidth = $(window).innerWidth() - (containerWidth + 160 + 50);
 
 		if ($(window).innerWidth() >= 1490) {
 			console.log(containerRightOffsetWidth)
 			if (containerRightOffsetWidth <= 400) {
 				rightFilters.css({
-					right: containerRightOffsetWidth - 400 + 'px'
+					width: 400 - containerRightOffsetWidth + 'px'
 				})
 				
 			} else {
@@ -145,6 +187,25 @@
 		} else {
 			rightFilters.removeAttr('style');
 		}
+		if ($(window).innerWidth()>= 1200){
+			if (rightFiltersForm.innerHeight() >= $(window).outerHeight() - 100) {
+
+				rightFilters.css({
+					height: $(window).outerHeight() - $('.main-header__desktop').outerHeight() + 'px'
+				});
+
+			} else {
+				rightFilters.css({
+					height: rightFiltersForm.innerHeight() + 'px'
+				})
+			}
+			
+		} else {
+			rightFilters.css({
+				height: $(window).innerHeight() - $('.main-header__mobile').outerHeight() + 'px'
+			})
+		}
+		$('.nano').nanoScroller();
 	});
 
 	// google map
@@ -201,6 +262,13 @@
 			center: new google.maps.LatLng(40.6743890, -73.9455),
 		};
 
+
+		var mapOptions3 = {
+			scrollwheel: false,
+			zoom: 12,
+			center: new google.maps.LatLng(40.6743890, -73.9455),
+		};
+
 		if (document.getElementById('map')) {
 			var map = new google.maps.Map(document.getElementById('map'),
 				mapOptions);
@@ -213,7 +281,7 @@
 		}
 		if (document.getElementById('elem-page-map')) {
 			var map3 = new google.maps.Map(document.getElementById('elem-page-map'),
-				mapOptions2);
+				mapOptions3);
 		}
 		}
 
@@ -227,6 +295,9 @@
 		$(this).addClass('open');
 	});
 
+	$('.main-header__mobile-menu-dropdown').mouseleave(function(){
+		$('.main-header__phone-dropdown').removeClass('open');
+	})
 
 
 
@@ -405,8 +476,18 @@ $('.main-form__submit').click(function(e){
 	e.preventDefault();
 	MainPopupsVar
 		.showPopup($('#requestPopup'));
-})
+});
 
-
+	$('.main-section').addClass('hidden-class').viewportChecker({
+		classToAdd: 'visible animated fadeIn',
+		classToRemove: 'hidden-class',
+		repeat: false,
+		offset: 100
+	});
 		
-})(jQuery)
+})(jQuery);
+
+
+
+
+
