@@ -100,7 +100,7 @@ a:active
 }
 .mobile-show
 {
-    display: none;
+    display: none !important;
 }
 .hidden-class
 {
@@ -2935,7 +2935,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     }
     .mobile-show
     {
-        display: block;
+        display: block !important;
     }
     .filter-elem:last-of-type .filter-elem__btn
     {
