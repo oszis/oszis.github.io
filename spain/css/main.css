@@ -238,6 +238,8 @@ a.btn-square.active
     margin-bottom: 20px;
     padding: 0 20px;
 
+    vertical-align: top;
+
     color: #252525;
     border: 1px solid #06c;
     border-radius: 0;
@@ -319,10 +321,13 @@ label.input-label.icon-torn.icon-corn-bottom span
 label.input-label.input-label--checkbox span
 {
     background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 label.input-label.input-label--checkbox input[type=checkbox]:checked + span
 {
     background-color: #06c;
+    background-image: url('../img/checkbox-arrow.svg');
 }
 label.input-label.input-label--radio span
 {
@@ -1437,11 +1442,12 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 
     transform-style: preserve-3d;
 }
-.list-elem--small .list-elem__front-side,
 .list-elem--small .list-elem__back-side
 {
     position: absolute;
     top: 0;
+    right: 0;
+    left: 0;
 
     overflow: hidden;
 
@@ -1449,14 +1455,57 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     height: 100%;
 
     background-color: #fff;
-
-    backface-visibility: hidden;
 }
 .list-elem--small .list-elem__back-side
 {
     padding-top: 10px;
 
-    transform: rotateX(180deg);
+    transition: opacity .3s;
+
+    opacity: 0;
+    background-color: #fff;
+}
+.list-elem--small .list-elem__back-side .list-elem__buttons,
+.list-elem--small .list-elem__back-side .list-elem__vendor-code,
+.list-elem--small .list-elem__back-side .list-elem__heading,
+.list-elem--small .list-elem__back-side .list-elem__data,
+.list-elem--small .list-elem__back-side .list-elem__place,
+.list-elem--small .list-elem__back-side .list-elem__price
+{
+    transition: opacity .5s, transform .3s;
+    transition-delay: 0;
+    transform-origin: center;
+
+    opacity: 0;
+}
+.list-elem--small .list-elem__back-side .list-elem__buttons
+{
+    transition-delay: .1s;
+    transform: scale(5);
+}
+.list-elem--small .list-elem__back-side .list-elem__vendor-code
+{
+    display: block;
+
+    width: 100%;
+
+    transform: scale(6);
+}
+.list-elem--small .list-elem__back-side .list-elem__heading
+{
+    transform: scale(7);
+}
+.list-elem--small .list-elem__back-side .list-elem__data
+{
+    transform: scale(8);
+}
+.list-elem--small .list-elem__back-side .list-elem__place
+{
+    transform: scale(9);
+}
+.list-elem--small .list-elem__back-side .list-elem__price
+{
+    transform: scale(10);
 }
 .list-elem--small .list-elem__front-side .icon--list-like
 {
@@ -1471,19 +1520,56 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 {
     opacity: 1;
 }
-.list-elem--small .list-elem__heading
-{
-    margin-bottom: 10px;
-}
 .list-elem--small .list-elem__buttons
 {
     padding: 0 10px;
 }
+.list-elem--small .list-elem__heading
+{
+    margin-bottom: 10px;
+}
 .list-elem--small:hover .list-elem__container
 {
-    transform: rotateX(180deg);
-
     border: 1px solid #06c;
+}
+.list-elem--small:hover .list-elem__back-side
+{
+    opacity: 1;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__buttons,
+.list-elem--small:hover .list-elem__back-side .list-elem__vendor-code,
+.list-elem--small:hover .list-elem__back-side .list-elem__heading,
+.list-elem--small:hover .list-elem__back-side .list-elem__data,
+.list-elem--small:hover .list-elem__back-side .list-elem__place,
+.list-elem--small:hover .list-elem__back-side .list-elem__price
+{
+    transform: scale(1);
+
+    opacity: 1;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__buttons
+{
+    transition-delay: .1s;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__vendor-code
+{
+    transition-delay: .2s;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__heading
+{
+    transition-delay: .3s;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__data
+{
+    transition-delay: .4s;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__place
+{
+    transition-delay: .5s;
+}
+.list-elem--small:hover .list-elem__back-side .list-elem__price
+{
+    transition-delay: .6s;
 }
 .list-elem--large
 {
@@ -1570,6 +1656,43 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 .list-elem__cube-space:after
 {
     background-position: -490px -242px;
+}
+.gm-style-iw
+{
+    right: -1px;
+    left: -1px !important;
+
+    overflow: visible !important;
+
+    width: auto !important;
+
+    text-align: center !important;
+}
+.gm-style-iw > div
+{
+    overflow: visible !important;
+
+    width: 250px !important;
+}
+.gm-style-iw > div > div
+{
+    overflow: visible !important;
+
+    width: 250px !important;
+}
+.gm-style-iw .google-maps-container
+{
+    font-size: 16px;
+
+    top: -8px;
+
+    margin-right: -25px;
+    margin-bottom: 0;
+    margin-left: -26px;
+}
+.gm-style-iw + div > img
+{
+    display: none !important;
 }
 .property-card-slider
 {
@@ -1995,7 +2118,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     right: 0;
     bottom: 0;
 
-    max-width: 490px;
+    width: 490px;
     padding: 65px 85px 0;
 
     background-color: #fff;
@@ -2090,6 +2213,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     position: relative;
     z-index: 3;
 
+    width: calc(100% - 490px);
     height: 100%;
 
     background-color: #c03;
@@ -2940,6 +3064,25 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     .filter-elem:last-of-type .filter-elem__btn
     {
         border-bottom: 1px solid #fff;
+    }
+    .main-footer__right-col
+    {
+        position: relative;
+
+        width: auto;
+        padding: 65px 20px;
+    }
+    .main-footer-icon-col
+    {
+        font-family: 'Proxima Nova Regular';
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+
+        height: 70px;
+        margin-bottom: 0;
+        padding: 0;
+
+        border-bottom: 1px solid #e6e6e6;
     }
 }
 @media screen and (max-width: 480px)

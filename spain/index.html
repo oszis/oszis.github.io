@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="page">
+    <!-- .main-header-->
     <header class="main-header">
       <div class="main-header__desktop">
         <div class="row-container">
@@ -144,7 +145,7 @@
               <div class="filter-sort clearfix">
                 <div class="filter-sort__heading pull-left">по дате добавления</div>
                 <div class="filter-sort__buttons pull-right">
-                  <label class="input-label input-label--checkbox icon-torn">
+                  <label class="input-label input-label--checkbox">
                     <input type="checkbox" name="date" value="1"><span></span>
                   </label>
                 </div>
@@ -357,6 +358,8 @@
       </div>
       <div class="main-header__filter-overlay"></div>
     </header>
+    <!-- End .main-header-->
+    <!-- .main-content-->
     <div class="main-content">
       <div class="container main-content-container">
         <div class="row list-elem-container clearfix">
@@ -811,16 +814,19 @@
         </div>
       </div>
     </div>
+    <!-- End .main-content-->
+    <!-- .main-footer-->
     <footer class="main-footer">
       <div class="main-footer__right-col">
-        <div class="main-footer__place main-footer-icon-col">Carrer de Ramon Turró, 55, Local 2, Vila Olimpica, Barcelona, España</div>
-        <div class="main-footer__phone main-footer-icon-col">+34 93 531 47 76</div>
+        <div class="main-footer__place main-footer-icon-col"><span>Carrer de Ramon Turró, 55, Local 2, Vila Olimpica, Barcelona, España</span></div>
+        <div class="main-footer__phone main-footer-icon-col"><span>+34 93 531 47 76</span></div>
+        <div class="main-footer-icon-col mobile-show"><span>reuniondeagenciassa</span></div>
+        <div class="main-footer-icon-col mobile-show"><span>+34 636 949 154</span></div>
+        <div class="main-footer-icon-col mobile-show"><span>raejvsl@gmail.com </span></div>
         <div class="main-footer__links"><a class="btn icon icon-footer icon-youtube" href="#"></a><a class="btn icon icon-footer icon-facebook" href="#"></a><a class="btn icon icon-footer icon-instagram" href="#"></a><a class="btn icon icon-footer icon-g-plus" href="#"></a></div>
         <div class="main-footer__copyrights text-center">2017 © Reunion de agencias europea S.L.<br>Все права защищены.</div>
       </div>
-      <div class="main-footer-map" id="map">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
-      </div>
+      <div class="main-footer-map" id="map"></div>
       <div class="main-footer-overlay text-center">
         <div class="main-footer-overlay__btn"></div>
         <div class="main-footer-overlay__content">
@@ -834,6 +840,8 @@
         </div>
       </div>
     </footer>
+    <!-- End .main-footer-->
+    <!-- popups-->
     <div class="big-map-popup" id="map-popup"></div>
     <div class="popup main-popup main-popup--blue" id="requestPopup">
       <div class="popup-overlay"></div>
@@ -847,12 +855,120 @@
         </div>
       </div>
     </div>
+    <!-- End popups-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nouislider.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.viewportchecker.js"></script>
     <script src="js/jquery.nanoscroller.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
+    <!-- карта-->
+    <script>
+      $('.filter-elem--map').click(function(){
+      	setTimeout(function(){
+      		initializeMap();
+      	}, 100)
+      })
+      // popup map options
+      function initializeMap(){
+      
+      	var mapOptions2 = {
+      		zoom: 12,
+      		center: {lat: 41.391018, lng: 2.191113},
+      	};
+      	// popup map
+      	if (document.getElementById('map-popup')) {
+      		var map2 = new google.maps.Map(document.getElementById('map-popup'),
+      			mapOptions2);
+      
+      		setMapMarkers(map2);
+      	}
+      
+      
+      }
+      var houses = [
+      	// Создаем массив домов, [Название дома, широта, долгота, ось  Z, src картинки, цена, артикул, ссылка, заголовок]
+      	['Calle Cecilio Gallego Alamis, 36', 41.391018, 2.191113, 1,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1319',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море '],
+      	['Calle Cecilio Gallego Alamis, 36', 41.394310, 2.195496, 2,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1313',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море '],
+      	['Calle Cecilio Gallego Alamis, 36', 41.392981, 2.200737, 3,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1312',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море '],
+      	['Calle Cecilio Gallego Alamis, 36', 41.401021, 2.203290, 4,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1314',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море '],
+      	['Calle Cecilio Gallego Alamis, 36', 41.391518, 2.191213, 5,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1315',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море '],
+      	['Calle Cecilio Gallego Alamis, 36', 41.405046, 2.206402, 6,
+      		'../img/fish/property-list-1.png', '131 000', 'ARD1316',
+      		'#',
+      		'Новые бунгало в уютном жилом комплексе с видом на море ']
+      ];
+      
+      function setMapMarkers(map){
+      	var image = {
+      		url: 'img/map-marker.png',
+      		size: new google.maps.Size(40, 46),
+      		origin: new google.maps.Point(0, 0),
+      		anchor: new google.maps.Point(0, 0)
+      	};
+      
+      
+      
+      
+      	var shape = {
+      		coords: [0,0,0,46,40,46,40,0,0,0],
+      		type: 'poly'
+      	};
+      	  for (var i = 0; i < houses.length; i++) {
+      	    var house = houses[i];
+      
+      
+      	    var marker = new google.maps.Marker({
+      			title: house[0],
+      			position: {lat: house[1], lng: house[2]},
+      			zIndex: house[3],
+      			map: map,
+      			icon: image,
+      			shape: shape,
+      	    });
+      		var contentString =
+      			'<div class="google-maps-container list-elem list-elem--small">'+
+      			'<div class="google-maps-container__img list-elem__img">'+
+      			'<img src="' + house[4] + '">' +
+      			'</div>' +
+      			'<div class="list-elem__price list-elem__price--torn">' + house[5] + ' &#8364;</div>'+
+      			'<div class="list-elem__vendor-code">'+ house[6] + '</div>' +
+      			'<a class="list-elem__heading" href="' + house[7] + '">' + house[8] +
+      			'</div>';
+      
+      		var infowindow = new google.maps.InfoWindow();
+      		var prev_infowindow = false;
+      
+      		 google.maps.event.addListener(marker, 'click', (function(marker, content, infowindow) {
+      			return function() {
+      				if( prev_infowindow ) {
+      					prev_infowindow.close();
+      				}
+      				prev_infowindow = infowindow;
+      				infowindow.setContent(content);
+      				infowindow.open(map, marker);
+      			};
+                })(marker, contentString, infowindow));
+      	  }
+      
+      }
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
