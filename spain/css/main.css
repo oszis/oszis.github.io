@@ -2160,6 +2160,14 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 }
 .main-footer-overlay__content
 {
+    position: absolute;
+    top: 65px;
+    right: 534px;
+    bottom: 65px;
+    left: 114px;
+
+    overflow: hidden;
+
     padding: 50px 40px 20px;
 
     border: 2px solid #06c;
@@ -3065,6 +3073,10 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     {
         border-bottom: 1px solid #fff;
     }
+    .main-footer
+    {
+        height: auto;
+    }
     .main-footer__right-col
     {
         position: relative;
@@ -3083,6 +3095,26 @@ label.input-label.input-label--radio input[type=radio]:checked + span
         padding: 0;
 
         border-bottom: 1px solid #e6e6e6;
+    }
+    .main-footer-icon-col span
+    {
+        position: absolute;
+        top: 50%;
+        left: 65px;
+
+        transform: translateY(-50%);
+    }
+    .main-footer-icon-col:before
+    {
+        top: 50%;
+
+        width: 60px;
+
+        transform: translateY(-50%);
+    }
+    .main-footer__links
+    {
+        text-align: center;
     }
 }
 @media screen and (max-width: 480px)

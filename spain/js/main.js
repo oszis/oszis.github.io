@@ -445,11 +445,11 @@ $(document).ready(function(){
 
 
 		// elem map options
-		// var mapOptions3 = {
-		// 	scrollwheel: false,
-		// 	zoom: 12,
-		// 	center: {lat: 41.391018, lng: 2.191113},
-		// };
+		var mapOptions3 = {
+			scrollwheel: false,
+			zoom: 12,
+			center: {lat: 41.391018, lng: 2.191113},
+		};
 
 		// footer map
 		if (document.getElementById('map')) {
@@ -463,11 +463,11 @@ $(document).ready(function(){
 			icon: '../img/footer-map-logo.png'
 		});
 		
-		// // elem-page map
-		// if (document.getElementById('elem-page-map')) {
-		// 	var map3 = new google.maps.Map(document.getElementById('elem-page-map'),
-		// 		mapOptions3);
-		// }
+		// elem-page map
+		if (document.getElementById('elem-page-map')) {
+			var map3 = new google.maps.Map(document.getElementById('elem-page-map'),
+				mapOptions3);
+		}
 	}
 
 
