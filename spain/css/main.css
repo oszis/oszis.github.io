@@ -1099,25 +1099,45 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 
     background-color: #fff;
 }
-.noUi-horizontal .noUi-handle
+.ui-slider-handle
 {
+    position: absolute;
     top: -11px;
+
+    display: block;
 
     width: 26px;
     height: 26px;
 
     border: none;
     border-radius: 50%;
+    outline: none;
     background-color: #06c;
     box-shadow: none;
 }
-.noUi-horizontal .noUi-handle:before,
-.noUi-horizontal .noUi-handle:after
+.ui-slider-handle span
+{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+
+    display: block;
+
+    min-width: 100%;
+
+    transform: translate(-50%, -10px);
+    text-align: center;
+}
+.ui-slider-handle:before,
+.ui-slider-handle:after
 {
     display: none;
 }
-.noUi-horizontal
+.ui-slider-horizontal
 {
+    position: relative;
+
+    width: calc(100% - 26px);
     height: 4px;
     margin-top: 33px;
     margin-bottom: 53px;
@@ -1126,18 +1146,15 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     background: #c3dbf2;
     box-shadow: none;
 }
-.noUi-connect
+.ui-slider-range
 {
+    position: absolute;
+
     height: 4px;
 
     border-radius: 0;
     background: #75ace3;
     box-shadow: none;
-}
-.noUi-base
-{
-    width: auto;
-    margin: 0 8px 0 16px;
 }
 .filter-sort
 {
@@ -2194,7 +2211,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     position: absolute;
     top: 65px;
     right: 534px;
-    bottom: 65px;
+    bottom: 50px;
     left: 114px;
 
     overflow: hidden;
@@ -2205,13 +2222,13 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 }
 .main-footer-overlay__content p
 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .main-footer-overlay__heading
 {
     font-family: 'Proxima Nova Bold';
 
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .main-footer-overlay__btn
 {

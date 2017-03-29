@@ -262,9 +262,9 @@
                     <div class="icon icon-sale"></div><span>Жилая площадь</span>
                   </div>
                   <div class="main-range-slider">
-                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="10000"></div>
+                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="10000" data-steps="10"></div>
                     <input class="hidden" type="text">
-                    <input class="hidden" type="text"><span>0</span> - <span>10000</span> м<sup>2</sup>
+                    <input class="hidden" type="text">
                   </div>
                 </div>
               </div>
@@ -277,9 +277,9 @@
                     <div class="icon icon-sale"></div><span>Количество комнат</span>
                   </div>
                   <div class="main-range-slider">
-                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="100"></div>
+                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="100" data-steps="1"></div>
                     <input class="hidden" type="text">
-                    <input class="hidden" type="text"><span>0</span> - <span>100</span> Комнат
+                    <input class="hidden" type="text">
                   </div>
                 </div>
               </div>
@@ -292,9 +292,9 @@
                     <div class="icon icon-sale"></div><span>Жилая площадь</span>
                   </div>
                   <div class="main-range-slider">
-                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="17500000"></div>
+                    <div class="main-range-slider__elem" data-min-value="0" data-max-value="17500000" data-steps="10000"></div>
                     <input class="hidden" type="text">
-                    <input class="hidden" type="text"><span>0</span> - <span>17500000</span> &#8364;
+                    <input class="hidden" type="text">
                   </div>
                 </div>
               </div><a class="filter-elem" href="#">
@@ -816,14 +816,12 @@
       <div class="main-footer-overlay text-center">
         <div class="main-footer-overlay__btn"></div>
         <div class="main-footer-overlay__content">
-          <div class="main-footer-overlay__container nano">
-            <div class="nano-content">
-              <div class="main-footer-overlay__heading">
-                <h4>REUNION DE AGENCIAS EUROPEA SL está ubicada en la localidad de BARCELONA, provincia de Barcelona.</h4>
-              </div>
-              <p>Fue constituida el 26/06/2006 con el objetivo SERVICIOS INMOBILIARIOS: ADQUISICION, TENENCIA, PROMOCION, CONSTRUCCION, REPARACION, CONSERVACION, CESION, ALQUILER EXPLOTACION COMPRAVENTA Y PERMUTA DE TERRENOS, FINCAS, SOLARES, URBANIZACIONES, ETC" y se dedica a la actividad CNAE de "Servicios relativos a la propiedad inmobiliaria y a la propiedad industrial".</p>
-              <p>CNAE 6810 - Compraventa de bienes inmobiliarios por cuenta propia, SIC 6531 - Agencias inmobiliarias, administradores de fincas, CIF B64256399.</p>
+          <div class="main-footer-overlay__container">
+            <div class="main-footer-overlay__heading">
+              <h4>REUNION DE AGENCIAS EUROPEA SL está ubicada en la localidad de BARCELONA, provincia de Barcelona.</h4>
             </div>
+            <p>Fue constituida el 26/06/2006 con el objetivo SERVICIOS INMOBILIARIOS: ADQUISICION, TENENCIA, PROMOCION, CONSTRUCCION, REPARACION, CONSERVACION, CESION, ALQUILER EXPLOTACION COMPRAVENTA Y PERMUTA DE TERRENOS, FINCAS, SOLARES, URBANIZACIONES, ETC" y se dedica a la actividad CNAE de "Servicios relativos a la propiedad inmobiliaria y a la propiedad industrial".</p>
+            <p>CNAE 6810 - Compraventa de bienes inmobiliarios por cuenta propia, SIC 6531 - Agencias inmobiliarias, administradores de fincas, CIF B64256399.</p>
           </div>
         </div>
       </div>
@@ -846,7 +844,7 @@
     <!-- End popups-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.viewportchecker.js"></script>
     <script src="js/jquery.nanoscroller.min.js"></script>
@@ -914,7 +912,7 @@
       		coords: [0,0,0,46,40,46,40,0,0,0],
       		type: 'poly'
       	};
-      	
+      
       	  for (var i = 0; i < houses.length; i++) {
       	    var house = houses[i];
       

@@ -223,7 +223,7 @@
 
 
 	// range sliders
-	var rangeSliderIndex = 0;
+	/*var rangeSliderIndex = 0;
 	$('.main-range-slider__elem').each(function(){
 		var elem = $(this),
 			elemIndex = rangeSliderIndex,
@@ -252,7 +252,32 @@
 					.find('span').eq(handle).html(Math.round(values[handle]));
 		});
 		rangeSliderIndex++;
-	});
+	});*/
+
+	$('.main-range-slider__elem').each(function(){
+		var elem = $(this),
+			minValue = +elem.attr('data-min-value'),
+			maxValue = +elem.attr('data-max-value'),
+			steps = +elem.attr('data-steps');
+		
+		elem.slider({
+			range: true,
+			min: minValue,
+			max: maxValue,
+			step: steps,
+			values: [ minValue, maxValue],
+			create: function(){
+				elem.find('.ui-slider-handle').eq(0).append('<span>' + minValue + '</span>');
+				elem.find('.ui-slider-handle').eq(1).append('<span>' + maxValue + '</span>');				
+			},
+			slide: function( event, ui ) {
+				elem.parent().find('input').eq(0).val(ui.values[0] );
+				elem.parent().find('input').eq(1).val(ui.values[1] );
+				elem.find('.ui-slider-handle').eq(0).find('span').html(ui.values[0]);
+				elem.find('.ui-slider-handle').eq(1).find('span').html(ui.values[1]);
+			}
+		})
+	})
 
 
 	// sliders
