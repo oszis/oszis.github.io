@@ -18,7 +18,7 @@
       <div class="main-header__desktop">
         <div class="row-container">
           <div class="row clearfix">
-            <div class="col-lg-5 pull-left clearfix"><a class="main-logo" href="/"><img src="img/main-logo.png"></a>
+            <div class="col-lg-5 pull-left clearfix"><a class="main-logo" href="http://oszis.github.io/spain/"><img src="img/main-logo.png"></a>
               <div class="pull-right">
                 <div class="dropdown dropdown--inline main-header__phone-dropdown">
                   <div class="dropdown-toggle main-header__mobile-btn" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">+34 93 531 47 76
@@ -263,10 +263,10 @@
               </div>
             </div><a class="filter-elem" href="#">
               <div class="filter-elem__heading clearfix">
-                <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Продать недвижимость</span>
+                <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span>
               </div></a><a class="filter-elem" href="#">
               <div class="filter-elem__heading clearfix">
-                <div class="btn btn-square icon icon--filter-big-search filter-elem__btn"></div><span>Расширенный поиск</span>
+                <div class="btn btn-square icon icon--filter-sale filter-elem__btn"></div><span>Продать недвижимость</span>
               </div></a>
             <div class="filter-elem mobile-show"><a class="filter-elem__heading clearfix" href="#">
                 <div class="btn btn-square icon icon--filter-filter icon-red filter-elem__btn"></div><span>Фильтр</span>
@@ -435,7 +435,7 @@
               </div>
             </div>
           </section>
-          <section class="main-section">
+          <section class="main-section main-section--map">
             <div class="row">
               <div class="col-md-12">
                 <div class="property-card__heading property-card__heading--no-margin property-card__heading--padding property-card__heading--icon property-card__heading--icon-map">
@@ -445,7 +445,7 @@
               </div>
             </div>
           </section>
-          <section class="main-section">
+          <section class="main-section main-section--video">
             <div class="row">
               <div class="col-md-12 text-center">
                 <div class="property-card__heading">
@@ -478,12 +478,12 @@
           </section>
           <section class="main-section">
             <div class="row">
-              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-print"></span><span class="property-card__block-link-content">Распечатать страницу</span></a></div>
+              <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#" onclick="window.print();"><span class="btn btn-square icon icon--filter-print"></span><span class="property-card__block-link-content">Распечатать страницу</span></a></div>
               <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-pdf"></span><span class="property-card__block-link-content">Сохранить страницу</span></a></div>
               <div class="col-lg-4 col-md-6 col-sm-12"><a class="property-card__block-link" href="#"><span class="btn btn-square icon icon--filter-share"></span><span class="property-card__block-link-content">Поделиться ссылкой</span></a></div>
             </div>
           </section>
-          <section class="main-section">
+          <section class="main-section main-section--other-property">
             <div class="row">
               <div class="col-md-12">
                 <div class="property-card__heading">
@@ -493,7 +493,7 @@
               <div class="col-md-12">
                 <div class="other-property-slider">
                   <article class="other-property-elem list-elem list-elem--small">
-                    <div class="list-elem__container">
+                    <div class="list-elem__container"><a class="list-elem__btn icon icon--list-like active" href="#"></a>
                       <div class="list-elem__front-side">
                         <div class="list-elem__img"><img src="img/fish/property-list-1.png"></div>
                         <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
@@ -506,9 +506,9 @@
                         <div class="btn btn-sold">ПРОДАНО</div>
                       </div>
                       <div class="list-elem__back-side">
-                        <div class="list-elem__buttons">
-                          <div class="list-elem__like"></div>
-                          <div class="list-elem__video"></div>
+                        <div class="list-elem__buttons clearfix">
+                          <div class="pull-left active"><a class="list-elem__btn icon icon--list-video" href="#"></a></div>
+                          <div class="pull-right"><a class="list-elem__btn icon icon--list-eye" href="#"></a></div>
                         </div>
                         <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
                           <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
@@ -524,7 +524,7 @@
                     </div>
                   </article>
                   <article class="other-property-elem list-elem list-elem--small">
-                    <div class="list-elem__container">
+                    <div class="list-elem__container"><a class="list-elem__btn icon icon--list-like" href="#"></a>
                       <div class="list-elem__front-side">
                         <div class="list-elem__img"><img src="img/fish/property-list-1.png"></div>
                         <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
@@ -537,9 +537,9 @@
                         <div class="btn btn-sold">ПРОДАНО</div>
                       </div>
                       <div class="list-elem__back-side">
-                        <div class="list-elem__buttons">
-                          <div class="list-elem__like"></div>
-                          <div class="list-elem__video"></div>
+                        <div class="list-elem__buttons clearfix">
+                          <div class="pull-left active"><a class="list-elem__btn icon icon--list-video" href="#"></a></div>
+                          <div class="pull-right"><a class="list-elem__btn icon icon--list-eye" href="#"></a></div>
                         </div>
                         <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
                           <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
@@ -555,7 +555,7 @@
                     </div>
                   </article>
                   <article class="other-property-elem list-elem list-elem--small">
-                    <div class="list-elem__container">
+                    <div class="list-elem__container"><a class="list-elem__btn icon icon--list-like" href="#"></a>
                       <div class="list-elem__front-side">
                         <div class="list-elem__img"><img src="img/fish/property-list-1.png"></div>
                         <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
@@ -568,9 +568,9 @@
                         <div class="btn btn-sold">ПРОДАНО</div>
                       </div>
                       <div class="list-elem__back-side">
-                        <div class="list-elem__buttons">
-                          <div class="list-elem__like"></div>
-                          <div class="list-elem__video"></div>
+                        <div class="list-elem__buttons clearfix">
+                          <div class="pull-left active"><a class="list-elem__btn icon icon--list-video" href="#"></a></div>
+                          <div class="pull-right"><a class="list-elem__btn icon icon--list-eye" href="#"></a></div>
                         </div>
                         <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
                           <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
@@ -586,7 +586,7 @@
                     </div>
                   </article>
                   <article class="other-property-elem list-elem list-elem--small">
-                    <div class="list-elem__container">
+                    <div class="list-elem__container"><a class="list-elem__btn icon icon--list-like active" href="#"></a>
                       <div class="list-elem__front-side">
                         <div class="list-elem__img"><img src="img/fish/property-list-1.png"></div>
                         <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
@@ -599,9 +599,9 @@
                         <div class="btn btn-sold">ПРОДАНО</div>
                       </div>
                       <div class="list-elem__back-side">
-                        <div class="list-elem__buttons">
-                          <div class="list-elem__like"></div>
-                          <div class="list-elem__video"></div>
+                        <div class="list-elem__buttons clearfix">
+                          <div class="pull-left active"><a class="list-elem__btn icon icon--list-video" href="#"></a></div>
+                          <div class="pull-right"><a class="list-elem__btn icon icon--list-eye" href="#"></a></div>
                         </div>
                         <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
                           <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
@@ -617,7 +617,7 @@
                     </div>
                   </article>
                   <article class="other-property-elem list-elem list-elem--small">
-                    <div class="list-elem__container">
+                    <div class="list-elem__container"><a class="list-elem__btn icon icon--list-like" href="#"></a>
                       <div class="list-elem__front-side">
                         <div class="list-elem__img"><img src="img/fish/property-list-1.png"></div>
                         <div class="list-elem__price list-elem__price--torn">98 400 &#8364;</div>
@@ -630,9 +630,9 @@
                         <div class="btn btn-sold">ПРОДАНО</div>
                       </div>
                       <div class="list-elem__back-side">
-                        <div class="list-elem__buttons">
-                          <div class="list-elem__like"></div>
-                          <div class="list-elem__video"></div>
+                        <div class="list-elem__buttons clearfix">
+                          <div class="pull-left active"><a class="list-elem__btn icon icon--list-video" href="#"></a></div>
+                          <div class="pull-right"><a class="list-elem__btn icon icon--list-eye" href="#"></a></div>
                         </div>
                         <div class="list-elem__vendor-code">APP2816</div><a class="list-elem__heading" href="#">
                           <h5>Новые бунгало в уютном жилом комплексе с видом на море</h5></a>
@@ -651,7 +651,7 @@
               </div>
             </div>
           </section>
-          <section class="main-section">
+          <section class="main-section main-section--other-articles">
             <div class="row">
               <div class="col-md-12">
                 <div class="property-card__heading text-center">
@@ -713,13 +713,59 @@
         </div>
       </div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nouislider.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.viewportchecker.js"></script>
     <script src="js/jquery.nanoscroller.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
+    <!-- карта-->
+    <script>
+      // elem map
+      function initializeMap(){
+      	
+      	// elem map options
+      	var mapOptions = {
+      		scrollwheel: false,
+      		zoom: 12,
+      		// сюда вставляем координаты объекта
+      		center: {lat: 41.391018, lng: 2.191113},
+      	};
+      
+      	var propertyName = $('.property-card__heading h2').text();
+      
+      	var image = {
+      		url: 'img/map-marker.png',
+      		size: new google.maps.Size(40, 46),
+      		origin: new google.maps.Point(0, 0),
+      		anchor: new google.maps.Point(0, 0)
+      	};
+      
+      	var shape = {
+      		coords: [0,0,0,46,40,46,40,0,0,0],
+      		type: 'poly'
+      	};
+      
+      	
+      	// elem-page map
+      	if (document.getElementById('elem-page-map')) {
+      		var map = new google.maps.Map(document.getElementById('elem-page-map'),
+      			mapOptions);
+      	}
+      	var marker = new google.maps.Marker({
+      		title: propertyName,
+      		// сюда вставляем координаты объекта
+      		position: {lat: 41.391018, lng: 2.191113},
+      		map: map,
+      		icon: image,
+      		shape: shape,
+      	});
+      }
+      
+      
+      google.maps.event.addDomListener(window, 'load', initializeMap);
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
