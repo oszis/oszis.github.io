@@ -409,10 +409,26 @@
 			.showPopup($('#requestPopup'));
 	});
 
-	$('.property-card-slider__btn-big').click(function(){
+	$('.property-card-slider__header, .property-card-slider__elem.slick-current').click(function(){
 		MainPopupsVar
 			.showPopup($('#fotorama-popup'));
-	})
+	});
+
+	$('.property-card-slider__content').on('afterChange', function(event, slick, currentSlide){
+		setSliderPopup();
+	});
+	$('.property-card-slider__content').on('init reInit', function(event, slick){
+		setSliderPopup();
+	});
+
+	function setSliderPopup(){
+		$('.property-card-slider__elem, .property-card-slider__elem.slick-current').unbind('click');
+		$('.property-card-slider__elem.slick-current').click(function(){
+			MainPopupsVar
+				.showPopup($('#fotorama-popup'));
+			
+		})
+	}
 
 	
 
