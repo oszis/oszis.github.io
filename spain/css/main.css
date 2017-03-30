@@ -1117,15 +1117,17 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 }
 .ui-slider-handle span
 {
+    font-size: 1.8rem;
+
     position: absolute;
-    top: -100%;
+    top: 100%;
     left: 50%;
 
     display: block;
 
     min-width: 100%;
 
-    transform: translate(-50%, -10px);
+    transform: translate(-50%, 10px);
     text-align: center;
 }
 .ui-slider-handle:before,
@@ -2190,6 +2192,23 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     font-size: 1.4rem;
     line-height: 2rem;
 }
+.main-footer.active .main-footer-overlay__btn
+{
+    top: 0;
+    bottom: 0;
+    left: -43px;
+
+    width: 44px;
+    height: auto;
+    margin-top: 0;
+
+    transform: rotate(180deg);
+
+    color: #fff;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: none;
+}
 .main-footer-overlay
 {
     position: absolute;
@@ -2199,26 +2218,18 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     left: calc(100% - 490px);
 
     width: 100%;
-    padding: 65px 534px 0 114px;
+    padding: 65px 574px 0 114px;
 
     transition: left 1.2s;
 
-    background-color: #fff;
+    background-color: #f4f8fb;
     box-shadow: -1px 0 7px 0 rgba(0,0,0,.2);
 }
 .main-footer-overlay__content
 {
-    position: absolute;
-    top: 65px;
-    right: 534px;
-    bottom: 50px;
-    left: 114px;
-
     overflow: hidden;
 
-    padding: 50px 40px 20px;
-
-    border: 2px solid #06c;
+    padding-top: 10px;
 }
 .main-footer-overlay__content p
 {
@@ -2226,8 +2237,6 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 }
 .main-footer-overlay__heading
 {
-    font-family: 'Proxima Nova Bold';
-
     margin-bottom: 15px;
 }
 .main-footer-overlay__btn
@@ -2251,18 +2260,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 }
 .main-footer-overlay.active
 {
-    left: 44px;
-}
-.main-footer-overlay.active .main-footer-overlay__btn
-{
-    left: -44px;
-
-    width: 44px;
-
-    color: #fff;
-    border-radius: 0;
-    background: url('../img/icon-left-arrow-double-hover.png') no-repeat center center #f4f8fb;
-    background-color: #06c;
+    left: 0;
 }
 .main-footer-map
 {
@@ -2332,7 +2330,9 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 .main-popup--blue .main-popup__window
 {
     color: #fff;
+    border: 1px solid #fff;
     background-color: #06c;
+    box-shadow: 0 0 0 10px #06c;
 }
 .main-popup__window
 {
@@ -2346,9 +2346,6 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     padding: 115px 190px;
 
     transform: translate(-50%, -50%);
-
-    border: 1px solid #fff;
-    box-shadow: 0 0 0 10px #06c;
 }
 .main-popup__heading
 {
@@ -2364,6 +2361,26 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 {
     display: block;
 }
+.main-popup--big .main-popup__window
+{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    max-width: none;
+    padding: 0;
+
+    transform: none;
+}
+.main-popup--white .main-popup__window
+{
+    background-color: #fff;
+}
+.main-popup--white .popup-close
+{
+    background-color: #06c;
+}
 .popup-overlay
 {
     position: absolute;
@@ -2378,6 +2395,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
 .popup-close
 {
     position: absolute;
+    z-index: 10;
     top: 15px;
     right: 15px;
 
@@ -2387,6 +2405,10 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     cursor: pointer;
 
     background: url('../img/icon-cross.png') no-repeat center center;
+}
+.fotorama__thumb-border
+{
+    border-color: #06c;
 }
 .icon
 {

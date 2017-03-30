@@ -166,6 +166,7 @@
 	// footer overlay show-hide
 	$('.main-footer-overlay__btn').click(function(){
 		$('.main-footer-overlay').toggleClass(CLASSES.active);
+		$('.main-footer-overlay').toggleClass(CLASSES.active);
 	});
 
 
@@ -408,12 +409,23 @@
 			.showPopup($('#requestPopup'));
 	});
 
+	$('.property-card-slider__btn-big').click(function(){
+		MainPopupsVar
+			.showPopup($('#fotorama-popup'));
+	})
+
+	
+
+
 	$('.main-section').addClass('hidden-class').viewportChecker({
 		classToAdd: 'visible animated fadeIn',
 		classToRemove: 'hidden-class',
 		repeat: false,
 		offset: 100
 	});
+
+
+
 
 	// input radio checked
 	$('.input-label--radio').click(function(e){
@@ -440,7 +452,15 @@
 			$('.main-header__like span').text(+$('.main-header__like span').text() + i)
 		}
 
-	})
+	});
+
+
+
+	$('#fotorama').fotorama({
+		width: '100%',
+		height: '100%',
+		nav: 'thumbs'
+	});
 		
 })(jQuery);
 

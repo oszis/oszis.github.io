@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/nouislider.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/nanoscroller.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/fotorama.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="page">
@@ -685,10 +685,10 @@
         <div class="main-footer-icon-col mobile-show menu-dropdown__phone menu-dropdown__email"><span>raejvsl@gmail.com </span></div>
         <div class="main-footer__links"><a class="btn icon icon-footer icon-youtube" href="#"></a><a class="btn icon icon-footer icon-facebook" href="#"></a><a class="btn icon icon-footer icon-instagram" href="#"></a><a class="btn icon icon-footer icon-g-plus" href="#"></a></div>
         <div class="main-footer__copyrights text-center">2017 © Reunion de agencias europea S.L.<br>Все права защищены.</div>
+        <div class="main-footer-overlay__btn"></div>
       </div>
       <div class="main-footer-map" id="map"></div>
       <div class="main-footer-overlay text-center">
-        <div class="main-footer-overlay__btn"></div>
         <div class="main-footer-overlay__content">
           <div class="main-footer-overlay__container">
             <div class="main-footer-overlay__heading">
@@ -713,12 +713,20 @@
         </div>
       </div>
     </div>
+    <div class="popup main-popup main-popup--big main-popup--white" id="fotorama-popup">
+      <div class="popup-overlay"></div>
+      <div class="main-popup__window">
+        <div class="popup-close"></div>
+        <div id="fotorama"><img src="img/fish/property-list-1.png"><img src="img/fish/property-list-2.png"></div>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.viewportchecker.js"></script>
     <script src="js/jquery.nanoscroller.min.js"></script>
+    <script src="js/fotorama.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuehUN6n7NxaT8ohIN1Hgj1NoXHX5AhSk&amp;signed_in=true"></script>
     <!-- карта-->
     <script>
