@@ -165,7 +165,7 @@
 
 	// footer overlay show-hide
 	$('.main-footer-overlay__btn').click(function(){
-		$('.main-footer-overlay').toggleClass(CLASSES.active);
+		$('.main-footer').toggleClass(CLASSES.active);
 		$('.main-footer-overlay').toggleClass(CLASSES.active);
 	});
 
@@ -471,12 +471,14 @@
 	});
 
 
-
-	$('#fotorama').fotorama({
-		width: '100%',
-		height: '100%',
-		nav: 'thumbs'
-	});
+	if ($('#fotorama').length != 0) {
+		$('#fotorama').fotorama({
+			width: '100%',
+			height: '100%',
+			nav: 'thumbs'
+		});
+		
+	}
 		
 })(jQuery);
 

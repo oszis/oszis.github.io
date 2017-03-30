@@ -2298,7 +2298,7 @@ label.input-label.input-label--radio input[type=radio]:checked + span
     width: calc(100% - 490px);
     height: 100%;
 
-    background-color: #c03;
+    background-color: #fff;
 }
 .main-footer-icon-col
 {
