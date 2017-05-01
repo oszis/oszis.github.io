@@ -21,59 +21,6 @@ a:active
 {
     text-decoration: none;
 }
-.main-section
-{
-    position: absolute;
-    z-index: 1;
-    top: -100%;
-    right: 0;
-    left: 0;
-
-    box-sizing: border-box;
-    min-height: 100vh;
-    padding: 20px 0;
-
-    transition: top 1s;
-    transform: scale(.85);
-
-    color: #000;
-    background-color: #fff;
-}
-.main-section--black
-{
-    color: #fff;
-    background-color: #ff3a3a;
-}
-.main-section--black a
-{
-    color: #fff;
-}
-.main-section--black .btn-show-menu span
-{
-    background-color: #ff3a3a;
-}
-.main-section.active
-{
-    z-index: 3;
-    top: 0;
-
-    transition: top 1s, transform .5s;
-    transform: scale(1);
-
-    box-shadow: 0 0 10px -3px #000;
-}
-.main-section.last
-{
-    z-index: 2;
-    top: -100%;
-
-    transition: top 2s, transform 1s;
-    transform: scale(.85);
-}
-.main-section.next
-{
-    transform: scale(.85);
-}
 .btn-show-menu
 {
     position: absolute;
@@ -142,19 +89,15 @@ a:active
 .main-header
 {
     position: fixed;
-    z-index: 100;
-    top: -200px;
+    z-index: 20;
+    top: 0;
     right: 0;
     left: 0;
 
     transition: top 1s;
 
     color: #fff;
-    background-color: #ff3a3a;
-}
-.main-header.active
-{
-    top: 0;
+    background-color: #ff6368;
 }
 .main-header ul
 {
@@ -180,8 +123,65 @@ a:active
 }
 .main-header ul li a:hover
 {
-    color: #ff3a3a;
+    color: #ff6368;
     background-color: #fff;
+}
+.main-header__desktop
+{
+    box-shadow: 0 -10px 20px 10px rgba(0,0,0,.8);
+}
+.main-section
+{
+    position: absolute;
+    z-index: 1;
+    top: -100%;
+    right: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 20px 0;
+
+    transition: top 1s;
+    transform: scale(.85);
+
+    color: #000;
+    background-color: #fff;
+}
+.main-section--black
+{
+    color: #fff;
+    background-color: #ff6368;
+}
+.main-section--black a
+{
+    color: #fff;
+}
+.main-section--black .btn-show-menu span
+{
+    background-color: #ff6368;
+}
+.main-section.active
+{
+    z-index: 3;
+    top: 0;
+
+    transition: top 1s, transform .5s;
+    transform: scale(1);
+
+    box-shadow: 0 0 10px -3px #000;
+}
+.main-section.last
+{
+    z-index: 2;
+    top: -100%;
+
+    transition: top 2s, transform 1s;
+    transform: scale(.85);
+}
+.main-section.next
+{
+    transform: scale(.85);
 }
 .projects
 {

@@ -19,35 +19,24 @@
 			slides,
 			activeSlide;
 
-		var scrollEnable = false;
+		this.scrollTimeout = true;
 
-		_this.scrollDetect = function(e){
-
-			if (!scrollEnable) {
-				scrollEnable = true;
-
-				e = e || window.event;
-				var delta = e.deltaY || e.detail || e.wheelDelta;
-
-				scrollValue = delta;
-
-				if (scrollValue > 0) {
-					console.log('Событие колесика сработало!');
-					return _this.slideNext(activeSlide);
-				} else if (scrollValue < 0) {
-					return _this.slidePrev(activeSlide);
-				}
-				
-				setTimeout(function(){
-					scrollEnable = false;
-				}, 1000);
-			}
-			else return false;
-
+		this.scrollDetect = function(e){
 			
+			e = e || window.event;
+			var delta = e.deltaY || e.detail || e.wheelDelta;
+
+			scrollValue = delta;
+
+			if (scrollValue > 0) {
+				console.log('Событие колесика сработало!');
+				return _this.slideNext(activeSlide);
+			} else if (scrollValue < 0) {
+				return _this.slidePrev(activeSlide);
+			}
 		}
 
-		_this.slidePrev = function(){
+		this.slidePrev = function(){
 			
 			if (activeSlide > 0) {
 				
@@ -60,7 +49,7 @@
 			} else return false;
 		}
 
-		_this.slideNext = function(){
+		this.slideNext = function(){
 
 			
 			console.log('Прокрутка!');
@@ -79,17 +68,17 @@
 
 		}
 
-		_this.slideShow = function(slide){
+		this.slideShow = function(slide){
 			slide.removeClass(lastClass);
 			slide.addClass(activeClass);
 		}
 
-		_this.slideHide = function(slide){
+		this.slideHide = function(slide){
 			slide.removeClass(activeClass);
 			slide.addClass(lastClass);
 		}
 
-		_this.initSlider = function(elem){
+		this.initSlider = function(elem){
 
 			slides = elem;
 
@@ -99,7 +88,7 @@
 
 		}
 
-		_this.init = function(obj){
+		this.init = function(obj){
 
 			_this.initSlider(obj.blocks);
 
@@ -116,8 +105,16 @@
 
 	document.querySelectorAll('.page')[0]
 		.addEventListener('wheel', function(){
+			if (slideScrollVar.scrollTimeout) {
+				slideScrollVar.scrollDetect();
+				slideScrollVar.scrollTimeout = false;
+				setTimeout(function(){
+					slideScrollVar.scrollTimeout = true;
+				}, 1000);
+			} else {
+				return false;
+			}
 
-			slideScrollVar.scrollDetect();
 		});
 
 
