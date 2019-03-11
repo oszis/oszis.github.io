@@ -204,7 +204,7 @@ $('.js-main-menu').each(function (index, element) {
     scrollTopOffset = $(window).scrollTop();
     menuTimeout = setTimeout(function () {
       $(document.body).addClass('modal-open');
-    }, 1000);
+    }, 1100);
   });
   $component.on('menu:hide', function (e) {
     if (menuTimeout) {
@@ -215,7 +215,7 @@ $('.js-main-menu').each(function (index, element) {
     $(window).scrollTop(scrollTopOffset);
     menuTimeout = setTimeout(function () {
       $(e.target).removeClass('visible');
-    }, 1000);
+    }, 300);
   });
 });
 
