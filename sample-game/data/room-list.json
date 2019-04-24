@@ -7,7 +7,60 @@
                 "background": "#FF8670"
             },
             "characters": [
-                "char1"
+                {
+                    "id": "char1",
+                    "name": "character 1",
+                    "style": {
+                        "opacity": 1,
+                        "marginLeft": "-300px",
+                        "marginTop": "-300px",
+                        "transform": "scale(0.5)"
+                    },
+                    "currentRoom": 0,
+                    "routes": [
+                        {
+                            "name": "main",
+                            "step": 0
+                        }
+                    ],
+                    "currentDialog": {},
+                    "dialog": {
+                        "replics": [
+                            {
+                                "author": "character 1",
+                                "text": "hello, bruz",
+                                "key": 1
+                            },
+                            {
+                                "author": "bruz",
+                                "text": "hello, character",
+                                "key": 2
+                            }
+                        ],
+                        "answers": [
+                            {
+                                "text": "button text",
+                                "exit": false,
+                                "route": {
+                                    "name": "main",
+                                    "step": 1
+                                },
+                                "replics": [
+                                    {
+                                        "author": "bruz",
+                                        "text": "how is it going?"
+                                    },
+                                    {
+                                        "author": "character 1",
+                                        "text": "it ok"
+                                    }
+                                ],
+                                "dialog": {
+                                }
+                            }
+                        ]
+                    }
+                }
             ],
             "links": [
                 {
@@ -25,7 +78,60 @@
                 "background": "#FF8670"
             },
             "characters": [
-                "char1"
+                {
+                    "id": "char1",
+                    "name": "character 1",
+                    "style": {
+                        "opacity": 1,
+                        "marginLeft": "300px",
+                        "marginTop": "-300px",
+                        "transform": "scale(0.75) rotateY(-180deg)"
+                    },
+                    "currentRoom": 0,
+                    "routes": [
+                        {
+                            "name": "main",
+                            "step": 0
+                        }
+                    ],
+                    "currentDialog": {},
+                    "dialog": {
+                        "replics": [
+                            {
+                                "author": "character 1",
+                                "text": "hello, bruz",
+                                "key": 1
+                            },
+                            {
+                                "author": "bruz",
+                                "text": "hello, character",
+                                "key": 2
+                            }
+                        ],
+                        "answers": [
+                            {
+                                "text": "button text",
+                                "exit": false,
+                                "route": {
+                                    "name": "main",
+                                    "step": 1
+                                },
+                                "replics": [
+                                    {
+                                        "author": "bruz",
+                                        "text": "how is it going?"
+                                    },
+                                    {
+                                        "author": "character 1",
+                                        "text": "it ok"
+                                    }
+                                ],
+                                "dialog": {
+                                }
+                            }
+                        ]
+                    }
+                }
             ],
             "links": [
                 {
