@@ -1,0 +1,19 @@
+{
+    "main": {
+        "name": "main",
+        "steps": [
+            {
+                "step": 0,
+                "done": false
+            },
+            {
+                "step": 1,
+                "done": false
+            },
+            {
+                "step": 2,
+                "done": false
+            }
+        ]
+    }
+}

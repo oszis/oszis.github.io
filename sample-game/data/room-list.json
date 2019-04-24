@@ -1,0 +1,40 @@
+{
+    "roomsList": [
+        {
+            "name": "room-1",
+            "index": 1,
+            "style": {
+                "background": "#FF8670"
+            },
+            "characters": [
+                "char1"
+            ],
+            "links": [
+                {
+                    "style": {},
+                    "linkTo": "2",
+                    "text": "this is a link to room 2",
+                    "key": 1
+                }
+            ]
+        },
+        {
+            "name": "room-2",
+            "index": 2,
+            "style": {
+                "background": "#FF8670"
+            },
+            "characters": [
+                "char1"
+            ],
+            "links": [
+                {
+                    "style": {},
+                    "linkTo": "1",
+                    "text": "this is a link to room 1",
+                    "key": 1
+                }
+            ]
+        }
+    ]
+}
