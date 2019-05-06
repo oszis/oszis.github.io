@@ -9696,6 +9696,9 @@ body {
       opacity: 0; }
   .collapse-head__icon {
     width: 65px; }
+    .collapse-head__icon .icon_folder {
+      margin-top: -9px;
+      margin-left: -3px; }
     .collapse-head__icon svg {
       fill: #f50057; }
   .collapse-head__content {
@@ -9733,16 +9736,16 @@ body {
       right: 26px;
       top: 50%;
       fill: #f50057;
-      -webkit-transform-origin: center center;
-         -moz-transform-origin: center center;
-          -ms-transform-origin: center center;
-           -o-transform-origin: center center;
-              transform-origin: center center;
       -webkit-transform: translateY(-50%);
          -moz-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
            -o-transform: translateY(-50%);
               transform: translateY(-50%);
+      -webkit-transform-origin: center center;
+         -moz-transform-origin: center center;
+          -ms-transform-origin: center center;
+           -o-transform-origin: center center;
+              transform-origin: center center;
       -webkit-transition: -webkit-transform 0.3s;
       transition: -webkit-transform 0.3s;
       -o-transition: -o-transform 0.3s;
@@ -9751,10 +9754,10 @@ body {
       transition: transform 0.3s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s; }
   .collapse-head__count {
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 160px;
+    -webkit-flex: 0 0 155px;
        -moz-box-flex: 0;
-        -ms-flex: 0 0 160px;
-            flex: 0 0 160px;
+        -ms-flex: 0 0 155px;
+            flex: 0 0 155px;
     font-size: 16px;
     line-height: 25px;
     color: #777;
@@ -9806,7 +9809,7 @@ body {
 .presentation-lead {
   position: relative;
   z-index: 1;
-  padding-top: 66px;
+  padding-top: 59px;
   padding-left: 155px; }
   .presentation-lead_has-bg {
     overflow: hidden;
@@ -9836,11 +9839,12 @@ body {
       -o-object-fit: cover;
          object-fit: cover; }
   .presentation-lead__title {
-    margin-bottom: 50px;
+    margin-bottom: 73px;
     font-weight: 700;
     font-size: 64px;
     line-height: 92px; }
   .presentation-lead__content {
+    margin-top: 24px;
     font-weight: 300;
     font-style: italic;
     font-size: 24px;
@@ -9853,9 +9857,10 @@ body {
       fill: #fff; }
 
 .presentation-title {
-  margin-bottom: 53px;
-  padding-top: 40px; }
+  margin-bottom: 52px;
+  padding-top: 38px; }
   .presentation-title__title {
+    margin-top: 5px;
     font-weight: 700;
     font-size: 36px;
     line-height: 52px; }
@@ -9865,7 +9870,10 @@ body {
   z-index: 10;
   margin-bottom: 69px; }
   .filter_inner {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-left: auto;
+    max-width: 356px;
+    width: 100%; }
 
 .list-link {
   position: relative;

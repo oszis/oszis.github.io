@@ -187,26 +187,54 @@ $('.js-collapse-list').each(function (listIndex, component) {
     parent: $component,
     toggle: false
   });
-  $collapseContent.on('show.bs.collapse shown.bs.collapse', function () {
-    $(document.body).trigger('collapse-show');
-  });
   setTimeout(function () {
     $collapseContent.stop(true, true).removeClass('show');
     $component.stop(true, true).addClass('collapse-list_show');
   }, 30);
+  $collapseContent.on('hide.bs.collapse', function (e) {
+    var $trgt = $(e.target);
+    var $item = $trgt.parent();
+    var $head = $item.find('.js-collapse-head');
+    $head.removeClass('collapse-head_active');
+    $item.removeClass('collapse-item_active');
+  });
+  $collapseContent.on('show.bs.collapse', function (e) {
+    var $trgt = $(e.target);
+    var $item = $trgt.parent();
+    var $head = $item.find('.js-collapse-head');
+    $head.addClass('collapse-head_active');
+    $item.addClass('collapse-item_active');
+  });
+  $collapseHead.on('click', function (e) {
+    $(e.currentTarget).closest('.js-collapse-item').find('.js-collapse-content').collapse('toggle');
+  });
   $collapseHead.on('click', function (e) {
     e.preventDefault();
     var $trgt = $(e.currentTarget);
-
-    if ($trgt.hasClass('collapse-head_active')) {
-      $collapseHead.stop(true, true).removeClass('collapse-head_active');
-      $(e.currentTarget).closest('.js-collapse-item').stop(true, true).removeClass('collapse-item_active');
-      $(e.currentTarget).closest('.js-collapse-item').find('.js-collapse-content').stop(true, true).collapse('hide');
+    /*if ($trgt.hasClass('collapse-head_active')) {
+    	$collapseHead.stop(true, true)
+    		.removeClass('collapse-head_active');
+    		$(e.currentTarget)
+    		.closest('.js-collapse-item')
+    		.stop(true, true)
+    		.removeClass('collapse-item_active');
+    		$(e.currentTarget)
+    		.closest('.js-collapse-item')
+    		.find('.js-collapse-content')
+    		.stop(true, true)
+    		.collapse('hide');
     } else {
-      $collapseHead.stop(true, true).removeClass('collapse-head_active');
-      $(e.currentTarget).stop(true, true).addClass('collapse-head_active');
-      $(e.currentTarget).closest('.js-collapse-item').find('.js-collapse-content').stop(true, true).collapse('show');
-    }
+    	$collapseHead.stop(true, true)
+    		.removeClass('collapse-head_active');
+    		$(e.currentTarget)
+    		.stop(true, true)
+    		.addClass('collapse-head_active');
+    		$(e.currentTarget)
+    		.closest('.js-collapse-item')
+    		.find('.js-collapse-content')
+    		.stop(true, true)
+    		.collapse('show');
+    }*/
   });
 });
 
@@ -262,17 +290,17 @@ $('[data-fancybox]').fancybox({
   image: {
     preload: true
   },
-  baseTpl: "<div class=\"fancybox-container\" role=\"dialog\" tabindex=\"-1\">\n\t\t\t\t<div class=\"fancybox-bg\"></div>\n\t\t\t\t<div class=\"fancy\">\n\t\t\t\t\t<button data-fancybox-close class=\"fancy__btn fancy__close-btn\" title=\"{{CLOSE}}\">\n\t\t\t\t\t\t<span class=\"icon icon_cross\">\n\t\t\t\t\t\t\t<svg><use xlink:href=\"/images/sprites.svg#icon-cross\"></use></svg>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t\t<div class=\"fancy__inner\">\n\t\t\t\t\t\t<div class=\"fancy__content\">\n\t\t\t\t\t\t\t<div class=\"fancybox-stage fancy__stage\"></div>\n\t\t\t\t\t\t\t{{arrows}}\n\t\t\t\t\t\t\t<div class=\"fancy__toolbar\">{{buttons}}</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"fancy__caption js-caption\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"fancy__infobar\">\n\t\t\t\t\t\t<span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"fancy__thumbs\"></div>\n\t\t\t</div>",
+  baseTpl: "<div class=\"fancybox-container\" role=\"dialog\" tabindex=\"-1\">\n\t\t\t\t<div class=\"fancybox-bg\"></div>\n\t\t\t\t<div class=\"fancy\">\n\t\t\t\t\t<button data-fancybox-close class=\"fancy__btn fancy__close-btn\" title=\"{{CLOSE}}\">\n\t\t\t\t\t\t<span class=\"icon icon_cross\">\n\t\t\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-cross\"></use></svg>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t\t<div class=\"fancy__inner\">\n\t\t\t\t\t\t<div class=\"fancy__content\">\n\t\t\t\t\t\t\t<div class=\"fancybox-stage fancy__stage\"></div>\n\t\t\t\t\t\t\t{{arrows}}\n\t\t\t\t\t\t\t<div class=\"fancy__toolbar\">{{buttons}}</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"fancy__caption js-caption\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"fancy__infobar\">\n\t\t\t\t\t\t<span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"fancy__thumbs\"></div>\n\t\t\t</div>",
   video: {
     tpl: "<div class=\"fancybox-content\">\n\t\t\t\t\t<div class=\"fancy__video\">\n\t\t\t\t\t\t<video class=\"video video-js js-video\" controls controlsList=\"nodownload\" poster=\"{{poster}}\">\n\t\t\t\t\t\t\t<source src=\"{{src}}\" type=\"{{format}}\" />\n\t\t\t\t\t\t</video>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
     format: '',
     autoStart: false
   },
   btnTpl: {
-    zoom: "<button data-fancybox-zoom class=\"fancy__btn\" title=\"{{ZOOM}}\">\n\t\t\t\t\t<span class=\"icon icon_zoom\">\n\t\t\t\t\t\t<svg><use xlink:href=\"/images/sprites.svg#icon-zoom\"></use></svg>\n\t\t\t\t\t</span>\n\t\t\t\t</button>",
+    zoom: "<button data-fancybox-zoom class=\"fancy__btn\" title=\"{{ZOOM}}\">\n\t\t\t\t\t<span class=\"icon icon_zoom\">\n\t\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-zoom\"></use></svg>\n\t\t\t\t\t</span>\n\t\t\t\t</button>",
     // Arrows
-    arrowLeft: "<button data-fancybox-prev class=\"fancy__arrow fancy__arrow_left fancy__btn\" title=\"{{PREV}}\">\n\t\t\t\t\t<svg><use xlink:href=\"/images/sprites.svg#icon-angle-left-thin\"></use></svg>\n\t\t\t\t</button>",
-    arrowRight: "<button data-fancybox-next class=\"fancy__arrow fancy__arrow_right fancy__btn\" title=\"{{NEXT}}\">\n\t\t\t\t\t<svg><use xlink:href=\"/images/sprites.svg#icon-angle-right-thin\"></use></svg>\n\t\t\t\t</button>"
+    arrowLeft: "<button data-fancybox-prev class=\"fancy__arrow fancy__arrow_left fancy__btn\" title=\"{{PREV}}\">\n\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-angle-left-thin\"></use></svg>\n\t\t\t\t</button>",
+    arrowRight: "<button data-fancybox-next class=\"fancy__arrow fancy__arrow_right fancy__btn\" title=\"{{NEXT}}\">\n\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-angle-right-thin\"></use></svg>\n\t\t\t\t</button>"
   },
   thumbs: {
     autoStart: true,
@@ -316,6 +344,11 @@ $('[data-fancybox]').fancybox({
   afterShow: function afterShow(instance, current) {
     var $clickedElement = $(current.opts.$orig);
     var currentCaption = ($clickedElement.data('caption') || '') + ($clickedElement.find('.js-data-caption').html() || '');
+
+    if (currentCaption.length === 0) {
+      currentCaption = "<h6 style=\"text-align:center\">\u0424\u043E\u0442\u043E \u0431\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F.</h6>";
+    }
+
     var $fancyBox = $('.fancybox-container');
     var $captionContainer = $fancyBox.find('.js-caption');
     $captionContainer.html(currentCaption);
@@ -382,13 +415,10 @@ $('.js-gallery-slider').each(function (index, component) {
     $slider.stop(true, true).addClass('gallery-slider__container_has-before gallery-slider__container_has-after');
   });
   swiper.on('reachBeginning', function () {
-    $slider.stop(true, true).removeClass('gallery-slider__container_has-before');
+    $slider.removeClass('gallery-slider__container_has-before');
   });
   swiper.on('reachEnd', function () {
-    $slider.stop(true, true).removeClass('gallery-slider__container_has-after');
-  });
-  $(document.body).on('collapse-show', function () {
-    swiper.update();
+    $slider.removeClass('gallery-slider__container_has-after');
   });
 });
 
@@ -613,6 +643,24 @@ $('.js-scroller').each(function (index, component) {
 
 /***/ }),
 
+/***/ "./src/js/components/show-menu.js":
+/*!****************************************!*\
+  !*** ./src/js/components/show-menu.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('.js-show-menu-btn').each(function (index, component) {
+  var $component = $(component);
+  var $body = $(document.body);
+  $component.on('click', function (e) {
+    e.preventDefault();
+    $body.trigger('main-menu:open');
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/components/standstill.js":
 /*!*****************************************!*\
   !*** ./src/js/components/standstill.js ***!
@@ -624,7 +672,7 @@ $('.js-standstill').each(function (index, component) {
   var $component = $(component);
   var standstillTimeout = setTimeout(function () {
     $component.fadeIn(300);
-  }, 420000);
+  }, 5000);
   var mainPageTimeout = setTimeout(function () {
     window.location = '/';
   }, 450000);
@@ -650,7 +698,7 @@ $('.js-standstill').each(function (index, component) {
 
     standstillTimeout = setTimeout(function () {
       $component.fadeIn(300);
-    }, 420000);
+    }, 5000);
     mainPageTimeout = setTimeout(function () {
       window.location = '/';
     }, 450000);
@@ -677,13 +725,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_collapse__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_collapse__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_presentation_lead__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/presentation-lead */ "./src/js/components/presentation-lead.js");
 /* harmony import */ var _components_presentation_lead__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_presentation_lead__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_material_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/material-slider */ "./src/js/components/material-slider.js");
-/* harmony import */ var _components_gallery_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/gallery-slider */ "./src/js/components/gallery-slider.js");
-/* harmony import */ var _components_grid_gallery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/grid-gallery */ "./src/js/components/grid-gallery.js");
-/* harmony import */ var _components_standstill__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/standstill */ "./src/js/components/standstill.js");
-/* harmony import */ var _components_standstill__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_standstill__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_fancybox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/fancybox */ "./src/js/components/fancybox.js");
-/* harmony import */ var _components_js_video__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/js-video */ "./src/js/components/js-video.js");
+/* harmony import */ var _components_show_menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/show-menu */ "./src/js/components/show-menu.js");
+/* harmony import */ var _components_show_menu__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_show_menu__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_material_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/material-slider */ "./src/js/components/material-slider.js");
+/* harmony import */ var _components_gallery_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/gallery-slider */ "./src/js/components/gallery-slider.js");
+/* harmony import */ var _components_grid_gallery__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/grid-gallery */ "./src/js/components/grid-gallery.js");
+/* harmony import */ var _components_standstill__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/standstill */ "./src/js/components/standstill.js");
+/* harmony import */ var _components_standstill__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_standstill__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_fancybox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/fancybox */ "./src/js/components/fancybox.js");
+/* harmony import */ var _components_js_video__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/js-video */ "./src/js/components/js-video.js");
+
 
 
 
