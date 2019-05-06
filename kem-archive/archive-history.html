@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/main.css?v=1557112994885">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700" rel="stylesheet">
+	</head>
+	<body>
+		<div class="main-menu js-main-menu">
+			<div class="main-menu__overlay js-close-menu"></div>
+			<div class="main-menu__container">
+				<div class="main-menu__title">
+					<button class="main-menu__close-btn js-close-menu">
+						<svg>
+							<use xlink:href="images/sprites.svg#icon-cross"></use>
+						</svg>
+					</button><span class="main-menu__close-text">Закрыть меню</span>
+					<div class="main-menu__buttons"><a class="btn btn-outline-light main-menu__btn" href="#"><span class="main-menu__icon main-menu__icon_question">
+								<svg>
+									<use xlink:href="images/sprites.svg#icon-question"></use>
+								</svg></span>Справка</a><a class="btn btn-outline-light main-menu__btn" href="#"><span class="main-menu__icon main-menu__icon_eye">
+								<svg>
+									<use xlink:href="images/sprites.svg#icon-eye"></use>
+								</svg></span>Версия для слабовидящих</a></div>
+				</div>
+				<div class="main-menu__content js-main-menu-content">
+					<div class="main-menu__section main-menu__section_first js-main-menu-section" data-index="1">
+								<ul class="menu-list list-unstyled js-menu-list">
+											<li class="menu-list__item"><a class="menu-list__btn" href="/" data-request-id="">Главная</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn js-menu-list-btn" href="#" data-request-id="1-0">Об архиве
+													<div class="menu-list__icon">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-angle-right"></use>
+														</svg>
+													</div></a></li>
+											<li class="menu-list__item"><a class="menu-list__btn js-menu-list-btn" href="#" data-request-id="1-1">Выставки
+													<div class="menu-list__icon">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-angle-right"></use>
+														</svg>
+													</div></a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Публикации</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Коллекции</a></li>
+								</ul>
+					</div>
+					<div class="main-menu__section main-menu__section_second main-menu__section_inner js-main-menu-section" data-index="2">
+								<ul class="menu-list list-unstyled js-menu-list menu-list_inner">
+											<li class="menu-list__item"><a class="menu-list__btn js-menu-list-btn" href="#" data-request-id="2-0">История архива
+													<div class="menu-list__icon">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-angle-right"></use>
+														</svg>
+													</div></a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Архив сегодня</a></li>
+								</ul>
+								<ul class="menu-list list-unstyled js-menu-list menu-list_inner">
+											<li class="menu-list__item"><a class="menu-list__btn js-menu-list-btn" href="#" data-request-id="2-1">История выставок
+													<div class="menu-list__icon">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-angle-right"></use>
+														</svg>
+													</div></a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Выставки сегодня</a></li>
+								</ul>
+					</div>
+					<div class="main-menu__section main-menu__section_last main-menu__section_inner main-menu__section_last js-main-menu-section" data-index="3">
+								<ul class="menu-list list-unstyled js-menu-list menu-list_inner">
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">История архива</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Архив сегодня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Архив сегодня</a></li>
+								</ul>
+								<ul class="menu-list list-unstyled js-menu-list menu-list_inner">
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">История Выставок</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Выставки сегодня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок третьего уровня</a></li>
+											<li class="menu-list__item"><a class="menu-list__btn" href="#" data-request-id="">Заголовок 3 уровня</a></li>
+								</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="show-menu">
+			<button class="show-menu__btn show-menu__btn_show js-show-menu-btn">
+				<div class="icon icon_burger">
+					<svg>
+						<use xlink:href="images/sprites.svg#icon-burger"></use>
+					</svg>
+				</div><span class="show-menu__text">Меню</span>
+			</button>
+		</div>
+		<div class="scroller js-scroller">
+			<div class="main">
+				<section class="section">
+					<div class="page-title">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<h1>История архива</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-3">
+								<div class="filter">
+									<select class="selectpicker filter__select">
+										<option value="1" default="default">По исторической дате</option>
+										<option value="2">По дате создания</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="collapse-list js-collapse-list">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<div class="collapse-list__content">
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1990-2000гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">10 папок</div>
+													<div class="collapse-head__title">1980-1990гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1970-1980гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1960-1970гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1950-1960гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1940-1950гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1930-1940гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+										<div class="collapse-item js-collapse-item">
+											<div class="collapse-head js-collapse-head">
+												<div class="collapse-head__content">
+													<div class="collapse-head__icon">
+														<div class="icon icon_folder">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="collapse-head__count">2 папки</div>
+													<div class="collapse-head__title">1920-1930гг.</div>
+												</div>
+												<div class="collapse-head__arrow">
+													<div class="icon icon_arrow-down">
+														<svg>
+															<use xlink:href="images/sprites.svg#icon-arrow-down"></use>
+														</svg>
+													</div>
+												</div>
+											</div>
+											<div class="collapse show collapse-content js-collapse-content"><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_folder-inner">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-folder-inner"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a><a class="list-link" href="#">
+													<div class="list-link__icon">
+														<div class="icon icon_arrow-right-rounded">
+															<svg>
+																<use xlink:href="images/sprites.svg#icon-arrow-right-rounded"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="list-link__type-count">70 файлов</div>
+													<div class="list-link__title">Событие из жизни архива (название)</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="standstill js-standstill">
+			<div class="standstill__content">
+				<div class="standstill__title">
+					<div class="standstill__icon">
+						<div class="icon icon_watch">
+							<svg>
+								<use xlink:href="images/sprites.svg#icon-watch"></use>
+							</svg>
+						</div>
+					</div>Вы бездействуете уже 7 минут
+				</div>
+				<div class="standstill__text">Система вернётся на главный экран через: <span>30</span> секунд
+				</div>
+				<div class="standstill__last">
+					<div class="standstill__icon">
+						<div class="icon icon_cursor">
+							<svg>
+								<use xlink:href="images/sprites.svg#icon-cursor"></use>
+							</svg>
+						</div>
+					</div>Коснитесь экрана чтобы продолжить работу
+				</div>
+			</div>
+		</div>
+		<script src="js/vendor.js?v=1557112994888"></script>
+		<script src="js/main.js?v=1557112994888"></script>
+	</body>
+</html>
