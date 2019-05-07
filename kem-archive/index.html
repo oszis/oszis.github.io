@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1557134980427">
+		<link rel="stylesheet" href="css/main.css?v=1557185968249">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700" rel="stylesheet">
 	</head>
 	<body>
-		<header class="header"><a class="logo" href="/"><img class="logo__image" src="images/logo.png" alt="Архивной службе кузбасса 75 лет. 1943-2018"><span class="logo__text">Государственный архив<br>Кемеровской области</span></a><a class="btn btn-outline-dark header__btn" href="#"><span class="icon icon_question header__icon">
+		<header class="header"><a class="logo" href="/"><img class="logo__image" src="images/logo.png" alt="Архивной службе кузбасса 75 лет. 1943-2018"><span class="logo__text">Государственный архив<br>Кемеровской области</span></a><a class="btn btn-outline-dark header__btn js-header-btn-show-instruction" href="#"><span class="icon icon_question header__icon">
 					<svg>
 						<use xlink:href="images/sprites.svg#icon-question"></use>
 					</svg></span>Справка</a><a class="btn btn-outline-dark header__btn" href="#"><span class="header__icon icon icon_eye">
@@ -149,13 +149,13 @@
 										</svg>
 									</div></a>
 						</div>
-						<div class="cards__background-image"><img src="images/main-page-bg.jpg" alt=""></div>
+						<div class="cards__background-image"><img src="/images/main-page-bg.jpg" alt=""></div>
 					</div>
 				</div>
 				<div class="main-page-lead__col main-page-lead__col_right">
 					<div class="news-card">
 						<div class="news-card__today-in">Сегодня в архиве</div>
-						<div class="news-card__image"><img src="images/news-card-image.jpg" alt=""/></div><a class="news-card__title" href="#"><span>&laquo;Возле самого сердца&nbsp;&mdash;<br>комсомольский билет&raquo</span></a>
+						<div class="news-card__image"><img src="/images/news-card-image.jpg" alt=""/></div><a class="news-card__title" href="#"><span>&laquo;Возле самого сердца&nbsp;&mdash;<br>комсомольский билет&raquo</span></a>
 						<div class="news-card__content">выставка, посвященная истории Всесоюзного ленинского коммунистического союза молодежи (ВЛКСМ).</div><a class="btn btn-outline-dark" href="#"><span>Презентация выставки</span>
 							<div class="news-card__icon">
 								<div class="icon icon_arrow-right-big">
@@ -179,7 +179,7 @@
 						</div>
 					</div>Вы бездействуете уже 7 минут
 				</div>
-				<div class="standstill__text">Система вернётся на главный экран через: <span>30</span> секунд
+				<div class="standstill__text">Система вернётся на главный экран через: <span class="js-counter">30</span> секунд
 				</div>
 				<div class="standstill__last">
 					<div class="standstill__icon">
@@ -192,7 +192,80 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1557134980429"></script>
-		<script src="js/main.js?v=1557134980429"></script>
+		<div class="instruction-popup js-instruction-popup">
+			<div class="instruction-popup__close js-instruction-popup-close">
+				<div class="icon icon_cross">
+					<svg>
+						<use xlink:href="images/sprites.svg#icon-cross"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="instruction-popup__background"></div>
+			<div class="instruction-popup__content js-instruction-popup-content">
+				<div class="content-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-6 offset-3">
+								<h2>Инструкция по использованию</h2>
+								<ol class="content-area__custom-list content-area__custom-list_small">
+									<li>
+										<h3>Работа с меню</h3>
+										<p>Занимается комплектованием Архивного фонда РФ, а также обеспечением сохранности и государственным учетом хранящихся в архиве документов</p>
+										<div class="content-area__links">
+											<div class="row">
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Как открыть меню">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Как открыть меню</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Как открыть меню второго уровня">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Как открыть меню второго уровня</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Кнопка “назад”">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Кнопка “назад”</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h3>Работа с разделами</h3>
+										<p>Хранит поступившие архивные фонды и документы, в том числе управленческую документацию, документы личного происхождения, фамильные (семейные) архивы, документальные коллекции.</p>
+									</li>
+									<li>
+										<h3>Поиск материалов</h3>
+										<div class="row">
+											<div class="col-4"><a class="video-link" href="https://www.w3schools.com/html/mov_bbb.mp4" data-fancybox type="video">
+																	<div class="video-link__background"><img src="/images/presentation-lead-image.jpg"></div>
+																	<div class="video-link__icon">
+																						<div class="icon icon_media-play-filled">
+																											<svg>
+																												<use xlink:href="images/sprites.svg#icon-media-play-filled"></use>
+																											</svg>
+																						</div>
+																	</div>
+																	<div class="video-link__title"><span>Как открыть меню</span></div></a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h3>Работа с разделами</h3>
+										<p>Хранит поступившие архивные фонды и документы, в том числе управленческую документацию, документы личного происхождения, фамильные (семейные) архивы, документальные коллекции.</p>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/vendor.js?v=1557185968251"></script>
+		<script src="js/main.js?v=1557185968251"></script>
 	</body>
 </html>

@@ -190,6 +190,7 @@ $('.js-collapse-list').each(function (listIndex, component) {
   setTimeout(function () {
     $collapseContent.stop(true, true).removeClass('show');
     $component.stop(true, true).addClass('collapse-list_show');
+    $(document.body).trigger('scroll:update');
   }, 30);
   $collapseContent.on('hide.bs.collapse', function (e) {
     var $trgt = $(e.target);
@@ -204,6 +205,9 @@ $('.js-collapse-list').each(function (listIndex, component) {
     var $head = $item.find('.js-collapse-head');
     $head.addClass('collapse-head_active');
     $item.addClass('collapse-item_active');
+  });
+  $collapseContent.on('shown.bs.collapse hidden.bs.collapse', function () {
+    $(document.body).trigger('scroll:update');
   });
   $collapseHead.on('click', function (e) {
     $(e.currentTarget).closest('.js-collapse-item').find('.js-collapse-content').collapse('toggle');
@@ -343,29 +347,31 @@ $('[data-fancybox]').fancybox({
   },
   afterShow: function afterShow(instance, current) {
     var $clickedElement = $(current.opts.$orig);
-    var currentCaption = ($clickedElement.data('caption') || '') + ($clickedElement.find('.js-data-caption').html() || '');
-
-    if (currentCaption.length === 0) {
-      currentCaption = "<h6 style=\"text-align:center\">\u0424\u043E\u0442\u043E \u0431\u0435\u0437 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044F.</h6>";
-    }
-
+    var currentCaption = ($clickedElement.data('caption') || '') + $.trim($clickedElement.find('.js-data-caption').html() || '');
     var $fancyBox = $('.fancybox-container');
+    var $fancy = $fancyBox.find('.fancy');
     var $captionContainer = $fancyBox.find('.js-caption');
     $captionContainer.html(currentCaption);
-    $captionContainer.find('.js-video').each(function (index, element) {
-      if ($(element).data('audio')) {
-        $(element).addClass('video_audio');
+
+    if (currentCaption.length === 0) {
+      $fancy.addClass('fancy_no-caption');
+    } else {
+      $fancy.removeClass('fancy_no-caption');
+      $captionContainer.find('.js-video').each(function (index, element) {
+        if ($(element).data('audio')) {
+          $(element).addClass('video_audio');
+        }
+
+        Object(_createVideoJs__WEBPACK_IMPORTED_MODULE_1__["default"])($(element)[0]);
+      });
+
+      if (ps) {
+        ps.update();
       }
 
-      Object(_createVideoJs__WEBPACK_IMPORTED_MODULE_1__["default"])($(element)[0]);
-    });
-
-    if (ps) {
-      ps.update();
-    }
-
-    if (thumbsPs) {
-      thumbsPs.update();
+      if (thumbsPs) {
+        thumbsPs.update();
+      }
     }
   },
   afterClose: function afterClose() {
@@ -442,6 +448,54 @@ $('.js-grid-gallery').each(function (index, component) {
     itemSelector: '.grid-gallery__item',
     columnWidth: 280,
     gutter: 30
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/components/header.js":
+/*!*************************************!*\
+  !*** ./src/js/components/header.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('.js-header-btn-show-instruction').on('click', function (e) {
+  e.preventDefault();
+  $(document.body).trigger('instruction:show');
+});
+
+/***/ }),
+
+/***/ "./src/js/components/instruction-popup.js":
+/*!************************************************!*\
+  !*** ./src/js/components/instruction-popup.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
+
+$('.js-instruction-popup').each(function (index, component) {
+  var $component = $(component);
+  var $content = $component.find('.js-instruction-popup-content');
+  var $closeBtn = $component.find('.js-instruction-popup-close');
+  var ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($content[0], {
+    suppressScrollX: true
+  });
+  ps.update();
+  $(document.body).on('instruction:show', function () {
+    $component.fadeIn(200);
+    ps.update();
+  });
+  $(document.body).on('instruction:hide', function () {
+    $component.fadeOut(200);
+  });
+  $closeBtn.on('click', function (e) {
+    e.preventDefault();
+    $(document.body).trigger('instruction:hide');
   });
 });
 
@@ -572,6 +626,7 @@ $('.js-material-slider').each(function (index, component) {
   var slidesLength = $component.find('.swiper-slide').length;
   var sliderOptions = {
     slidesPerView: 3.5,
+    spaceBetween: 40,
     scrollbar: {
       el: '.swiper-scrollbar',
       hide: true
@@ -636,8 +691,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
 
 $('.js-scroller').each(function (index, component) {
+  var $component = $(component);
+  var toTopBtn = $('.js-to-top-btn');
   var ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($(component)[0], {
     suppressScrollX: true
+  });
+  $component.on('ps-scroll-y', function () {
+    if ($component.scrollTop() >= $(window).innerHeight()) {
+      toTopBtn.addClass('to-top-btn_active');
+    } else {
+      toTopBtn.removeClass('to-top-btn_active');
+    }
+  });
+  toTopBtn.on('click', function (e) {
+    e.preventDefault();
+    $component.animate({
+      scrollTop: 0
+    }, 500);
+  });
+  $(document.body).on('scroll:update', function () {
+    ps.update();
   });
 });
 
@@ -653,6 +726,23 @@ $('.js-scroller').each(function (index, component) {
 $('.js-show-menu-btn').each(function (index, component) {
   var $component = $(component);
   var $body = $(document.body);
+  var $presentationLead = $('.js-presentation-lead');
+
+  function checkScrollTop() {
+    if ($('.js-scroller').scrollTop() < $presentationLead.outerHeight() - 100) {
+      $component.addClass('show-menu__btn_active');
+    } else {
+      $component.removeClass('show-menu__btn_active');
+    }
+  }
+
+  if ($presentationLead && $presentationLead.hasClass('presentation-lead_has-bg')) {
+    checkScrollTop();
+    $('.js-scroller').on('ps-scroll-y', function () {
+      checkScrollTop();
+    });
+  }
+
   $component.on('click', function (e) {
     e.preventDefault();
     $body.trigger('main-menu:open');
@@ -670,38 +760,54 @@ $('.js-show-menu-btn').each(function (index, component) {
 
 $('.js-standstill').each(function (index, component) {
   var $component = $(component);
-  var standstillTimeout = setTimeout(function () {
-    $component.fadeIn(300);
-  }, 5000);
-  var mainPageTimeout = setTimeout(function () {
-    window.location = '/';
-  }, 450000);
-  $component.on('click', function () {
-    $component.stop(true, true).fadeOut(300);
+  var $counter = $component.find('.js-counter');
+  var animationInterval = null;
+  var standstillTimeout = null;
 
-    if (standstillTimeout) {
-      clearTimeout(standstillTimeout);
-    }
-
-    if (mainPageTimeout) {
-      clearTimeout(mainPageTimeout);
-    }
-  });
-  $(document.body).on('click', function () {
-    if (standstillTimeout) {
-      clearTimeout(standstillTimeout);
-    }
-
-    if (mainPageTimeout) {
-      clearTimeout(mainPageTimeout);
-    }
-
+  function showStandStillTimeout() {
     standstillTimeout = setTimeout(function () {
       $component.fadeIn(300);
-    }, 5000);
-    mainPageTimeout = setTimeout(function () {
+      $component.trigger('timeout:start');
+    }, 420000);
+  }
+
+  function thirtySecondsTimeout(counter) {
+    if (Number(counter) === 0) {
       window.location = '/';
-    }, 450000);
+      return 0;
+    } else {
+      return Number(--counter);
+    }
+  }
+
+  showStandStillTimeout();
+  $component.on('timeout:start', function () {
+    $counter.html(30);
+    animationInterval = setInterval(function () {
+      var counter = thirtySecondsTimeout($counter.html());
+      $counter.html(counter);
+    }, 1000);
+  });
+  $component.on('timeout:stop', function () {
+    if (standstillTimeout) {
+      clearTimeout(standstillTimeout);
+      standstillTimeout = null;
+      showStandStillTimeout();
+    }
+
+    if (animationInterval) {
+      clearInterval(animationInterval);
+      animationInterval = null;
+    }
+  }); // clear timeouts on body click
+
+  $(document.body).on('click', function () {
+    $component.trigger('timeout:stop');
+  }); // hide component and clear timeouts on component click
+
+  $component.on('click', function () {
+    $component.stop(true, true).fadeOut(300);
+    $component.trigger('timeout:stop');
   });
 });
 
@@ -734,6 +840,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_standstill__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_standstill__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_fancybox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/fancybox */ "./src/js/components/fancybox.js");
 /* harmony import */ var _components_js_video__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/js-video */ "./src/js/components/js-video.js");
+/* harmony import */ var _components_instruction_popup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/instruction-popup */ "./src/js/components/instruction-popup.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -741,6 +850,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // sliders
+
+
 
 
 

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1557134980649">
+		<link rel="stylesheet" href="css/main.css?v=1557185968574">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700" rel="stylesheet">
 	</head>
 	<body>
@@ -111,17 +111,17 @@
 		<div class="scroller js-scroller">
 			<div class="presentation-lead js-presentation-lead presentation-lead_has-bg">
 				<div class="presentation-lead__bg js-presentation-lead-bg"><img src="images/presentation-lead-image.jpg" alt=""/></div>
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
-						<div class="col-8">
-							<div class="presentation-lead__title">&laquo;Возле самого сердца&nbsp;&mdash; комсомольский билет&raquo;</div><a class="btn btn_big btn-primary presentation-lead__btn" href="#">Смотреть презентацию
+						<div class="col-6 offset-2">
+							<h1 class="presentation-lead__title">&laquo;Возле самого сердца&nbsp;&mdash; комсомольский билет&raquo;</h1><a class="btn btn_big btn-primary presentation-lead__btn" href="#">Смотреть презентацию
 								<div class="presentation-lead__icon icon icon_arrow-right">
 									<svg>
 										<use xlink:href="images/sprites.svg#icon-arrow-right"></use>
 									</svg>
 								</div></a>
 						</div>
-						<div class="col-4">
+						<div class="col-3">
 							<div class="presentation-lead__content">выставка, посвященная истории Всесоюзного ленинского коммунистического союза молодежи (ВЛКСМ).</div>
 						</div>
 					</div>
@@ -130,9 +130,9 @@
 			<div class="main">
 				<section class="section">
 					<div class="presentation-title">
-						<div class="container">
+						<div class="container-fluid">
 							<div class="row align-items-center">
-								<div class="col-9">
+								<div class="col-6 offset-2">
 									<div class="presentation-title__title">Материалы выставки:</div>
 								</div>
 								<div class="col-3">
@@ -147,9 +147,9 @@
 						</div>
 					</div>
 					<div class="collapse-list js-collapse-list collapse-list_inner">
-						<div class="container">
+						<div class="container-fluid">
 							<div class="row">
-								<div class="col-12">
+								<div class="col-9 offset-2">
 									<div class="collapse-list__content">
 										<div class="collapse-item js-collapse-item">
 											<div class="collapse-head js-collapse-head">
@@ -745,7 +745,114 @@
 				</section>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1557134980657"></script>
-		<script src="js/main.js?v=1557134980657"></script>
+		<div class="to-top-btn js-to-top-btn">
+			<div class="to-top-btn__icon">
+						<div class="icon icon_angle-down">
+									<svg>
+										<use xlink:href="images/sprites.svg#icon-angle-down"></use>
+									</svg>
+						</div>
+			</div>
+			<div class="to-top-btn__text">Наверх</div>
+		</div>
+		<div class="standstill js-standstill">
+			<div class="standstill__content">
+				<div class="standstill__title">
+					<div class="standstill__icon">
+								<div class="icon icon_watch">
+											<svg>
+												<use xlink:href="images/sprites.svg#icon-watch"></use>
+											</svg>
+								</div>
+					</div>Вы бездействуете уже 7 минут
+				</div>
+				<div class="standstill__text">Система вернётся на главный экран через: <span class="js-counter">30</span> секунд
+				</div>
+				<div class="standstill__last">
+					<div class="standstill__icon">
+								<div class="icon icon_cursor">
+											<svg>
+												<use xlink:href="images/sprites.svg#icon-cursor"></use>
+											</svg>
+								</div>
+					</div>Коснитесь экрана чтобы продолжить работу
+				</div>
+			</div>
+		</div>
+		<div class="instruction-popup js-instruction-popup">
+			<div class="instruction-popup__close js-instruction-popup-close">
+						<div class="icon icon_cross">
+									<svg>
+										<use xlink:href="images/sprites.svg#icon-cross"></use>
+									</svg>
+						</div>
+			</div>
+			<div class="instruction-popup__background"></div>
+			<div class="instruction-popup__content js-instruction-popup-content">
+				<div class="content-area">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-6 offset-3">
+								<h2>Инструкция по использованию</h2>
+								<ol class="content-area__custom-list content-area__custom-list_small">
+									<li>
+										<h3>Работа с меню</h3>
+										<p>Занимается комплектованием Архивного фонда РФ, а также обеспечением сохранности и государственным учетом хранящихся в архиве документов</p>
+										<div class="content-area__links">
+											<div class="row">
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Как открыть меню">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Как открыть меню</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Как открыть меню второго уровня">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Как открыть меню второго уровня</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+												<div class="col-4"><a class="material-item" href="/images/content-page-image-1.jpg" data-fancybox="material-item-images" data-type="image" data-caption="Кнопка “назад”">
+																		<div class="material-item__image"><img src="images/presentation-item-placeholder.jpg" alt=""></div>
+																		<div class="material-item__title">Кнопка “назад”</div>
+																		<div class="data-caption js-data-caption">
+																		</div></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h3>Работа с разделами</h3>
+										<p>Хранит поступившие архивные фонды и документы, в том числе управленческую документацию, документы личного происхождения, фамильные (семейные) архивы, документальные коллекции.</p>
+									</li>
+									<li>
+										<h3>Поиск материалов</h3>
+										<div class="row">
+											<div class="col-4"><a class="video-link" href="https://www.w3schools.com/html/mov_bbb.mp4" data-fancybox type="video">
+																	<div class="video-link__background"><img src="/images/presentation-lead-image.jpg"></div>
+																	<div class="video-link__icon">
+																						<div class="icon icon_media-play-filled">
+																											<svg>
+																												<use xlink:href="images/sprites.svg#icon-media-play-filled"></use>
+																											</svg>
+																						</div>
+																	</div>
+																	<div class="video-link__title"><span>Как открыть меню</span></div></a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<h3>Работа с разделами</h3>
+										<p>Хранит поступившие архивные фонды и документы, в том числе управленческую документацию, документы личного происхождения, фамильные (семейные) архивы, документальные коллекции.</p>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/vendor.js?v=1557185968583"></script>
+		<script src="js/main.js?v=1557185968583"></script>
 	</body>
 </html>
