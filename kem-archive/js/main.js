@@ -672,16 +672,11 @@ $('.js-material-slider').each(function (index, component) {
 /*!****************************************!*\
   !*** ./src/js/components/pdf-popup.js ***!
   \****************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 $('.js-pdf-popup').each(function (index, component) {
   var $component = $(component);
-  var $content = $component.find('.js-popup-content');
   var $closeBtn = $component.find('.js-popup-close');
   $(document.body).on('pdf:show', function () {
     $component.fadeIn(200);
@@ -867,9 +862,9 @@ $('.js-standstill').each(function (index, component) {
 $(document).ready(function () {
   /* Всплывающее Меню */
   var CecutientMenuShow = 0;
-  $('#CecutientBtn').click(function () {
+  $('#CecutientBtn, #CecutientBtn2').click(function () {
     CecutientOn();
-    $.cookie('CecutientCookie', 'on', {
+    $.cookie("CecutientCookie", "on", {
       expires: 365,
       path: '/'
     });
@@ -887,19 +882,19 @@ $(document).ready(function () {
 
     FontSansSerif(); // Тип шрифта по умолчанию
 
-    $.cookie('settings', 'off', {
+    $.cookie("settings", "off", {
       expires: 365,
       path: '/'
     });
 
     if (CecutientMenuShow === 0) {
       $('#CecutientWrapper').animate({
-        'height': '55px'
+        "height": "55px"
       }, 500);
       CecutientMenuShow = 1;
     } else {
       $('#CecutientWrapper').animate({
-        'height': '0px'
+        "height": "0px"
       }, 500);
       CecutientMenuShow = 0;
     }
@@ -907,13 +902,13 @@ $(document).ready(function () {
     return false;
   });
 
-  if ($.cookie('CecutientCookie') == 'on') {
-    if ($.cookie('settings') == 'on') {
-      $('#CecutientWrapper').css('height', '280px');
-      $('#m-header').css('margin-top', '310px'); //Настройка сдвига контента при отображение расширенного меню
+  if ($.cookie("CecutientCookie") == "on") {
+    if ($.cookie("settings") == "on") {
+      $('#CecutientWrapper').css("height", "360px");
+      $('#m-header').css("margin-top", "310px"); //Настройка сдвига контента при отображение расширенного меню
     } else {
-      $('#CecutientWrapper').css('height', '55px');
-      $('#m-header').css('margin-top', '50px');
+      $('#CecutientWrapper').css("height", "55px");
+      $('#m-header').css("margin-top", "50px");
     }
   }
   /* Конец Всплывающего Меню */
@@ -1010,39 +1005,39 @@ $(document).ready(function () {
   /*Отключение версии для слабовидящих*/
 
   $('#CecutientOff').click(function () {
-    $.cookie('CecutientCookie', 'null', {
+    $.cookie("CecutientCookie", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('settings', 'null', {
+    $.cookie("settings", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('style', 'null', {
+    $.cookie("style", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('image', 'null', {
+    $.cookie("image", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('video', 'null', {
+    $.cookie("video", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('fonts', 'null', {
+    $.cookie("fonts", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('line_height', 'null', {
+    $.cookie("line_height", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('spacing', 'null', {
+    $.cookie("spacing", "null", {
       expires: 365,
       path: '/'
     });
-    $.cookie('type', 'null', {
+    $.cookie("type", "null", {
       expires: 365,
       path: '/'
     });
@@ -1052,82 +1047,82 @@ $(document).ready(function () {
 }); //Инициализация списка для слабовидящих
 
 function Cecutient_init() {
-  if ($.cookie('CecutientCookie') == 'on') {
+  if ($.cookie("CecutientCookie") == "on") {
     CecutientOn();
 
-    if ($.cookie('fonts') == 'small') {
+    if ($.cookie("fonts") == "small") {
       SmallFonts();
     }
 
-    if ($.cookie('fonts') == 'medium') {
+    if ($.cookie("fonts") == "medium") {
       MediumFonts();
     }
 
-    if ($.cookie('fonts') == 'big') {
+    if ($.cookie("fonts") == "big") {
       BigFonts();
     }
 
-    if ($.cookie('style') == 'white') {
+    if ($.cookie("style") == "white") {
       WhiteStyle();
     }
 
-    if ($.cookie('style') == 'black') {
+    if ($.cookie("style") == "black") {
       BlackStyle();
     }
 
-    if ($.cookie('style') == 'blue') {
+    if ($.cookie("style") == "blue") {
       BlueStyle();
     }
 
-    if ($.cookie('style') == 'green') {
+    if ($.cookie("style") == "green") {
       GreenStyle();
     }
 
-    if ($.cookie('image') == 'on') {
+    if ($.cookie("image") == "on") {
       ImageOn();
     }
 
-    if ($.cookie('image') == 'off') {
+    if ($.cookie("image") == "off") {
       ImageOff();
     }
 
-    if ($.cookie('video') == 'on') {
+    if ($.cookie("video") == "on") {
       VideoOn();
     }
 
-    if ($.cookie('video') == 'off') {
+    if ($.cookie("video") == "off") {
       VideoOff();
     }
 
-    if ($.cookie('line_height') == '100') {
+    if ($.cookie("line_height") == "100") {
       LineHeight_100();
     }
 
-    if ($.cookie('line_height') == '150') {
+    if ($.cookie("line_height") == "150") {
       LineHeight_150();
     }
 
-    if ($.cookie('line_height') == '200') {
+    if ($.cookie("line_height") == "200") {
       LineHeight_200();
     }
 
-    if ($.cookie('spacing') == '1') {
+    if ($.cookie("spacing") == "1") {
       LetterSpacing_1();
     }
 
-    if ($.cookie('spacing') == '2') {
+    if ($.cookie("spacing") == "2") {
       LetterSpacing_2();
     }
 
-    if ($.cookie('spacing') == '3') {
+    if ($.cookie("spacing") == "3") {
       LetterSpacing_3();
     }
 
-    if ($.cookie('type') == 'sans-serif') {
+    if ($.cookie("type") == "sans-serif") {
       FontSansSerif();
     }
 
-    if ($.cookie('type') == 'serif') {
+    if ($.cookie("type") == "serif") {
       FontSerif();
     }
   }
@@ -1137,28 +1132,28 @@ function Cecutient_init() {
 
 function CecutientOn() {
   $(document.body).addClass('visually');
-  $('.d5__hide').css('display', 'none'); //Класс элементов, которые не отображаются в специальной версии
+  $('.d5__hide').css("display", "none"); //Класс элементов, которые не отображаются в специальной версии
 
-  $('#CecutientOn').css('display', 'none');
-  $('#CecutientOff').css('display', 'inline-block');
+  $('#CecutientOn').css("display", "none");
+  $('#CecutientOff').css("display", "inline-block");
   $('*').not('#logo, .home-three-akcii-wrap, .home-two-wrap div div div div').css('background', 'transparent');
   $('*').not('#logo, .home-three-akcii-wrap').css('color', '#000');
-  $('li').css('list-style-image', 'none'); //$('li').css("list-style","none");
+  $('li').css("list-style-image", "none"); //$('li').css("list-style","none");
 
-  $('body, html').css('background', '#fff');
+  $('body, html').css("background", "#fff");
   $('#CecutientWrapper').css('background', '#fff !important');
-  $('#CecutientBtn').css('display', 'none'); //Отключение изображения переключения в режим для слабовидящих
+  $('#CecutientBtn, #CecutientBtn2').css("display", "none"); //Отключение изображения переключения в режим для слабовидящих
 
   /*Настройка пользовательских стилей при включении режима для слабовидящих*/
   //
 
-  $('.home-video-btn div, .about-video-btn div').css('display', 'none');
-  $('.callibri-module-area').css('display', 'none');
-  $('.d5__shop_3-2_row').css('padding', '15px 0');
+  $('.home-video-btn div, .about-video-btn div').css("display", "none");
+  $('.callibri-module-area').css("display", "none");
+  $('.d5__shop_3-2_row').css("padding", "15px 0");
   $('.header').css('margin-top', '60px');
   /*Конец Настройки пользовательских стилей при включении режима для слабовидящих*/
 
-  $.cookie('CecutientCookie', 'on', {
+  $.cookie("CecutientCookie", "on", {
     expires: 365,
     path: '/'
   });
@@ -1169,27 +1164,27 @@ function CecutientOn() {
 
 
 function ShowSettings() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    if ($.cookie('settings') == 'on') {
+  if ($.cookie("CecutientCookie") == "on") {
+    if ($.cookie("settings") == "on") {
       $('#CecutientWrapper').animate({
-        'height': '55px'
+        "height": "55px"
       }, 500);
       $('#m-header').animate({
-        'margin-top': '50px'
+        "margin-top": "50px"
       }, 500);
-      $.cookie('settings', 'off', {
+      $.cookie("settings", "off", {
         expires: 365,
         path: '/'
       });
     } else {
       $('#CecutientWrapper').animate({
-        'height': '280px'
+        "height": "360px"
       }, 500);
       $('#m-header').animate({
-        'margin-top': '310px'
+        "margin-top": "310px"
       }, 500); //Настройка сдвига контента при отображение расширенного меню
 
-      $.cookie('settings', 'on', {
+      $.cookie("settings", "on", {
         expires: 365,
         path: '/'
       });
@@ -1206,35 +1201,35 @@ function ShowSettings() {
 
 
 function SmallFonts() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.main').removeClass('MediumFonts BigFonts').addClass('SmallFonts');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.main').removeClass("MediumFonts BigFonts").addClass("SmallFonts");
     $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1');
-    $('.FontSize').removeClass('A_FontSize');
-    $('#SmallFonts').addClass('A_FontSize');
+    $('.FontSize').removeClass("A_FontSize");
+    $('#SmallFonts').addClass("A_FontSize");
     /*Настройка пользовательских стилей для маленьких шрифтов*/
 
     /*END*/
 
-    $.cookie('fonts', 'small', {
+    $.cookie("fonts", "small", {
       expires: 365,
       path: '/'
     });
     return false;
-    $('.l-menu-item').css('padding-bottom', '20px');
+    $('.l-menu-item').css("padding-bottom", "20px");
   }
 }
 
 function MediumFonts() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.main').removeClass('SmallFonts BigFonts').addClass('MediumFonts');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.main').removeClass("SmallFonts BigFonts").addClass("MediumFonts");
     $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1.3');
-    $('.FontSize').removeClass('A_FontSize');
-    $('#MediumFonts').addClass('A_FontSize');
+    $('.FontSize').removeClass("A_FontSize");
+    $('#MediumFonts').addClass("A_FontSize");
     /*Настройка пользовательских стилей для средних шрифтов*/
 
     /*END*/
 
-    $.cookie('fonts', 'medium', {
+    $.cookie("fonts", "medium", {
       expires: 365,
       path: '/'
     });
@@ -1243,17 +1238,17 @@ function MediumFonts() {
 }
 
 function BigFonts() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.main').removeClass('SmallFonts MediumFonts').addClass('BigFonts');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.main').removeClass("SmallFonts MediumFonts").addClass("BigFonts");
     $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1.5'); //$('.first_nav, .second_nav').css("width","50%");
 
-    $('.FontSize').removeClass('A_FontSize');
-    $('#BigFonts').addClass('A_FontSize');
+    $('.FontSize').removeClass("A_FontSize");
+    $('#BigFonts').addClass("A_FontSize");
     /*Настройка пользовательских стилей для больших шрифтов*/
 
     /*END*/
 
-    $.cookie('fonts', 'big', {
+    $.cookie("fonts", "big", {
       expires: 365,
       path: '/'
     });
@@ -1268,12 +1263,12 @@ function BigFonts() {
 
 
 function ImageOn() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('img').css('display', 'inline-block');
-    $('#ImageOff').css('display', 'inline-block');
-    $('#ImageOn').css('display', 'none');
-    $('.logo_image').css('display', 'none');
-    $.cookie('image', 'on', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('img').css("display", "inline-block");
+    $('#ImageOff').css("display", "inline-block");
+    $('#ImageOn').css("display", "none");
+    $('.logo_image').css("display", "none");
+    $.cookie("image", "on", {
       expires: 365,
       path: '/'
     });
@@ -1282,13 +1277,13 @@ function ImageOn() {
 }
 
 function ImageOff() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('img').css('display', 'none');
-    $('#ImageOff').css('display', 'none');
-    $('#ImageOn').css('display', 'inline-block');
-    $('#CecutientBtn img').css('display', 'inline-block');
-    $('.img_special_black').css('display', 'inline-block');
-    $.cookie('image', 'off', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('img').css("display", "none");
+    $('#ImageOff').css("display", "none");
+    $('#ImageOn').css("display", "inline-block");
+    $('#CecutientBtn img, #CecutientBtn img').css("display", "inline-block");
+    $('.img_special_black').css("display", "inline-block");
+    $.cookie("image", "off", {
       expires: 365,
       path: '/'
     });
@@ -1303,11 +1298,11 @@ function ImageOff() {
 
 
 function VideoOn() {
-  if ($.cookie('CecutientCookie') == 'on') {
+  if ($.cookie("CecutientCookie") == "on") {
     $('#VideoOff').show();
     $('#VideoOn').hide();
     $('iframe').show();
-    $.cookie('video', 'on', {
+    $.cookie("video", "on", {
       expires: 365,
       path: '/'
     });
@@ -1316,11 +1311,11 @@ function VideoOn() {
 }
 
 function VideoOff() {
-  if ($.cookie('CecutientCookie') == 'on') {
+  if ($.cookie("CecutientCookie") == "on") {
     $('#VideoOff').hide();
     $('#VideoOn').show();
     $('iframe').hide();
-    $.cookie('video', 'off', {
+    $.cookie("video", "off", {
       expires: 365,
       path: '/'
     });
@@ -1337,19 +1332,19 @@ function VideoOff() {
 
 
 function WhiteStyle() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('body, html').css('background', '#fff');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('body, html').css("background", "#fff");
     $('*').css('color', '#000');
-    $('#CecutientTop').css('color', '#000');
-    $('.ColorStyle').removeClass('A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle');
-    $('#WhiteStyle').addClass('A_WhiteStyle');
+    $('#CecutientTop').css("color", "#000");
+    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
+    $('#WhiteStyle').addClass("A_WhiteStyle");
     /*Настройка пользовательских стилей для белой цветовой схемы*/
     //
     //
 
     /*Конец Настройки пользовательских стилей для белой цветовой схемы*/
 
-    $.cookie('style', 'white', {
+    $.cookie("style", "white", {
       expires: 365,
       path: '/'
     });
@@ -1360,19 +1355,19 @@ function WhiteStyle() {
 
 
 function BlackStyle() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('body, html').css('background', '#000');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('body, html').css("background", "#000");
     $('*').css('color', '#fff');
-    $('#CecutientTop').css('color', '#fff');
-    $('.ColorStyle').removeClass('A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle');
-    $('#BlackStyle').addClass('A_BlackStyle');
+    $('#CecutientTop').css("color", "#fff");
+    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
+    $('#BlackStyle').addClass("A_BlackStyle");
     /*Настройка пользовательских стилей для чёрной цветовой схемы*/
     //
     //
 
     /*Конец Настройки пользовательских стилей для чёрной цветовой схемы*/
 
-    $.cookie('style', 'black', {
+    $.cookie("style", "black", {
       expires: 365,
       path: '/'
     });
@@ -1383,19 +1378,19 @@ function BlackStyle() {
 
 
 function BlueStyle() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('body, html').css('background', '#9DD1FF');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('body, html').css("background", "#9DD1FF");
     $('*').css('color', '#000');
-    $('#CecutientTop').css('color', '#063462');
-    $('.ColorStyle').removeClass('A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle');
-    $('#BlueStyle').addClass('A_BlueStyle');
+    $('#CecutientTop').css("color", "#063462");
+    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
+    $('#BlueStyle').addClass("A_BlueStyle");
     /*Настройка пользовательских стилей для синей цветовой схемы*/
     //
     //
 
     /*Конец Настройки пользовательских стилей для синей цветовой схемы*/
 
-    $.cookie('style', 'blue', {
+    $.cookie("style", "blue", {
       expires: 365,
       path: '/'
     });
@@ -1406,19 +1401,19 @@ function BlueStyle() {
 
 
 function GreenStyle() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('body, html').css('background', '#3B2716');
+  if ($.cookie("CecutientCookie") == "on") {
+    $('body, html').css("background", "#3B2716");
     $('*').css('color', '#A9E44D');
-    $('#CecutientTop').css('color', '#A9E44D');
-    $('.ColorStyle').removeClass('A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle');
-    $('#GreenStyle').addClass('A_GreenStyle');
+    $('#CecutientTop').css("color", "#A9E44D");
+    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
+    $('#GreenStyle').addClass("A_GreenStyle");
     /*Настройка пользовательских стилей для зелёной цветовой схемы*/
     //
     //
 
     /*Конец Настройки пользовательских стилей для зелёной цветовой схемы*/
 
-    $.cookie('style', 'green', {
+    $.cookie("style", "green", {
       expires: 365,
       path: '/'
     });
@@ -1435,11 +1430,11 @@ function GreenStyle() {
 
 
 function LineHeight_100() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__line_height').removeClass('A_line_height');
-    $('#d5__line_height_100').addClass('A_line_height');
-    $('*').css('line-height', '100%');
-    $.cookie('line_height', '100', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__line_height').removeClass("A_line_height");
+    $('#d5__line_height_100').addClass("A_line_height");
+    $('*').css("line-height", "100%");
+    $.cookie("line_height", "100", {
       expires: 365,
       path: '/'
     });
@@ -1450,11 +1445,11 @@ function LineHeight_100() {
 
 
 function LineHeight_150() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__line_height').removeClass('A_line_height');
-    $('#d5__line_height_150').addClass('A_line_height');
-    $('*').css('line-height', '125%');
-    $.cookie('line_height', '150', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__line_height').removeClass("A_line_height");
+    $('#d5__line_height_150').addClass("A_line_height");
+    $('*').css("line-height", "125%");
+    $.cookie("line_height", "150", {
       expires: 365,
       path: '/'
     });
@@ -1465,11 +1460,11 @@ function LineHeight_150() {
 
 
 function LineHeight_200() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__line_height').removeClass('A_line_height');
-    $('#d5__line_height_200').addClass('A_line_height');
-    $('*').css('line-height', '150%');
-    $.cookie('line_height', '200', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__line_height').removeClass("A_line_height");
+    $('#d5__line_height_200').addClass("A_line_height");
+    $('*').css("line-height", "150%");
+    $.cookie("line_height", "200", {
       expires: 365,
       path: '/'
     });
@@ -1486,11 +1481,11 @@ function LineHeight_200() {
 
 
 function LetterSpacing_1() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__letter_spacing').removeClass('A_letter_spacing');
-    $('#d5__letter_spacing_1').addClass('A_letter_spacing');
-    $('*').css('letter-spacing', '0px');
-    $.cookie('spacing', '1', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__letter_spacing').removeClass("A_letter_spacing");
+    $('#d5__letter_spacing_1').addClass("A_letter_spacing");
+    $('*').css("letter-spacing", "0px");
+    $.cookie("spacing", "1", {
       expires: 365,
       path: '/'
     });
@@ -1501,11 +1496,11 @@ function LetterSpacing_1() {
 
 
 function LetterSpacing_2() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__letter_spacing').removeClass('A_letter_spacing');
-    $('#d5__letter_spacing_2').addClass('A_letter_spacing');
-    $('*').css('letter-spacing', '1px');
-    $.cookie('spacing', '2', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__letter_spacing').removeClass("A_letter_spacing");
+    $('#d5__letter_spacing_2').addClass("A_letter_spacing");
+    $('*').css("letter-spacing", "1px");
+    $.cookie("spacing", "2", {
       expires: 365,
       path: '/'
     });
@@ -1516,11 +1511,11 @@ function LetterSpacing_2() {
 
 
 function LetterSpacing_3() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__letter_spacing').removeClass('A_letter_spacing');
-    $('#d5__letter_spacing_3').addClass('A_letter_spacing');
-    $('*').css('letter-spacing', '2px');
-    $.cookie('spacing', '3', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__letter_spacing').removeClass("A_letter_spacing");
+    $('#d5__letter_spacing_3').addClass("A_letter_spacing");
+    $('*').css("letter-spacing", "2px");
+    $.cookie("spacing", "3", {
       expires: 365,
       path: '/'
     });
@@ -1537,11 +1532,11 @@ function LetterSpacing_3() {
 
 
 function FontSansSerif() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__serifs').removeClass('A_serifs');
-    $('#d5__sans_serif').addClass('A_serifs');
-    $('*').css('font-family', 'Arial, SansSerif');
-    $.cookie('type', 'sans-serif', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__serifs').removeClass("A_serifs");
+    $('#d5__sans_serif').addClass("A_serifs");
+    $('*').css("font-family", "Arial, SansSerif");
+    $.cookie("type", "sans-serif", {
       expires: 365,
       path: '/'
     });
@@ -1552,11 +1547,11 @@ function FontSansSerif() {
 
 
 function FontSerif() {
-  if ($.cookie('CecutientCookie') == 'on') {
-    $('.d5__serifs').removeClass('A_serifs');
-    $('#d5__serif').addClass('A_serifs');
-    $('*').css('font-family', '\'Times New Roman\', Serif');
-    $.cookie('type', 'serif', {
+  if ($.cookie("CecutientCookie") == "on") {
+    $('.d5__serifs').removeClass("A_serifs");
+    $('#d5__serif').addClass("A_serifs");
+    $('*').css("font-family", "'Times New Roman', Serif");
+    $.cookie("type", "serif", {
       expires: 365,
       path: '/'
     });
@@ -1597,6 +1592,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_js_video__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/js-video */ "./src/js/components/js-video.js");
 /* harmony import */ var _components_instruction_popup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/instruction-popup */ "./src/js/components/instruction-popup.js");
 /* harmony import */ var _components_pdf_popup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/pdf-popup */ "./src/js/components/pdf-popup.js");
+/* harmony import */ var _components_pdf_popup__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_components_pdf_popup__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _components_visually_impaired__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/visually-impaired */ "./src/js/components/visually-impaired.js");
