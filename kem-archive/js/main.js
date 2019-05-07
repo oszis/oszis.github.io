@@ -300,7 +300,7 @@ $('[data-fancybox]').fancybox({
   image: {
     preload: true
   },
-  baseTpl: "<div class=\"fancybox-container\" role=\"dialog\" tabindex=\"-1\">\n\t\t\t\t<div class=\"fancybox-bg\"></div>\n\t\t\t\t<div class=\"fancy\">\n\t\t\t\t\t<button data-fancybox-close class=\"fancy__btn fancy__close-btn\" title=\"{{CLOSE}}\">\n\t\t\t\t\t\t<span class=\"icon icon_cross\">\n\t\t\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-cross\"></use></svg>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t\t<div class=\"fancy__inner\">\n\t\t\t\t\t\t<div class=\"fancy__content\">\n\t\t\t\t\t\t\t<div class=\"fancybox-stage fancy__stage\"></div>\n\t\t\t\t\t\t\t{{arrows}}\n\t\t\t\t\t\t\t<div class=\"fancy__toolbar\">{{buttons}}</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"fancy__caption js-caption\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"fancy__infobar\">\n\t\t\t\t\t\t<span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"fancy__thumbs\"></div>\n\t\t\t</div>",
+  baseTpl: "<div class=\"fancybox-container\" role=\"dialog\" tabindex=\"-1\">\n\t\t\t\t<div class=\"fancybox-bg\"></div>\n\t\t\t\t<div class=\"fancy fancy_no-caption\">\n\t\t\t\t\t<button data-fancybox-close class=\"fancy__btn fancy__close-btn\" title=\"{{CLOSE}}\">\n\t\t\t\t\t\t<span class=\"icon icon_cross\">\n\t\t\t\t\t\t\t<svg><use xlink:href=\"images/sprites.svg#icon-cross\"></use></svg>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</button>\n\t\t\t\t\t<div class=\"fancy__inner\">\n\t\t\t\t\t\t<div class=\"fancy__content\">\n\t\t\t\t\t\t\t<div class=\"fancybox-stage fancy__stage\"></div>\n\t\t\t\t\t\t\t{{arrows}}\n\t\t\t\t\t\t\t<div class=\"fancy__toolbar\">{{buttons}}</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"fancy__caption js-caption\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"fancy__infobar\">\n\t\t\t\t\t\t<span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"fancy__thumbs\"></div>\n\t\t\t</div>",
   video: {
     tpl: "<div class=\"fancybox-content\">\n\t\t\t\t\t<div class=\"fancy__video\">\n\t\t\t\t\t\t<video class=\"video video-js js-video\" controls controlsList=\"nodownload\" poster=\"{{poster}}\">\n\t\t\t\t\t\t\t<source src=\"{{src}}\" type=\"{{format}}\" />\n\t\t\t\t\t\t</video>\n\t\t\t\t\t</div>\n\t\t\t\t</div>",
     format: '',
@@ -351,7 +351,7 @@ $('[data-fancybox]').fancybox({
       Object(_createVideoJs__WEBPACK_IMPORTED_MODULE_1__["default"])($video[0]);
     }
   },
-  afterShow: function afterShow(instance, current) {
+  beforeShow: function beforeShow(instance, current) {
     var $clickedElement = $(current.opts.$orig);
     var currentCaption = ($clickedElement.data('caption') || '') + $.trim($clickedElement.find('.js-data-caption').html() || '');
     var $fancyBox = $('.fancybox-container');
@@ -380,6 +380,38 @@ $('[data-fancybox]').fancybox({
       }
     }
   },
+
+  /*afterShow: function (instance, current) {
+  	let $clickedElement = $(current.opts.$orig);
+  	let currentCaption = ($clickedElement.data('caption') || '') +
+  		$.trim($clickedElement
+  			.find('.js-data-caption')
+  			.html() || '');
+  		let $fancyBox = $('.fancybox-container');
+  	let $fancy = $fancyBox.find('.fancy');
+  	let $captionContainer = $fancyBox.find('.js-caption');
+  		$captionContainer.html(currentCaption);
+  		if (currentCaption.length === 0) {
+  		$fancy.addClass('fancy_no-caption');
+  	} else {
+  		$fancy.removeClass('fancy_no-caption');
+  			$captionContainer.find('.js-video')
+  			.each((index, element) => {
+  				if ($(element)
+  					.data('audio')) {
+  					$(element)
+  						.addClass('video_audio');
+  				}
+  				createVideoJs($(element)[0]);
+  			});
+  			if (ps) {
+  			ps.update();
+  		}
+  			if (thumbsPs) {
+  			thumbsPs.update();
+  		}
+  	}
+  },*/
   afterClose: function afterClose() {
     if (ps) {
       ps.destroy();

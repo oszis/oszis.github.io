@@ -8914,6 +8914,9 @@ body {
         .content-area ul.content-area__custom-list_small li,
         .content-area ol.content-area__custom-list_small li {
           margin-bottom: 45px; }
+          .content-area ul.content-area__custom-list_small li::before,
+          .content-area ol.content-area__custom-list_small li::before {
+            top: 5px; }
           .content-area ul.content-area__custom-list_small li:last-of-type,
           .content-area ol.content-area__custom-list_small li:last-of-type {
             margin-bottom: 0; }
