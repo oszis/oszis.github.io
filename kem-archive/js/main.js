@@ -731,6 +731,19 @@ $('.js-material-item-document').on('click', function (e) {
 
 /***/ }),
 
+/***/ "./src/js/components/preloader.js":
+/*!****************************************!*\
+  !*** ./src/js/components/preloader.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load', function () {
+  $('.js-preloader').fadeOut(300);
+});
+
+/***/ }),
+
 /***/ "./src/js/components/presentation-lead.js":
 /*!************************************************!*\
   !*** ./src/js/components/presentation-lead.js ***!
@@ -1629,6 +1642,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _components_visually_impaired__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/visually-impaired */ "./src/js/components/visually-impaired.js");
 /* harmony import */ var _components_visually_impaired__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_components_visually_impaired__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/preloader */ "./src/js/components/preloader.js");
+/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_components_preloader__WEBPACK_IMPORTED_MODULE_17__);
 
 
 
@@ -1636,6 +1651,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // sliders
+
 
 
 

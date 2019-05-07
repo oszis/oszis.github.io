@@ -4,7 +4,31 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1557224396987">
+		<style type="text/css">
+			.preloader {
+				position: fixed;
+				z-index: 100;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				animation: backgroundPulse 2.8s linear infinite;
+				transition: background-color 0.2s;
+			}
+			
+			@keyframes backgroundPulse {
+				from {
+					background-color: #000;
+				}
+				50% {
+					background-color: rgba(0,0,0,0.82)
+				}
+				to {
+					background-color: #000;
+				}
+			}
+		</style>
+		<link rel="stylesheet" href="css/main.css?v=1557225830318">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700" rel="stylesheet">
 	</head>
 	<body>
@@ -675,7 +699,8 @@
 				<p class="d5__common d5__option_block"><span class="d5__common d5__option_title">Гарнитура:</span><a class="d5__common d5__option_button d5__serifs" id="d5__sans_serif">Без засечек</a><a class="d5__common d5__option_button d5__serifs" id="d5__serif">С засечками</a></p>
 			</div>
 		</div>
-		<script src="js/vendor.js?v=1557224396991"></script>
-		<script src="js/main.js?v=1557224396991"></script>
+		<div class="preloader js-preloader"></div>
+		<script src="js/vendor.js?v=1557225830321"></script>
+		<script src="js/main.js?v=1557225830321"></script>
 	</body>
 </html>
