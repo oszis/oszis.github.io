@@ -183,6 +183,7 @@ $('.js-collapse-list').each(function (listIndex, component) {
   var $component = $(component);
   var $collapseHead = $component.find('.js-collapse-head');
   var $collapseContent = $component.find('.js-collapse-content');
+  var $scroller = $('.js-scroller');
   $collapseContent.collapse({
     parent: $component,
     toggle: false
@@ -208,6 +209,11 @@ $('.js-collapse-list').each(function (listIndex, component) {
   });
   $collapseContent.on('shown.bs.collapse hidden.bs.collapse', function () {
     $(document.body).trigger('scroll:update');
+  });
+  $collapseContent.on('shown.bs.collapse', function (e) {
+    $scroller.animate({
+      scrollTop: $(e.target).parent().find('.js-collapse-head').offset().top
+    }, 500);
   });
   $collapseHead.on('click', function (e) {
     $(e.currentTarget).closest('.js-collapse-item').find('.js-collapse-content').collapse('toggle');
