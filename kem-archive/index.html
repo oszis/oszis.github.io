@@ -4,14 +4,14 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="css/main.css?v=1557185968249">
+		<link rel="stylesheet" href="css/main.css?v=1557204131182">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700" rel="stylesheet">
 	</head>
 	<body>
 		<header class="header"><a class="logo" href="/"><img class="logo__image" src="images/logo.png" alt="Архивной службе кузбасса 75 лет. 1943-2018"><span class="logo__text">Государственный архив<br>Кемеровской области</span></a><a class="btn btn-outline-dark header__btn js-header-btn-show-instruction" href="#"><span class="icon icon_question header__icon">
 					<svg>
 						<use xlink:href="images/sprites.svg#icon-question"></use>
-					</svg></span>Справка</a><a class="btn btn-outline-dark header__btn" href="#"><span class="header__icon icon icon_eye">
+					</svg></span>Справка</a><a class="btn btn-outline-dark header__btn" id="CecutientBtn" href="#"><span class="header__icon icon icon_eye">
 					<svg>
 						<use xlink:href="images/sprites.svg#icon-eye"></use>
 					</svg></span>Версия для слабовидящих</a></header>
@@ -193,7 +193,7 @@
 			</div>
 		</div>
 		<div class="instruction-popup js-instruction-popup">
-			<div class="instruction-popup__close js-instruction-popup-close">
+			<div class="instruction-popup__close js-popup-close">
 				<div class="icon icon_cross">
 					<svg>
 						<use xlink:href="images/sprites.svg#icon-cross"></use>
@@ -201,7 +201,7 @@
 				</div>
 			</div>
 			<div class="instruction-popup__background"></div>
-			<div class="instruction-popup__content js-instruction-popup-content">
+			<div class="instruction-popup__content js-popup-content">
 				<div class="content-area">
 					<div class="container-fluid">
 						<div class="row">
@@ -265,7 +265,16 @@
 				</div>
 			</div>
 		</div>
-		<script src="js/vendor.js"></script>
-		<script src="js/main.js"></script>
+		<div id="d5__everybody_can_see"></div>
+		<div id="CecutientWrapper">
+			<div id="CecutientBlock"><a class="d5__common" id="CecutientOn">Вкл</a><a class="d5__common" id="CecutientOff"><img class="d5__common img_special_black" src="images/special_black.png" alt="">Обычная версия сайта</a><span class="d5__common">Шрифт:</span><a class="d5__common FontSize" id="SmallFonts">A</a><a class="d5__common FontSize" id="MediumFonts">A</a><a class="d5__common FontSize" id="BigFonts">A</a><span class="d5__common">Цвет:</span><a class="d5__common ColorStyle" id="WhiteStyle">Ц</a><a class="d5__common ColorStyle" id="BlackStyle">Ц</a><a class="d5__common ColorStyle" id="BlueStyle">Ц</a><a class="d5__common ColorStyle" id="GreenStyle">Ц</a><a class="d5__common d5__option_button" id="d5__option_settings">Дополнительно</a><br>
+				<p class="d5__common d5__option_block"><span class="d5__common d5__option_title">Графика:</span><a class="d5__common" id="ImageOn">Включить изображения</a><a class="d5__common" id="ImageOff">Выключить изображения</a><a class="d5__common" id="VideoOn">Включить видео</a><a class="d5__common" id="VideoOff">Выключить видео</a></p>
+				<p class="d5__common d5__option_block"><span class="d5__common d5__option_title">Интервал:</span><a class="d5__common d5__option_button d5__line_height" id="d5__line_height_100">Одинарный</a><a class="d5__common d5__option_button d5__line_height" id="d5__line_height_150">Полуторный</a><a class="d5__common d5__option_button d5__line_height" id="d5__line_height_200">Двойной</a></p>
+				<p class="d5__common d5__option_block"><span class="d5__common d5__option_title">Разрядка:</span><a class="d5__common d5__option_button d5__letter_spacing" id="d5__letter_spacing_1">Стандартный</a><a class="d5__common d5__option_button d5__letter_spacing" id="d5__letter_spacing_2">Средний</a><a class="d5__common d5__option_button d5__letter_spacing" id="d5__letter_spacing_3">Большой</a><br></p>
+				<p class="d5__common d5__option_block"><span class="d5__common d5__option_title">Гарнитура:</span><a class="d5__common d5__option_button d5__serifs" id="d5__sans_serif">Без засечек</a><a class="d5__common d5__option_button d5__serifs" id="d5__serif">С засечками</a></p>
+			</div>
+		</div>
+		<script src="js/vendor.js?v=1557204131184"></script>
+		<script src="js/main.js?v=1557204131184"></script>
 	</body>
 </html>
