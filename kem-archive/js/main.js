@@ -166,7 +166,8 @@ $('.js-card').each(function (index, component) {
   var $body = $(document.body);
   $component.on('click', function (e) {
     e.preventDefault();
-    $body.trigger('main-menu:open');
+    var $trgt = $(e.currentTarget);
+    $body.trigger('main-menu:open', [$trgt.attr('href')]);
   });
 });
 
@@ -579,60 +580,35 @@ $('.js-main-menu').each(function (index, component) {
   var $body = $(document.body);
   var $component = $(component);
   var $closeBtn = $component.find('.js-close-menu');
-  var $contentContainer = $component.find('.js-main-menu-content');
-  var $section = $component.find('.js-main-menu-section');
   var $listBtn = $component.find('.js-menu-list-btn');
-  var $list = $component.find('.js-menu-list');
   var ps = [];
-  $section.each(function (sectionIndex, item) {
+  $('.js-menu-list').each(function (sectionIndex, item) {
     ps[index] = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($(item)[0], {
       suppressScrollX: true
     });
   });
-
-  function hideLists() {
-    $section.removeClass('main-menu__section_active');
-    $listBtn.removeClass('menu-list__btn_active');
-    $list.removeClass('menu-list_active');
-    $contentContainer.removeClass('main-menu__content_active');
-  }
-
-  function showSection(sectionId, listId) {
-    var $currentSection = $section.eq(sectionId);
-    var $sectionLists = $currentSection.find('.js-menu-list');
-    var $currentList = $sectionLists.eq(listId);
-    $currentSection.find('.js-menu-list-btn').removeClass('menu-list__btn_active');
-
-    if (sectionId === 2) {
-      $contentContainer.addClass('main-menu__content_active');
-    } else {
-      $contentContainer.removeClass('main-menu__content_active');
-    }
-
-    $section.eq(sectionId + 1).removeClass('main-menu__section_active');
-    $currentSection.addClass('main-menu__section_active');
-    $sectionLists.removeClass('menu-list_active');
-    $currentList.addClass('menu-list_active');
-    ps.forEach(function (item) {
-      return item.update();
-    });
-  }
-
   $listBtn.on('click', function (e) {
-    e.preventDefault();
-    var $trgt = $(e.target);
-    var itemRequestId = $trgt.data('request-id').split('-').map(Number);
+    var $trgt = $(e.currentTarget);
+    var $parentList = $trgt.closest('.js-menu-list');
+    var $listItem = $trgt.closest('.menu-list__item').find('.menu-list');
+    var $btnArr = $parentList.find('.js-menu-list-btn');
+    var $listArr = $parentList.find('.menu-list');
 
-    if ($trgt.hasClass('menu-list__btn_active')) {
+    if (!$trgt.hasClass('menu-list__btn_active')) {
+      $btnArr.removeClass('menu-list__btn_active');
+      $trgt.addClass('menu-list__btn_active');
+      $listArr.removeClass('menu-list_active');
+      $listItem.eq(0).stop(true, true).addClass('menu-list_active');
+    } else {
       window.location = e.target.href;
     }
-
-    var $sectionBtns = $trgt.closest('.js-main-menu-section').find('.js-menu-list-btn');
-    $sectionBtns.removeClass('menu-list__btn_active');
-    $trgt.addClass('menu-list__btn_active');
-    showSection(itemRequestId[0], itemRequestId[1]);
   });
-  $body.on('main-menu:open', function () {
+
+  function hideLists() {
+    $component.find('.menu-list').removeClass('menu-list_active');
+  }
+
+  $body.on('main-menu:open', function (e) {
     $component.addClass('main-menu_active');
   });
   $body.on('main-menu:close', function () {
@@ -738,8 +714,14 @@ $('.js-material-item-document').on('click', function (e) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(window).on('load', function () {
+$(window).on('preloader:show', function () {
+  $('.js-preloader').fadeIn(300);
+});
+$(window).on('preloader:hide', function () {
   $('.js-preloader').fadeOut(300);
+});
+$(window).on('load', function () {
+  $(window).trigger('preloader:hide');
 });
 
 /***/ }),
@@ -765,21 +747,19 @@ $('.js-presentation-lead').each(function (index, component) {
 /*!***************************************!*\
   !*** ./src/js/components/scroller.js ***!
   \***************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
-
+//import PerfectScrollbar from 'perfect-scrollbar';
 $('.js-scroller').each(function (index, component) {
   var $component = $(component);
   var toTopBtn = $('.js-to-top-btn');
-  var ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($(component)[0], {
-    suppressScrollX: true
-  });
-  $component.on('ps-scroll-y', function () {
-    if ($component.scrollTop() >= $(window).innerHeight()) {
+  /*const ps = new PerfectScrollbar($(component)[0], {
+  	suppressScrollX: true,
+  });*/
+
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() >= $(window).innerHeight()) {
       toTopBtn.addClass('to-top-btn_active');
     } else {
       toTopBtn.removeClass('to-top-btn_active');
@@ -787,13 +767,13 @@ $('.js-scroller').each(function (index, component) {
   });
   toTopBtn.on('click', function (e) {
     e.preventDefault();
-    $component.animate({
-      scrollTop: 0
-    }, 500);
+    console.log(1);
+    $(window).scrollTop(0);
   });
-  $(document.body).on('scroll:update', function () {
-    ps.update();
-  });
+  /*$(document.body)
+  	.on('scroll:update', () => {
+  		ps.update();
+  	});*/
 });
 
 /***/ }),
@@ -1619,6 +1599,7 @@ function FontSerif() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor */ "./src/js/vendor.js");
 /* harmony import */ var _components_scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/scroller */ "./src/js/components/scroller.js");
+/* harmony import */ var _components_scroller__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_scroller__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_main_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/main-menu */ "./src/js/components/main-menu.js");
 /* harmony import */ var _components_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/card */ "./src/js/components/card.js");
 /* harmony import */ var _components_card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_card__WEBPACK_IMPORTED_MODULE_3__);
