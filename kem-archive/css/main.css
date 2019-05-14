@@ -9022,19 +9022,11 @@ body {
 
 .main-menu {
   position: fixed;
-  left: -81.71875%;
+  left: -100%;
   top: 0;
   bottom: 0;
   z-index: 100;
-  -webkit-border-radius: 0 8px 8px 0;
-     -moz-border-radius: 0 8px 8px 0;
-          border-radius: 0 8px 8px 0;
-  width: 81.71875%;
-  min-width: 1569px;
-  background: -webkit-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
-  background: -moz-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
-  background: -o-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
-  background: linear-gradient(128.24deg, #27509e 36.16%, #f50057 202.72%);
+  width: 100%;
   -webkit-transform: translateX(0);
      -moz-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -9079,7 +9071,16 @@ body {
        -moz-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    height: 100vh; }
+    -webkit-border-radius: 0 8px 8px 0;
+       -moz-border-radius: 0 8px 8px 0;
+            border-radius: 0 8px 8px 0;
+    width: 81.71875%;
+    height: 100vh;
+    min-width: 1569px;
+    background: -webkit-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
+    background: -moz-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
+    background: -o-linear-gradient(321.76deg, #27509e 36.16%, #f50057 202.72%);
+    background: linear-gradient(128.24deg, #27509e 36.16%, #f50057 202.72%); }
   .main-menu__title {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 144px;
@@ -9227,11 +9228,6 @@ body {
     top: 0;
     margin-left: 100%;
     opacity: 0;
-    -webkit-transform: translateX(20%);
-       -moz-transform: translateX(20%);
-        -ms-transform: translateX(20%);
-         -o-transform: translateX(20%);
-            transform: translateX(20%);
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     -webkit-box-shadow: -41px 0 41px 0 rgba(0, 0, 0, 0.17);
        -moz-box-shadow: -41px 0 41px 0 rgba(0, 0, 0, 0.17);
@@ -9242,7 +9238,12 @@ body {
     -moz-transition: opacity 0.3s, transform 0.2s, -moz-transform 0.2s;
     transition: opacity 0.3s, transform 0.2s;
     transition: opacity 0.3s, transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
-    pointer-events: none; }
+    pointer-events: none;
+    -webkit-transform: translateX(20%);
+       -moz-transform: translateX(20%);
+        -ms-transform: translateX(20%);
+         -o-transform: translateX(20%);
+            transform: translateX(20%); }
     .menu-list_inner.menu-list_active {
       opacity: 1;
       -webkit-transform: translateX(0);
@@ -11089,7 +11090,8 @@ body {
     -o-transition: opacity 0.2s, -o-transform 0.4s;
     -moz-transition: transform 0.4s, opacity 0.2s, -moz-transform 0.4s;
     transition: transform 0.4s, opacity 0.2s;
-    transition: transform 0.4s, opacity 0.2s, -webkit-transform 0.4s, -moz-transform 0.4s, -o-transform 0.4s; }
+    transition: transform 0.4s, opacity 0.2s, -webkit-transform 0.4s, -moz-transform 0.4s, -o-transform 0.4s;
+    overflow-y: scroll; }
     .fancy__caption .fancybox-caption {
       position: static;
       overflow: hidden;

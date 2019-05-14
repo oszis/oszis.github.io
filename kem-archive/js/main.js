@@ -287,11 +287,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _createVideoJs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createVideoJs */ "./src/js/components/createVideoJs.js");
-/* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
 
 
-
-var ps = null;
 var thumbsPs = null;
 $('[data-fancybox]').fancybox({
   buttons: ['zoom'],
@@ -319,25 +316,10 @@ $('[data-fancybox]').fancybox({
     parentEl: '.fancy__thumbs',
     axis: 'x'
   },
-  onInit: function onInit(instance, current) {
-    var $fancyBox = $('.fancybox-container');
-
-    if (!ps) {
-      ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["default"]($fancyBox.find('.js-caption')[0], {
-        suppressScrollX: true
-      });
-    }
-  },
+  onInit: function onInit(instance, current) {},
   beforeLoad: function beforeLoad(instance, current) {
     var $fancyBox = $('.fancybox-container');
     var $fancyThumbs = $fancyBox.find('.fancy__thumbs .fancybox-thumbs');
-
-    if ($fancyThumbs.length && !thumbsPs) {
-      thumbsPs = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_2__["default"]($fancyThumbs[0], {
-        suppressScrollY: true,
-        swipeEasing: true
-      });
-    }
   },
   afterLoad: function afterLoad(instance, current) {
     var $currentContent = $(current.$content);
@@ -372,53 +354,12 @@ $('[data-fancybox]').fancybox({
         Object(_createVideoJs__WEBPACK_IMPORTED_MODULE_1__["default"])($(element)[0]);
       });
 
-      if (ps) {
-        ps.update();
-      }
-
       if (thumbsPs) {
         thumbsPs.update();
       }
     }
   },
-
-  /*afterShow: function (instance, current) {
-  	let $clickedElement = $(current.opts.$orig);
-  	let currentCaption = ($clickedElement.data('caption') || '') +
-  		$.trim($clickedElement
-  			.find('.js-data-caption')
-  			.html() || '');
-  		let $fancyBox = $('.fancybox-container');
-  	let $fancy = $fancyBox.find('.fancy');
-  	let $captionContainer = $fancyBox.find('.js-caption');
-  		$captionContainer.html(currentCaption);
-  		if (currentCaption.length === 0) {
-  		$fancy.addClass('fancy_no-caption');
-  	} else {
-  		$fancy.removeClass('fancy_no-caption');
-  			$captionContainer.find('.js-video')
-  			.each((index, element) => {
-  				if ($(element)
-  					.data('audio')) {
-  					$(element)
-  						.addClass('video_audio');
-  				}
-  				createVideoJs($(element)[0]);
-  			});
-  			if (ps) {
-  			ps.update();
-  		}
-  			if (thumbsPs) {
-  			thumbsPs.update();
-  		}
-  	}
-  },*/
   afterClose: function afterClose() {
-    if (ps) {
-      ps.destroy();
-      ps = null;
-    }
-
     if (thumbsPs) {
       thumbsPs.destroy();
       thumbsPs = null;
@@ -581,12 +522,6 @@ $('.js-main-menu').each(function (index, component) {
   var $component = $(component);
   var $closeBtn = $component.find('.js-close-menu');
   var $listBtn = $component.find('.js-menu-list-btn');
-  var ps = [];
-  $('.js-menu-list').each(function (sectionIndex, item) {
-    ps[index] = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($(item)[0], {
-      suppressScrollX: true
-    });
-  });
   $listBtn.on('click', function (e) {
     var $trgt = $(e.currentTarget);
     var $parentList = $trgt.closest('.js-menu-list');
@@ -750,14 +685,9 @@ $('.js-presentation-lead').each(function (index, component) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//import PerfectScrollbar from 'perfect-scrollbar';
 $('.js-scroller').each(function (index, component) {
   var $component = $(component);
   var toTopBtn = $('.js-to-top-btn');
-  /*const ps = new PerfectScrollbar($(component)[0], {
-  	suppressScrollX: true,
-  });*/
-
   $(window).on('scroll', function () {
     if ($(window).scrollTop() >= $(window).innerHeight()) {
       toTopBtn.addClass('to-top-btn_active');
@@ -767,13 +697,8 @@ $('.js-scroller').each(function (index, component) {
   });
   toTopBtn.on('click', function (e) {
     e.preventDefault();
-    console.log(1);
     $(window).scrollTop(0);
   });
-  /*$(document.body)
-  	.on('scroll:update', () => {
-  		ps.update();
-  	});*/
 });
 
 /***/ }),
