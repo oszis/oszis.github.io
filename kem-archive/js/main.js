@@ -451,26 +451,19 @@ $('.js-header-btn-show-instruction').on('click', function (e) {
 /*!************************************************!*\
   !*** ./src/js/components/instruction-popup.js ***!
   \************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 $('.js-instruction-popup').each(function (index, component) {
   var $component = $(component);
-  var $content = $component.find('.js-popup-content');
+  var $body = $(document.body);
   var $closeBtn = $component.find('.js-popup-close');
-  var ps = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($content[0], {
-    suppressScrollX: true
-  });
-  ps.update();
   $(document.body).on('instruction:show', function () {
+    $body.stop(true, true).addClass('show-popup');
     $component.fadeIn(200);
-    ps.update();
   });
   $(document.body).on('instruction:hide', function () {
+    $body.stop(true, true).removeClass('show-popup');
     $component.fadeOut(200);
   });
   $closeBtn.on('click', function (e) {
@@ -620,11 +613,14 @@ $('.js-material-slider').each(function (index, component) {
 
 $('.js-pdf-popup').each(function (index, component) {
   var $component = $(component);
+  var $body = $(document.body);
   var $closeBtn = $component.find('.js-popup-close');
   $(document.body).on('pdf:show', function () {
+    $body.stop(true, true).addClass('show-popup');
     $component.fadeIn(200);
   });
   $(document.body).on('pdf:hide', function () {
+    $body.stop(true, true).removeClass('show-popup');
     $component.fadeOut(200);
   });
   $closeBtn.on('click', function (e) {
@@ -1542,6 +1538,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_fancybox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/fancybox */ "./src/js/components/fancybox.js");
 /* harmony import */ var _components_js_video__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/js-video */ "./src/js/components/js-video.js");
 /* harmony import */ var _components_instruction_popup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/instruction-popup */ "./src/js/components/instruction-popup.js");
+/* harmony import */ var _components_instruction_popup__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_components_instruction_popup__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _components_pdf_popup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/pdf-popup */ "./src/js/components/pdf-popup.js");
 /* harmony import */ var _components_pdf_popup__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_components_pdf_popup__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");

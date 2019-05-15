@@ -8589,12 +8589,7 @@ video::-webkit-media-text-track-display {
 *:hover, *:focus, *:active {
   outline: none !important;
   -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  /*-webkit-user-select: none;
-		-khtml-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;*/ }
+  -webkit-touch-callout: none; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -8603,10 +8598,11 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  /*overflow: hidden;
-	height: 100vh;*/
   min-width: 1600px;
   font-family: "Fira Sans", sans-serif; }
+  body.show-popup {
+    overflow: hidden;
+    height: 100vh; }
 
 .btn {
   -webkit-box-shadow: 0 9px 17px -6px rgba(39, 80, 158, 0.15);
@@ -9587,31 +9583,18 @@ body {
               transform: translate(-50%, -50%); }
   .card__icon {
     position: absolute;
+    right: 40px;
+    bottom: 50px;
+    width: 90px;
+    max-height: 90px;
     opacity: 0.1; }
-    .card__icon svg {
-      width: 100%;
-      height: 100%;
-      fill: #fff; }
-    .card__icon_about-archive {
-      right: 54px;
-      bottom: 60px;
-      width: 63px;
-      height: 77px; }
-    .card__icon_publications {
-      right: 38px;
-      bottom: 57px;
-      width: 86px;
-      height: 86px; }
-    .card__icon_expositions {
-      right: 52px;
-      bottom: 52px;
-      width: 68px;
-      height: 89px; }
-    .card__icon_collections {
-      right: 57px;
-      bottom: 49px;
-      width: 58px;
-      height: 81px; }
+    .card__icon img {
+      margin: 0 auto;
+      display: block;
+      max-width: 90px;
+      max-height: 90px;
+      -o-object-fit: contain;
+         object-fit: contain; }
   .card_1 {
     -webkit-border-bottom-right-radius: 0;
        -moz-border-radius-bottomright: 0;
@@ -11178,19 +11161,15 @@ body {
   bottom: 0;
   z-index: 100;
   display: none;
+  overflow: hidden;
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.9); }
-  .instruction-popup .ps .ps__rail-y {
-    right: 110px !important; }
   .instruction-popup__content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 90px;
-    bottom: 0;
+    position: relative;
     z-index: 3;
-    overflow: hidden;
-    padding-top: 128px;
-    padding-bottom: 128px; }
+    margin-bottom: 100px;
+    padding: 218px 0 128px;
+    min-height: 100vh; }
     .instruction-popup__content::before {
       content: "";
       position: absolute;
@@ -11200,37 +11179,23 @@ body {
       z-index: -1;
       display: block;
       width: 1717px;
-      height: 100%;
       background-color: #fff;
       -webkit-transform: translateX(-50%);
          -moz-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
            -o-transform: translateX(-50%);
               transform: translateX(-50%); }
-  .instruction-popup__background {
+  .instruction-popup__embed {
     position: absolute;
     left: 50%;
     top: 90px;
     bottom: 0;
-    width: 1717px;
-    height: 100%;
-    background-color: #fff;
-    -webkit-transform: translateX(-50%);
-       -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-         -o-transform: translateX(-50%);
-            transform: translateX(-50%); }
-  .instruction-popup__embed {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
     z-index: 3;
     margin-left: -859px;
     width: 1718px;
-    height: 100%; }
+    height: auto; }
   .instruction-popup__close {
-    position: absolute;
+    position: fixed;
     right: 30px;
     top: 36px;
     z-index: 10;
@@ -11250,6 +11215,8 @@ body {
       fill: #fff; }
     .instruction-popup__close:active {
       opacity: 0.9; }
+  .instruction-popup_pdf .instruction-popup__content {
+    margin-bottom: 0; }
 
 .standstill {
   position: fixed;
