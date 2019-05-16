@@ -166,8 +166,14 @@ $('.js-card').each(function (index, component) {
   var $body = $(document.body);
   $component.on('click', function (e) {
     e.preventDefault();
-    var $trgt = $(e.currentTarget);
-    $body.trigger('main-menu:open', [$trgt.attr('href')]);
+
+    if ($component.hasClass('show_in_menu')) {
+      var trgt_id = $component.data('id');
+      $body.trigger('select_menu_element', [trgt_id]);
+      $body.trigger('main-menu:open', []);
+    } else {
+      var trgt_href = $component.attr('href');
+    }
   });
 });
 
@@ -510,17 +516,27 @@ $('.js-video').each(function (index, component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! perfect-scrollbar */ "./node_modules/perfect-scrollbar/dist/perfect-scrollbar.esm.js");
 
+var ps = [];
 $('.js-main-menu').each(function (index, component) {
   var $body = $(document.body);
   var $component = $(component);
   var $closeBtn = $component.find('.js-close-menu');
   var $listBtn = $component.find('.js-menu-list-btn');
+  var $open_new_page_link = $component.find('.menu_open_new_page');
+  var $menuList = $component.find('.js-menu-list');
+  $menuList.each(function (index, list) {
+    ps[index] = new perfect_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"]($(list)[0], {
+      suppressScrollX: true
+    });
+  });
   $listBtn.on('click', function (e) {
     var $trgt = $(e.currentTarget);
     var $parentList = $trgt.closest('.js-menu-list');
+    var $parentMenuList = $trgt.closest('.menu-list');
     var $listItem = $trgt.closest('.menu-list__item').find('.menu-list');
     var $btnArr = $parentList.find('.js-menu-list-btn');
     var $listArr = $parentList.find('.menu-list');
+    $parentMenuList.find('.menu-list__btn').removeClass('menu-list__btn_active');
 
     if (!$trgt.hasClass('menu-list__btn_active')) {
       $btnArr.removeClass('menu-list__btn_active');
@@ -528,8 +544,15 @@ $('.js-main-menu').each(function (index, component) {
       $listArr.removeClass('menu-list_active');
       $listItem.eq(0).stop(true, true).addClass('menu-list_active');
     } else {
-      window.location = e.target.href;
+      $trgt.addClass('menu-list__btn_active');
     }
+  });
+  $open_new_page_link.on('click', function (e) {
+    var $trgt = $(e.currentTarget);
+    var $parentMenuList = $trgt.closest('.menu-list');
+    $parentMenuList.find('.menu-list__btn').removeClass('menu-list__btn_active');
+    $parentMenuList.find('.menu-list').removeClass('menu-list_active');
+    $trgt.addClass('menu-list__btn_active');
   });
 
   function hideLists() {
@@ -546,6 +569,12 @@ $('.js-main-menu').each(function (index, component) {
   $closeBtn.on('click', function (e) {
     e.preventDefault();
     $body.trigger('main-menu:close');
+  });
+  $body.on('select_menu_element', function (e, element_id) {
+    var $menu_element = $component.find('.menu_index_1 .menu-list__item[data-id="' + element_id + '"]');
+    $('.menu-list__btn').removeClass('menu-list__btn_active');
+    $menu_element.find('a:first').addClass('menu-list__btn_active');
+    $menu_element.find('.menu_index_2:first').addClass('menu-list_active');
   });
 });
 
@@ -746,12 +775,21 @@ $('.js-standstill').each(function (index, component) {
   var $counter = $component.find('.js-counter');
   var animationInterval = null;
   var standstillTimeout = null;
+  var TimeLimitInMinuts = $component.data('timeout_in_minutes');
+  TimeLimitInMinuts = Number.isInteger(TimeLimitInMinuts) ? TimeLimitInMinuts : 7;
+  var PopupTimeLimitInSeconds = $component.data('popup_timeout_in_seconds');
+  PopupTimeLimitInSeconds = Number.isInteger(PopupTimeLimitInSeconds) ? PopupTimeLimitInSeconds : 30;
 
   function showStandStillTimeout() {
     standstillTimeout = setTimeout(function () {
-      $component.fadeIn(300);
-      $component.trigger('timeout:start');
-    }, 420000);
+      if ($('.page_type_main').length) {
+        // exclude main page
+        $component.trigger('timeout:stop');
+      } else {
+        $component.fadeIn(300);
+        $component.trigger('timeout:start');
+      }
+    }, TimeLimitInMinuts * 60 * 1000);
   }
 
   function thirtySecondsTimeout(counter) {
@@ -765,7 +803,7 @@ $('.js-standstill').each(function (index, component) {
 
   showStandStillTimeout();
   $component.on('timeout:start', function () {
-    $counter.html(30);
+    $counter.html(PopupTimeLimitInSeconds);
     animationInterval = setInterval(function () {
       var counter = thirtySecondsTimeout($counter.html());
       $counter.html(counter);
@@ -793,719 +831,6 @@ $('.js-standstill').each(function (index, component) {
     $component.trigger('timeout:stop');
   });
 });
-
-/***/ }),
-
-/***/ "./src/js/components/visually-impaired.js":
-/*!************************************************!*\
-  !*** ./src/js/components/visually-impaired.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*Добавление HTML файла*/
-//$( "#d5__everybody_can_see" ).load( "/js/d5__everybody_can_see/d5__everybody_can_see.html" );
-$(document).ready(function () {
-  /* Всплывающее Меню */
-  var CecutientMenuShow = 0;
-  $('#CecutientBtn, #CecutientBtn2').click(function () {
-    CecutientOn();
-    $.cookie("CecutientCookie", "on", {
-      expires: 365,
-      path: '/'
-    });
-    SmallFonts(); // Шрифт по умолчанию
-
-    WhiteStyle(); // Фон по умолчанию
-
-    ImageOn(); // Изображения по умолчанию
-
-    VideoOff(); // Видео по умолчанию
-
-    LineHeight_100(); // Междустрочный интервал по умолчанию
-
-    LetterSpacing_1(); // Разрядка по умолчанию
-
-    FontSansSerif(); // Тип шрифта по умолчанию
-
-    $.cookie("settings", "off", {
-      expires: 365,
-      path: '/'
-    });
-
-    if (CecutientMenuShow === 0) {
-      $('#CecutientWrapper').animate({
-        "height": "55px"
-      }, 500);
-      CecutientMenuShow = 1;
-    } else {
-      $('#CecutientWrapper').animate({
-        "height": "0px"
-      }, 500);
-      CecutientMenuShow = 0;
-    }
-
-    return false;
-  });
-
-  if ($.cookie("CecutientCookie") == "on") {
-    if ($.cookie("settings") == "on") {
-      $('#CecutientWrapper').css("height", "360px");
-      $('#m-header').css("margin-top", "310px"); //Настройка сдвига контента при отображение расширенного меню
-    } else {
-      $('#CecutientWrapper').css("height", "55px");
-      $('#m-header').css("margin-top", "50px");
-    }
-  }
-  /* Конец Всплывающего Меню */
-
-  /* Загрузка парметров из Cookies, если включены */
-  //
-
-
-  Cecutient_init(); //
-
-  /* Конец Загрузки парметров из Cookies, если включены */
-
-  /*Включение стилей для слабовидящих*/
-
-  $('#CecutientOn').click(function () {
-    CecutientOn();
-  });
-  /*Включение Дополнтительного меню*/
-
-  $('#d5__option_settings').click(function () {
-    ShowSettings();
-  });
-  /*Включение выключение изображений*/
-
-  $('#ImageOn').click(function () {
-    ImageOn();
-  });
-  $('#ImageOff').click(function () {
-    ImageOff();
-  });
-  /*Включение выключение видео*/
-
-  $('#VideoOn').click(function () {
-    VideoOn();
-  });
-  $('#VideoOff').click(function () {
-    VideoOff();
-  });
-  /*Размер шрифта*/
-
-  $('#SmallFonts').click(function () {
-    SmallFonts();
-  });
-  $('#MediumFonts').click(function () {
-    MediumFonts();
-  });
-  $('#BigFonts').click(function () {
-    BigFonts();
-  });
-  /*Цветовая схема*/
-
-  $('#WhiteStyle').click(function () {
-    WhiteStyle();
-  });
-  $('#BlackStyle').click(function () {
-    BlackStyle();
-  });
-  $('#BlueStyle').click(function () {
-    BlueStyle();
-  });
-  $('#GreenStyle').click(function () {
-    GreenStyle();
-  });
-  /*Междустрочный Интервал*/
-
-  $('#d5__line_height_100').click(function () {
-    LineHeight_100();
-  });
-  $('#d5__line_height_150').click(function () {
-    LineHeight_150();
-  });
-  $('#d5__line_height_200').click(function () {
-    LineHeight_200();
-  });
-  /*Разрядка*/
-
-  $('#d5__letter_spacing_1').click(function () {
-    LetterSpacing_1();
-  });
-  $('#d5__letter_spacing_2').click(function () {
-    LetterSpacing_2();
-  });
-  $('#d5__letter_spacing_3').click(function () {
-    LetterSpacing_3();
-  });
-  /*Тип шрифта*/
-
-  $('#d5__sans_serif').click(function () {
-    FontSansSerif();
-  });
-  $('#d5__serif').click(function () {
-    FontSerif();
-  });
-  /*Отключение версии для слабовидящих*/
-
-  $('#CecutientOff').click(function () {
-    $.cookie("CecutientCookie", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("settings", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("style", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("image", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("video", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("fonts", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("line_height", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("spacing", "null", {
-      expires: 365,
-      path: '/'
-    });
-    $.cookie("type", "null", {
-      expires: 365,
-      path: '/'
-    });
-    window.location.reload();
-    return false;
-  });
-}); //Инициализация списка для слабовидящих
-
-function Cecutient_init() {
-  if ($.cookie("CecutientCookie") == "on") {
-    CecutientOn();
-
-    if ($.cookie("fonts") == "small") {
-      SmallFonts();
-    }
-
-    if ($.cookie("fonts") == "medium") {
-      MediumFonts();
-    }
-
-    if ($.cookie("fonts") == "big") {
-      BigFonts();
-    }
-
-    if ($.cookie("style") == "white") {
-      WhiteStyle();
-    }
-
-    if ($.cookie("style") == "black") {
-      BlackStyle();
-    }
-
-    if ($.cookie("style") == "blue") {
-      BlueStyle();
-    }
-
-    if ($.cookie("style") == "green") {
-      GreenStyle();
-    }
-
-    if ($.cookie("image") == "on") {
-      ImageOn();
-    }
-
-    if ($.cookie("image") == "off") {
-      ImageOff();
-    }
-
-    if ($.cookie("video") == "on") {
-      VideoOn();
-    }
-
-    if ($.cookie("video") == "off") {
-      VideoOff();
-    }
-
-    if ($.cookie("line_height") == "100") {
-      LineHeight_100();
-    }
-
-    if ($.cookie("line_height") == "150") {
-      LineHeight_150();
-    }
-
-    if ($.cookie("line_height") == "200") {
-      LineHeight_200();
-    }
-
-    if ($.cookie("spacing") == "1") {
-      LetterSpacing_1();
-    }
-
-    if ($.cookie("spacing") == "2") {
-      LetterSpacing_2();
-    }
-
-    if ($.cookie("spacing") == "3") {
-      LetterSpacing_3();
-    }
-
-    if ($.cookie("type") == "sans-serif") {
-      FontSansSerif();
-    }
-
-    if ($.cookie("type") == "serif") {
-      FontSerif();
-    }
-  }
-}
-/*Функция обработчик включения стилей*/
-
-
-function CecutientOn() {
-  $(document.body).addClass('visually');
-  $('.d5__hide').css("display", "none"); //Класс элементов, которые не отображаются в специальной версии
-
-  $('#CecutientOn').css("display", "none");
-  $('#CecutientOff').css("display", "inline-block");
-  $('*').not('#logo, .home-three-akcii-wrap, .home-two-wrap div div div div').css('background', 'transparent');
-  $('*').not('#logo, .home-three-akcii-wrap').css('color', '#000');
-  $('li').css("list-style-image", "none"); //$('li').css("list-style","none");
-
-  $('body, html').css("background", "#fff");
-  $('#CecutientWrapper').css('background', '#fff !important');
-  $('#CecutientBtn, #CecutientBtn2').css("display", "none"); //Отключение изображения переключения в режим для слабовидящих
-
-  /*Настройка пользовательских стилей при включении режима для слабовидящих*/
-  //
-
-  $('.home-video-btn div, .about-video-btn div').css("display", "none");
-  $('.callibri-module-area').css("display", "none");
-  $('.d5__shop_3-2_row').css("padding", "15px 0");
-  $('.header').css('margin-top', '60px');
-  /*Конец Настройки пользовательских стилей при включении режима для слабовидящих*/
-
-  $.cookie("CecutientCookie", "on", {
-    expires: 365,
-    path: '/'
-  });
-  return false;
-}
-/* Функция отображения всплывающего меню */
-//
-
-
-function ShowSettings() {
-  if ($.cookie("CecutientCookie") == "on") {
-    if ($.cookie("settings") == "on") {
-      $('#CecutientWrapper').animate({
-        "height": "55px"
-      }, 500);
-      $('#m-header').animate({
-        "margin-top": "50px"
-      }, 500);
-      $.cookie("settings", "off", {
-        expires: 365,
-        path: '/'
-      });
-    } else {
-      $('#CecutientWrapper').animate({
-        "height": "360px"
-      }, 500);
-      $('#m-header').animate({
-        "margin-top": "310px"
-      }, 500); //Настройка сдвига контента при отображение расширенного меню
-
-      $.cookie("settings", "on", {
-        expires: 365,
-        path: '/'
-      });
-    }
-
-    return false;
-  }
-} //
-
-/*Конец Функции отображения всплывающего меню*/
-
-/*Функции изменения размера шрифта*/
-//
-
-
-function SmallFonts() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.main').removeClass("MediumFonts BigFonts").addClass("SmallFonts");
-    $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1');
-    $('.FontSize').removeClass("A_FontSize");
-    $('#SmallFonts').addClass("A_FontSize");
-    /*Настройка пользовательских стилей для маленьких шрифтов*/
-
-    /*END*/
-
-    $.cookie("fonts", "small", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-    $('.l-menu-item').css("padding-bottom", "20px");
-  }
-}
-
-function MediumFonts() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.main').removeClass("SmallFonts BigFonts").addClass("MediumFonts");
-    $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1.3');
-    $('.FontSize').removeClass("A_FontSize");
-    $('#MediumFonts').addClass("A_FontSize");
-    /*Настройка пользовательских стилей для средних шрифтов*/
-
-    /*END*/
-
-    $.cookie("fonts", "medium", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-
-function BigFonts() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.main').removeClass("SmallFonts MediumFonts").addClass("BigFonts");
-    $('p, h1, h2, h3, h4, h5 a span').css('zoom', '1.5'); //$('.first_nav, .second_nav').css("width","50%");
-
-    $('.FontSize').removeClass("A_FontSize");
-    $('#BigFonts').addClass("A_FontSize");
-    /*Настройка пользовательских стилей для больших шрифтов*/
-
-    /*END*/
-
-    $.cookie("fonts", "big", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец функций изменения размера шрифта*/
-
-/*Функции обработчики отображения изображений*/
-//
-
-
-function ImageOn() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('img').css("display", "inline-block");
-    $('#ImageOff').css("display", "inline-block");
-    $('#ImageOn').css("display", "none");
-    $('.logo_image').css("display", "none");
-    $.cookie("image", "on", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-
-function ImageOff() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('img').css("display", "none");
-    $('#ImageOff').css("display", "none");
-    $('#ImageOn').css("display", "inline-block");
-    $('#CecutientBtn img, #CecutientBtn img').css("display", "inline-block");
-    $('.img_special_black').css("display", "inline-block");
-    $.cookie("image", "off", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций обработчиков отображения изображений*/
-
-/*Функции обработчики отображения видео*/
-//
-
-
-function VideoOn() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('#VideoOff').show();
-    $('#VideoOn').hide();
-    $('iframe').show();
-    $.cookie("video", "on", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-
-function VideoOff() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('#VideoOff').hide();
-    $('#VideoOn').show();
-    $('iframe').hide();
-    $.cookie("video", "off", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций обработчиков отображения видео*/
-
-/*Функции изменения цветовой схема*/
-//
-
-/*Белая цветовой схема*/
-
-
-function WhiteStyle() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('body, html').css("background", "#fff");
-    $('*').css('color', '#000');
-    $('#CecutientTop').css("color", "#000");
-    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
-    $('#WhiteStyle').addClass("A_WhiteStyle");
-    /*Настройка пользовательских стилей для белой цветовой схемы*/
-    //
-    //
-
-    /*Конец Настройки пользовательских стилей для белой цветовой схемы*/
-
-    $.cookie("style", "white", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Чёрная цветовой схема*/
-
-
-function BlackStyle() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('body, html').css("background", "#000");
-    $('*').css('color', '#fff');
-    $('#CecutientTop').css("color", "#fff");
-    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
-    $('#BlackStyle').addClass("A_BlackStyle");
-    /*Настройка пользовательских стилей для чёрной цветовой схемы*/
-    //
-    //
-
-    /*Конец Настройки пользовательских стилей для чёрной цветовой схемы*/
-
-    $.cookie("style", "black", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Синия цветовой схема*/
-
-
-function BlueStyle() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('body, html').css("background", "#9DD1FF");
-    $('*').css('color', '#000');
-    $('#CecutientTop').css("color", "#063462");
-    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
-    $('#BlueStyle').addClass("A_BlueStyle");
-    /*Настройка пользовательских стилей для синей цветовой схемы*/
-    //
-    //
-
-    /*Конец Настройки пользовательских стилей для синей цветовой схемы*/
-
-    $.cookie("style", "blue", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Зелёная цветовой схема*/
-
-
-function GreenStyle() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('body, html').css("background", "#3B2716");
-    $('*').css('color', '#A9E44D');
-    $('#CecutientTop').css("color", "#A9E44D");
-    $('.ColorStyle').removeClass("A_WhiteStyle A_BlackStyle A_BlueStyle A_GreenStyle");
-    $('#GreenStyle').addClass("A_GreenStyle");
-    /*Настройка пользовательских стилей для зелёной цветовой схемы*/
-    //
-    //
-
-    /*Конец Настройки пользовательских стилей для зелёной цветовой схемы*/
-
-    $.cookie("style", "green", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций изменения цветовой схемы*/
-
-/*Функции изменения междустрочного интервала*/
-//
-
-/*Нормальный Интервал*/
-
-
-function LineHeight_100() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__line_height').removeClass("A_line_height");
-    $('#d5__line_height_100').addClass("A_line_height");
-    $('*').css("line-height", "100%");
-    $.cookie("line_height", "100", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*125% Интервал*/
-
-
-function LineHeight_150() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__line_height').removeClass("A_line_height");
-    $('#d5__line_height_150').addClass("A_line_height");
-    $('*').css("line-height", "125%");
-    $.cookie("line_height", "150", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*150% Интервал*/
-
-
-function LineHeight_200() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__line_height').removeClass("A_line_height");
-    $('#d5__line_height_200').addClass("A_line_height");
-    $('*').css("line-height", "150%");
-    $.cookie("line_height", "200", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций изменения междустрочного интервала*/
-
-/*Функции изменения кернинга*/
-//
-
-/*Нормальная Разпрядка*/
-
-
-function LetterSpacing_1() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__letter_spacing').removeClass("A_letter_spacing");
-    $('#d5__letter_spacing_1').addClass("A_letter_spacing");
-    $('*').css("letter-spacing", "0px");
-    $.cookie("spacing", "1", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Средняя Разрядка*/
-
-
-function LetterSpacing_2() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__letter_spacing').removeClass("A_letter_spacing");
-    $('#d5__letter_spacing_2').addClass("A_letter_spacing");
-    $('*').css("letter-spacing", "1px");
-    $.cookie("spacing", "2", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Большая Разрядка*/
-
-
-function LetterSpacing_3() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__letter_spacing').removeClass("A_letter_spacing");
-    $('#d5__letter_spacing_3').addClass("A_letter_spacing");
-    $('*').css("letter-spacing", "2px");
-    $.cookie("spacing", "3", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций изменения разрядки*/
-
-/*Функции изменения типа шрифта*/
-//
-
-/*Шрифт Sans-serif*/
-
-
-function FontSansSerif() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__serifs').removeClass("A_serifs");
-    $('#d5__sans_serif').addClass("A_serifs");
-    $('*').css("font-family", "Arial, SansSerif");
-    $.cookie("type", "sans-serif", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-}
-/*Шрифт Serif*/
-
-
-function FontSerif() {
-  if ($.cookie("CecutientCookie") == "on") {
-    $('.d5__serifs').removeClass("A_serifs");
-    $('#d5__serif').addClass("A_serifs");
-    $('*').css("font-family", "'Times New Roman', Serif");
-    $.cookie("type", "serif", {
-      expires: 365,
-      path: '/'
-    });
-    return false;
-  }
-} //
-
-/*Конец Функций изменения типа шрифта*/
 
 /***/ }),
 
@@ -1543,10 +868,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pdf_popup__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_components_pdf_popup__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_components_header__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _components_visually_impaired__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/visually-impaired */ "./src/js/components/visually-impaired.js");
-/* harmony import */ var _components_visually_impaired__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_components_visually_impaired__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/preloader */ "./src/js/components/preloader.js");
-/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_components_preloader__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/preloader */ "./src/js/components/preloader.js");
+/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_components_preloader__WEBPACK_IMPORTED_MODULE_16__);
 
 
 
@@ -1563,9 +886,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ //import './components/visually-impaired';
 
-
-
+ //import './components/common';
 
 /***/ }),
 

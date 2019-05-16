@@ -8604,6 +8604,18 @@ body {
     overflow: hidden;
     height: 100vh; }
 
+.show_on_main, .show_on_primary, .show_on_secondary {
+  display: none; }
+
+body[data-content_page_type="main"] .show_on_main {
+  display: block; }
+
+body[data-content_page_type="primary"] .show_on_primary {
+  display: block; }
+
+body[data-content_page_type="secondary"] .show_on_secondary {
+  display: block; }
+
 .btn {
   -webkit-box-shadow: 0 9px 17px -6px rgba(39, 80, 158, 0.15);
      -moz-box-shadow: 0 9px 17px -6px rgba(39, 80, 158, 0.15);
@@ -9589,8 +9601,8 @@ body {
     max-height: 90px;
     opacity: 0.1; }
     .card__icon img {
-      margin: 0 auto;
       display: block;
+      margin: 0 auto;
       max-width: 90px;
       max-height: 90px;
       -o-object-fit: contain;
