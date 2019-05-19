@@ -1,0 +1,14 @@
+{
+    "home-city": {
+        "style": {},
+        "href": "2",
+        "text": "this is a link to room 2",
+        "key": 1
+    },
+    "city-home": {
+        "style": {},
+        "href": "1",
+        "text": "this is a link to room 1",
+        "key": 2
+    }
+}

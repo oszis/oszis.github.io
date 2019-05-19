@@ -1,24 +1,5 @@
-[
-    {
-        "name": "character 1",
-        "id": "char1",
-        "style": {
-            "opacity": 1,
-            "background": "url('images/characters/character-1/main.png') no-repeat center center",
-            "backgroundSize": "contain",
-            "width": "188px",
-            "height": "320px",
-            "marginLeft": "-300px",
-            "marginTop": "100px",
-            "transform": "scale(1.5)"
-        },
-        "currentRoom": 1,
-        "routes": [
-            {
-                "name": "main",
-                "step": 0
-            }
-        ],
+{
+    "main-room-test-1": {
         "dialog": {
             "replics": [
                 {
@@ -69,25 +50,7 @@
             ]
         }
     },
-    {
-        "name": "character 2",
-        "id": "char2",
-        "style": {
-            "opacity": 1,
-            "background": "url('images/characters/character-1/main.png') no-repeat center center",
-            "backgroundSize": "contain",
-            "width": "188px",
-            "height": "320px",
-            "marginLeft": "300px",
-            "marginTop": "-300px"
-        },
-        "currentRoom": 2,
-        "routes": [
-            {
-                "name": "main",
-                "step": 0
-            }
-        ],
+    "main-room-test-2": {
         "dialog": {
             "replics": [
                 {
@@ -103,7 +66,7 @@
             ],
             "answers": [
                 {
-                    "text": "Are you okay?",
+                    "text": "How is it going?",
                     "index": 0,
                     "key": 0,
                     "exit": false,
@@ -115,11 +78,11 @@
                         "replics": [
                             {
                                 "author": "player",
-                                "text": "Are you okay?"
+                                "text": "how is it going?"
                             },
                             {
                                 "author": "character 1",
-                                "text": "No, ya zaebalsya"
+                                "text": "it ok"
                             }
                         ],
                         "answers": []
@@ -138,4 +101,4 @@
             ]
         }
     }
-]
+}
