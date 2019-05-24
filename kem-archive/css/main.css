@@ -9730,19 +9730,6 @@ body[data-content_page_type="secondary"] .show_on_secondary {
     position: relative;
     margin-left: -27px;
     padding-bottom: 2px; }
-    .collapse-list__content::after {
-      content: "";
-      position: absolute;
-      left: 92px;
-      right: 0;
-      bottom: 0;
-      display: block;
-      height: 2px;
-      background-color: rgba(0, 0, 0, 0.3); }
-
-.collapse-item {
-  position: relative;
-  margin-top: -2px; }
 
 .collapse-head {
   position: relative;
@@ -9922,6 +9909,19 @@ body[data-content_page_type="secondary"] .show_on_secondary {
   .collapse-content.show::before {
     left: 0;
     background-color: #000; }
+
+.collapse-item {
+  position: relative;
+  margin-top: -2px; }
+  .collapse-item:last-of-type::after {
+    content: "";
+    position: absolute;
+    left: 92px;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3); }
 
 .presentation-lead {
   position: relative;
@@ -10400,6 +10400,51 @@ body[data-content_page_type="secondary"] .show_on_secondary {
   .content-card__text {
     font-size: 16px;
     line-height: 25px; }
+
+.preloader {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: backgroundPulse 1.4s linear infinite;
+     -moz-animation: backgroundPulse 1.4s linear infinite;
+       -o-animation: backgroundPulse 1.4s linear infinite;
+          animation: backgroundPulse 1.4s linear infinite; }
+
+@-webkit-keyframes backgroundPulse {
+  from {
+    background-color: rgba(0, 0, 0, 0.75); }
+  50% {
+    background-color: rgba(0, 0, 0, 0.57); }
+  to {
+    background-color: rgba(0, 0, 0, 0.75); } }
+
+@-moz-keyframes backgroundPulse {
+  from {
+    background-color: rgba(0, 0, 0, 0.75); }
+  50% {
+    background-color: rgba(0, 0, 0, 0.57); }
+  to {
+    background-color: rgba(0, 0, 0, 0.75); } }
+
+@-o-keyframes backgroundPulse {
+  from {
+    background-color: rgba(0, 0, 0, 0.75); }
+  50% {
+    background-color: rgba(0, 0, 0, 0.57); }
+  to {
+    background-color: rgba(0, 0, 0, 0.75); } }
+
+@keyframes backgroundPulse {
+  from {
+    background-color: rgba(0, 0, 0, 0.75); }
+  50% {
+    background-color: rgba(0, 0, 0, 0.57); }
+  to {
+    background-color: rgba(0, 0, 0, 0.75); } }
 
 .material-slider {
   display: -webkit-box;
